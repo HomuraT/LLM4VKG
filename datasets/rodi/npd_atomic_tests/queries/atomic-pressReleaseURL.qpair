@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#pressReleaseURL>
+orderNum=337
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/wellbore/', CAST(TABLE1.wlbNpdidWellbore AS CHARACTER VARYING)) AS x, CAST(TABLE1.wlbPressReleaseUrl AS CHARACTER VARYING) AS y FROM wellbore_exploration_all TABLE1 WHERE TABLE1.wlbPressReleaseUrl IS NOT NULL AND TABLE1.wlbNpdidWellbore IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#pressReleaseURL> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

@@ -1,0 +1,12 @@
+name=Q21 (Peoples' Given Names)
+orderNum=250
+
+sql=SELECT "Person"."has_the_first_name" \n\
+FROM "Person"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?name \n\
+WHERE {?p rdf:type :Person; :has_the_first_name ?name}
+
+categories=attrib,in-table

@@ -1,0 +1,8 @@
+
+     
+     name = 115a-mvd-ref-located-cities-same-river-diff-country
+     orderNum = 7
+
+     sql =   Select C1_City."name" as "?N1", C2_City."name" as "?N2" From mondial_rdf2sql_standard."cityIn" Co1_cityIn, mondial_rdf2sql_standard."Country" Co1_Country, mondial_rdf2sql_standard."City" C1_City, mondial_rdf2sql_standard."cityIn" Co2_cityIn, mondial_rdf2sql_standard."Country" Co2_Country, mondial_rdf2sql_standard."City" C2_City, mondial_rdf2sql_standard."locatedAt" C1_locatedAt, mondial_rdf2sql_standard."Water" R_Water, mondial_rdf2sql_standard."locatedAt" C2_locatedAt Where (Co1_Country."URI" = Co1_cityIn."AdministrativeArea") and (C1_City."URI" = Co1_cityIn."City") and (Co2_Country."URI" = Co2_cityIn."AdministrativeArea") and (C2_City."URI" = Co2_cityIn."City") and (C1_City."URI" = C1_locatedAt."City") and (R_Water."URI" = C1_locatedAt."Water") and (C2_City."URI" = C2_locatedAt."City") and (R_Water."URI" = C2_locatedAt."Water") and (R_Water."rdftype" = 'River') and ((C1_City."name" < C2_City."name") and (Co1_Country."name" != Co2_Country."name"))   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N1 ?N2    WHERE {?Co1 a :Country; :name ?CN1; :hasCity ?C1 .           ?Co2 a :Country; :name ?CN2; :hasCity ?C2 .           ?C1 a :City; :name ?N1 ; :locatedAt ?R .           ?C2 a :City; :name ?N2 ; :locatedAt ?R .           ?R a :River.           FILTER (?N1 < ?N2 && ?CN1 != ?CN2)    }          

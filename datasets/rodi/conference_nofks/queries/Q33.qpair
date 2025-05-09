@@ -1,0 +1,12 @@
+name=Q33 (Paper Dates)
+orderNum=370
+
+sql=SELECT "Conference_document"."has_a_date_of_issue" \n\
+FROM "Paper" NATURAL JOIN "Conference_document"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?dt \n\
+WHERE {?paper rdf:type :Paper; :has_a_date_of_issue ?dt}
+
+categories=attrib,other-table,no-fk

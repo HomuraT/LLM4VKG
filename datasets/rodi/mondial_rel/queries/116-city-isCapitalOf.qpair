@@ -1,0 +1,8 @@
+
+     
+     name = 116-city-isCapitalOf
+     orderNum = 9
+
+     sql =     Select Cty_City."name" as "?N", X_Union."?XN" as "?XN", X_Union."?A" as "?A"   From mondial_rdf2sql_standard."City" Cty_City, ( 	(  		Select X_Country."capital" as "?Cty", X_Country."URI" as "?X", X_Country."name" as "?XN", X_Country."area" as "?A"  		From mondial_rdf2sql_standard."Country" X_Country) 	Union 	(  		Select X_Province."capital" as "?Cty", X_Province."URI" as "?X", X_Province."name" as "?XN", X_Province."area" as "?A"  		From mondial_rdf2sql_standard."Province" X_Province)) X_Union   Where (X_Union."?Cty" = Cty_City."URI")  
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?XN ?A    WHERE {?Cty a :City; :name ?N; :isCapitalOf ?X .           ?X :name ?XN; :area ?A.    }          

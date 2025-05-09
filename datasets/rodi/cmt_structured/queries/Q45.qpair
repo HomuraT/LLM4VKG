@@ -1,0 +1,14 @@
+name=Q45 (Reviewers <-> Reviews)
+orderNum=500
+
+sql=SELECT COUNT(*) \n\
+FROM "Review" \n\
+	JOIN "Person" ON "Review"."writtenBy" = "Person"."ID"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?review rdf:type :Review . \n\
+	?reviewer rdf:type :Reviewer; :writeReview ?review}
+	
+categories=link,path-1

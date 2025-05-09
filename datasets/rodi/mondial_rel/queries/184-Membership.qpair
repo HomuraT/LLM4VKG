@@ -1,0 +1,8 @@
+
+     
+     name = 184-Membership
+     orderNum = 43
+
+     sql =   Select X_Country."name" as "?CN", O_Organization."abbrev" as "?OA", X_Membership."type" AS "?T" From mondial_rdf2sql_standard."Membership" X_Membership, mondial_rdf2sql_standard."Country" X_Country, mondial_rdf2sql_standard."Organization" O_Organization Where (X_Country."URI" = X_Membership."ofMember") and (O_Organization."URI" = X_Membership."inOrganization")     
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?OA ?T    WHERE {           ?M a :Membership; :ofMember ?C ; :inOrganization ?O; :type ?T .           ?C a :Country ; :name ?CN .           ?O a :Organization ; :abbrev ?OA .           }   

@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#resourcesIncludedInDiscovery>
+orderNum=368
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/discovery/', CAST(TABLE1.dscNpdidDiscovery AS CHARACTER VARYING), '/area/hctype/', CAST(TABLE1.dscHcType AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/discovery/', CAST(TABLE1.dscNpdidResInclInDiscovery AS CHARACTER VARYING)) AS y FROM fldArea TABLE1 WHERE TABLE1.dscHcType IS NOT NULL AND TABLE1.dscNpdidResInclInDiscovery IS NOT NULL AND TABLE1.dscNpdidDiscovery IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/discovery/', CAST(TABLE1.dscNpdidDiscovery AS CHARACTER VARYING), '/area/hctype/', CAST(TABLE1.dscHcType AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/discovery/', CAST(TABLE1.dscNpdidResInclInDiscovery AS CHARACTER VARYING)) AS y FROM dscArea TABLE1 WHERE TABLE1.dscHcType IS NOT NULL AND TABLE1.dscNpdidResInclInDiscovery IS NOT NULL AND TABLE1.dscNpdidDiscovery IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#resourcesIncludedInDiscovery> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-1

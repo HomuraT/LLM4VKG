@@ -1,0 +1,8 @@
+
+     
+     name = 222-org-abbrev-headq
+     orderNum = 48
+
+     sql =     Select O."abbrev" as "?A", Cty."name" as "?CN"   From mondial_rdf2sql_standard."Organization" O, mondial_rdf2sql_standard."City" Cty   where O."hasHeadq" = Cty."URI"   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?A ?CN    WHERE {           ?O a :Organization; :abbrev ?A; :hasHeadq ?C .           ?C a :City; :name ?CN .    }          

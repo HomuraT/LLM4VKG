@@ -1,0 +1,8 @@
+
+     
+     name = 153b-cities-onisland-atwater-fully-opt
+     orderNum = 32
+
+     sql =     Select LeftJoin207."?N" as "?N", LeftJoin207."?IN" as "?IN", BGP214."?SN" as "?SN" From ( 	Select BGP208."?C" as "?C", BGP208."?N" as "?N", BGP211."?IN" as "?IN" 	From ( 		Select C_City."URI" as "?C", C_City."name" as "?N" 		From mondial_rdf2sql_standard."City" C_City 		) BGP208 	Left Outer Join 	( 		Select C_Union."?C" as "?C", I_Island."name" as "?IN" 		From ( 			(  				Select C_Mountain."locatedOnIsland" as "?I", C_Mountain."URI" as "?C"  				From mondial_rdf2sql_standard."Mountain" C_Mountain) 			Union 			(  				Select C_locatedOnIsland."Island" as "?I", C_City."URI" as "?C"  				From mondial_rdf2sql_standard."locatedOnIsland" C_locatedOnIsland, mondial_rdf2sql_standard."City" C_City 				Where(C_City."URI" = C_locatedOnIsland."Entity"))) C_Union, mondial_rdf2sql_standard."Island" I_Island 		Where (C_Union."?I" = I_Island."URI")) BGP211 	On (BGP208."?C" = BGP211."?C") 	) LeftJoin207 Left Outer Join ( 	Select C_City."URI" as "?C", W_Water."name" as "?SN" 	From mondial_rdf2sql_standard."locatedAt" C_locatedAt, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Water" W_Water 	Where (C_City."URI" = C_locatedAt."City") and (W_Water."URI" = C_locatedAt."Water") and (W_Water."rdftype" = 'Sea')) BGP214 On (LeftJoin207."?C" = BGP214."?C")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?IN ?SN    WHERE {           ?C a :City; :name ?N .           OPTIONAL { ?C :locatedOnIsland [ :name ?IN ] }           OPTIONAL { ?C :locatedAt [ a :Sea; :name ?SN ] }    }          

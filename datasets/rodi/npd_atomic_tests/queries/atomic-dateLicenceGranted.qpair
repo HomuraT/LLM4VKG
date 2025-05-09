@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#dateLicenceGranted>
+orderNum=209
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING)) AS x, CAST(TABLE1.prlDateGranted AS CHARACTER VARYING) AS y FROM licence TABLE1 WHERE ('9999-12-31T00:00:00' <> TABLE1.prlDateGranted) AND TABLE1.prlDateGranted IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#dateLicenceGranted> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-0

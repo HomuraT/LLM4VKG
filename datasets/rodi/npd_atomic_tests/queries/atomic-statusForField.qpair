@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#statusForField>
+orderNum=381
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/field/', CAST(TABLE1.fldNpdidField AS CHARACTER VARYING), '/activity/', CAST(TABLE1.fldStatus AS CHARACTER VARYING), '/history/', CAST(TABLE1.fldStatusFromDate AS CHARACTER VARYING), '/', CAST(TABLE1.fldStatusToDate AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/field/', CAST(TABLE1.fldNpdidField AS CHARACTER VARYING)) AS y FROM field_activity_status_hst TABLE1 WHERE TABLE1.fldStatus IS NOT NULL AND TABLE1.fldNpdidField IS NOT NULL AND TABLE1.fldStatusFromDate IS NOT NULL AND TABLE1.fldStatusToDate IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#statusForField> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

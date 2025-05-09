@@ -1,0 +1,12 @@
+name=Q34 (Paper Titles)
+orderNum=380
+
+sql=SELECT "Document"."hasTitle" \n\
+FROM "Document" WHERE "Document"."TYPE" = 1
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?title \n\
+WHERE {?paper rdf:type :Paper; :hasTitle ?title}
+
+categories=attrib,in-table

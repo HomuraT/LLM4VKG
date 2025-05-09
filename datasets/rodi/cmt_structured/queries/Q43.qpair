@@ -1,0 +1,15 @@
+name=Q43 (Papers <-> Reviewers)
+orderNum=480
+
+sql=SELECT COUNT(*) \n\
+FROM "Paper" \n\
+	JOIN "assignedTo" ON "Paper"."ID" = "assignedTo"."Paper" \n\
+	JOIN "Person" ON "assignedTo"."Reviewer" = "Person"."ID"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?paper rdf:type :PaperFullVersion . \n\
+	?author rdf:type :Reviewer; :hasBeenAssigned ?paper }
+
+categories=link,path-X,path-2

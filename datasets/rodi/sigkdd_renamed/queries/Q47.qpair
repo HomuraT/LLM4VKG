@@ -1,0 +1,16 @@
+name=Q47 (PCs <-> Conferences)
+orderNum=520
+
+sql=SELECT COUNT(*) \n\
+ FROM program_committees NATURAL JOIN committees \n\
+		JOIN conferences ON committees.committee \n\
+			= conferences.id
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?pc rdf:type :Program_Committee; \n\
+		:isCommitteeOf ?cnf . \n\
+		?cnf rdf:type :Conference }
+
+categories=link,path-X,path-2

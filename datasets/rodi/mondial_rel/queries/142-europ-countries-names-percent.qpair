@@ -1,0 +1,8 @@
+
+     
+     name = 142-europ-countries-names-percent
+     orderNum = 26
+
+     sql =    Select C_Country."name" as "?N", E_Encompassed."percent" as "?P"   From mondial_rdf2sql_standard."Encompassed" E_Encompassed, mondial_rdf2sql_standard."Country" C_Country, mondial_rdf2sql_standard."Continent" Cont_Continent   Where (E_Encompassed."encompassedArea" = C_Country."URI") and (E_Encompassed."encompassedBy" = Cont_Continent."URI") and (Cont_Continent."name" = 'Europe')    
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?P    WHERE {           ?C a :Country; :name ?N.           ?E a :Encompassed; :encompassedArea ?C;              :encompassedBy ?Cont; :percent ?P.           ?Cont a :Continent; :name ?CN.            FILTER (?CN = "Europe")    }          

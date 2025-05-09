@@ -1,0 +1,8 @@
+
+     
+     name = 114c-city-cityIn-country+province
+     orderNum = 6
+
+     sql =   Select Cty_City."name" as "?N", Cty_City."population" as "?CP", X."name" as "?XN", X."population" as "?XP" From mondial_rdf2sql_standard."cityIn" Co_cityIn,   ((select "URI", "name", "population"     from mondial_rdf2sql_standard."Country")   union   (select "URI", "name", "population"     from mondial_rdf2sql_standard."Province")) X   , mondial_rdf2sql_standard."City" Cty_City Where (X."URI" = Co_cityIn."AdministrativeArea") and (Cty_City."URI" = Co_cityIn."City")   and Cty_City."population" is not null and X."population" is not null  
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?XN ?CP ?XP    WHERE {?X a :AdministrativeArea; :name ?XN; :population ?XP.           ?Cty a :City; :name ?N; :population ?CP; :cityIn ?X .    }          

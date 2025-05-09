@@ -1,0 +1,12 @@
+name=Q35 (Abstract IDs)
+orderNum=390
+
+sql=SELECT papers.paper_id \n\
+FROM papers NATURAL JOIN paper_abstracts
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT ?id \n\
+WHERE {?abs rdf:type :PaperAbstract; :paperID ?id}
+
+categories=attrib,other-table

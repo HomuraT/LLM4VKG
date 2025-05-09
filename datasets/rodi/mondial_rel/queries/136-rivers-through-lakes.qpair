@@ -1,0 +1,8 @@
+
+     
+     name = 136-rivers-through-lakes
+     orderNum = 24
+
+     sql =     Select W2_Water."name" as "?RN", W1_Water."name" as "?LN", S."inMountains"   From mondial_rdf2sql_standard."Water" W1_Water, mondial_rdf2sql_standard."Water" W2_Water, mondial_rdf2sql_standard."Source" S   Where (W1_Water."rdftype" = 'Lake') and (W1_Water."flowsThrough_Inv" = W2_Water."URI") and (W2_Water."rdftype" = 'River')     and S."hasSource-" = W2_Water."URI"    
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?RN ?LN ?MN    WHERE {           ?R a :River; :name ?RN; :flowsThrough ?L; :hasSource ?S .           ?L a :Water; :name ?LN .           ?S a :Source .           OPTIONAL { ?S :inMountains ?M . ?M :name ?MN }    }          

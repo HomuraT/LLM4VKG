@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#isSurfaceFacility>
+orderNum=290
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.fclNpdidFacility AS CHARACTER VARYING)) AS x, 'true' AS y FROM facility_fixed TABLE1 WHERE (TABLE1.fclSurface = 'Y') AND TABLE1.fclNpdidFacility IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.fclNpdidFacility AS CHARACTER VARYING)) AS x, 'false' AS y FROM facility_fixed TABLE1 WHERE (TABLE1.fclSurface = 'N') AND TABLE1.fclNpdidFacility IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#isSurfaceFacility> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-1

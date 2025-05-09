@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#wellboreFormationHcLevel3>
+orderNum=419
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/wellbore/', CAST(TABLE2.wlbNpdidWellbore AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/stratum/', CAST(TABLE1.lsuNpdidLithoStrat AS CHARACTER VARYING)) AS y FROM wellbore_formation_top TABLE1, wellbore_exploration_all TABLE2 WHERE (TABLE1.lsuName = TABLE2.wlbFormationWithHc3) AND TABLE1.lsuNpdidLithoStrat IS NOT NULL AND TABLE2.wlbNpdidWellbore IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#wellboreFormationHcLevel3> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-1, link, union-0

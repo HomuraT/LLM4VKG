@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#licenseeForField>
+orderNum=301
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/field/', CAST(TABLE1.fldNpdidField AS CHARACTER VARYING), '/licensee/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.fldLicenseeFrom AS CHARACTER VARYING), '/', CAST(TABLE1.fldLicenseeTo AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/field/', CAST(TABLE1.fldNpdidField AS CHARACTER VARYING)) AS y FROM field_licensee_hst TABLE1 WHERE TABLE1.fldLicenseeFrom IS NOT NULL AND TABLE1.fldLicenseeTo IS NOT NULL AND TABLE1.fldNpdidField IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#licenseeForField> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#Block>
+orderNum=9
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/block/', CAST(TABLE1.wlbNamePart1 AS CHARACTER VARYING), '/', CAST(TABLE1.wlbNamePart2 AS CHARACTER VARYING)) AS x FROM wellbore_shallow_all TABLE1 WHERE TABLE1.wlbNamePart1 IS NOT NULL AND TABLE1.wlbNamePart2 IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/block/', CAST(TABLE1.wlbNamePart1 AS CHARACTER VARYING), '/', CAST(TABLE1.wlbNamePart2 AS CHARACTER VARYING)) AS x FROM wellbore_exploration_all TABLE1 WHERE TABLE1.wlbNamePart1 IS NOT NULL AND TABLE1.wlbNamePart2 IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/block/', CAST(TABLE1.wlbNamePart1 AS CHARACTER VARYING), '/', CAST(TABLE1.wlbNamePart2 AS CHARACTER VARYING)) AS x FROM wellbore_development_all TABLE1 WHERE TABLE1.wlbNamePart2 IS NOT NULL AND TABLE1.wlbNamePart1 IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#Block> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-2

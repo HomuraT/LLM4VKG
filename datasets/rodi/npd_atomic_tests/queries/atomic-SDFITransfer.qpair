@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#SDFITransfer>
+orderNum=112
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING), '/transfer/', CAST(TABLE1.baaTransferDirection AS CHARACTER VARYING), '/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.baaTransferDateValidFrom AS CHARACTER VARYING)) AS x FROM bsns_arr_area_transfer_hst TABLE1 WHERE (TABLE1.baaTransferKind = 'SDFI') AND TABLE1.baaNpdidBsnsArrArea IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL AND TABLE1.baaTransferDateValidFrom IS NOT NULL AND TABLE1.baaTransferDirection IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/transfer/', CAST(TABLE1.prlTransferDirection AS CHARACTER VARYING), '/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlTransferDateValidFrom AS CHARACTER VARYING)) AS x FROM licence_transfer_hst TABLE1 WHERE (TABLE1.prlTransferKind = 'SDFI') AND TABLE1.prlNpdidLicence IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL AND TABLE1.prlTransferDateValidFrom IS NOT NULL AND TABLE1.prlTransferDirection IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#SDFITransfer> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-1

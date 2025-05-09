@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#dateBaaAreaValidTo>
+orderNum=194
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING), '/polygon/', CAST(TABLE1.baaNpdidBsnsArrAreaPoly AS CHARACTER VARYING)) AS x, CAST(TABLE1.baaAreaPolyDateValidTo AS CHARACTER VARYING) AS y FROM baaArea TABLE1 WHERE ('9999-12-31T00:00:00' <> TABLE1.baaAreaPolyDateValidTo) AND TABLE1.baaAreaPolyDateValidTo IS NOT NULL AND TABLE1.baaNpdidBsnsArrArea IS NOT NULL AND TABLE1.baaNpdidBsnsArrAreaPoly IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING), '/block/', CAST(TABLE1.baaAreaPolyBlockName AS CHARACTER VARYING), '/polyno/', CAST(TABLE1.baaAreaPolyNo AS CHARACTER VARYING), '/history/', CAST(TABLE1.baaAreaPolyDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.baaAreaPolyDateValidTo AS CHARACTER VARYING)) AS x, CAST(TABLE1.baaAreaPolyDateValidTo AS CHARACTER VARYING) AS y FROM bsns_arr_area_area_poly_hst TABLE1 WHERE ('9999-12-31T00:00:00' <> TABLE1.baaAreaPolyDateValidTo) AND TABLE1.baaAreaPolyBlockName IS NOT NULL AND TABLE1.baaAreaPolyNo IS NOT NULL AND TABLE1.baaNpdidBsnsArrArea IS NOT NULL AND TABLE1.baaAreaPolyDateValidFrom IS NOT NULL AND TABLE1.baaAreaPolyDateValidTo IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#dateBaaAreaValidTo> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-1

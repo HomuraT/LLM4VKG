@@ -1,0 +1,15 @@
+name=Q43 (Papers <-> Reviewers)
+orderNum=480
+
+sql=SELECT "title", "Person"."name" \n\
+FROM "Paper" \n\
+	JOIN "Person" ON "Paper"."Reviewer" = "Person"."ID"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT ?title ?name \n\
+	WHERE {?paper rdf:type :PaperFullVersion; :title ?title . \n\
+	?author rdf:type :Author; :name ?name; :co-writePaper ?paper }
+
+categories=link,path-1,denorm
+

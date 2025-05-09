@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#belongsToFacility>
+orderNum=163
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.fclNpdidFacility AS CHARACTER VARYING), '/point') AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/petreg/facility/', CAST(TABLE1.fclBelongsToS AS CHARACTER VARYING)) AS y FROM fclPoint TABLE1 WHERE TABLE1.fclBelongsToS IS NOT NULL AND TABLE1.fclNpdidFacility IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#belongsToFacility> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

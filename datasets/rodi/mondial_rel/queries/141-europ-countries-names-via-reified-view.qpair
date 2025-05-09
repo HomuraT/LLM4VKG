@@ -1,0 +1,8 @@
+
+     
+     name = 141-europ-countries-names-via-reified-view
+     orderNum = 25
+
+     sql =   Select C_Country."name" as "?N" From mondial_rdf2sql_standard."Encompassed" C_Encompassed, mondial_rdf2sql_standard."Country" C_Country, mondial_rdf2sql_standard."Continent" Cont_Continent Where (C_Country."URI" = C_Encompassed."encompassedArea") and (Cont_Continent."URI" = C_Encompassed."encompassedBy") and (Cont_Continent."name" = 'Europe')   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N     WHERE {           ?C a :Country; :name ?N; :encompassed ?Cont .           ?Cont a :Continent; :name ?CN.            FILTER (?CN = "Europe")    }          

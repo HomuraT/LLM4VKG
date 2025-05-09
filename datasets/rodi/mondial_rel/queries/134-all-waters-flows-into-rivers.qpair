@@ -1,0 +1,8 @@
+
+     
+     name = 134-all-waters-flows-into-rivers
+     orderNum = 23
+
+     sql =   Select W_Water."name" as "?WN", W2_Water."name" as "?RN" From mondial_rdf2sql_standard."Water" W_Water, mondial_rdf2sql_standard."Water" W2_Water Where (W_Water."flowsInto" = W2_Water."URI") and (W2_Water."rdftype" = 'River')   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?WN ?RN    WHERE {           ?W a :Water; :name ?WN; :flowsInto ?W2 .           ?W2 a :River; :name ?RN .    }          

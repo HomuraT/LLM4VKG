@@ -1,0 +1,8 @@
+
+     
+     name = 114b-city-cityIn-country
+     orderNum = 5
+
+     sql =   Select Cty_City."name" as "?N", Co_Country."carCode" as "?CC" From mondial_rdf2sql_standard."cityIn" Co_cityIn, mondial_rdf2sql_standard."Country" Co_Country, mondial_rdf2sql_standard."City" Cty_City Where (Co_Country."URI" = Co_cityIn."AdministrativeArea") and (Cty_City."URI" = Co_cityIn."City")  
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?CC    WHERE {?Co a :Country; :carCode ?CC.           ?Cty a :City; :name ?N; :cityIn ?Co .    }          

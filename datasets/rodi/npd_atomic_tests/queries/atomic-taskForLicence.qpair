@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#taskForLicence>
+orderNum=390
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/task/', CAST(TABLE1.prlTaskID AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING)) AS y FROM licence_task TABLE1 WHERE TABLE1.prlTaskID IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#taskForLicence> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

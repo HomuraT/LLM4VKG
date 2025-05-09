@@ -1,0 +1,8 @@
+
+     
+     name = 121-mvd-locatedonisland-mountains
+     orderNum = 11
+
+     sql =   Select M_Mountain."name" as "?MN", M_Mountain."elevation" as "?ME", I_Island."name" as "?IN", I_Island."elevation" as "?IE" From mondial_rdf2sql_standard."Mountain" M_Mountain, mondial_rdf2sql_standard."Island" I_Island Where (M_Mountain."locatedOnIsland" = I_Island."URI")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?MN ?ME ?IN ?IE    WHERE {           ?M a :Mountain; :name ?MN; :elevation ?ME; :locatedOnIsland ?I .           ?I :name ?IN ; :elevation ?IE.    }          

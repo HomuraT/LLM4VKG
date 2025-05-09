@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#pipelineFromFacility>
+orderNum=330
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/pipeline/', CAST(TABLE1.pipNpdidPipe AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.pipNpdidFromFacility AS CHARACTER VARYING)) AS y FROM pipLine TABLE1 WHERE TABLE1.pipNpdidPipe IS NOT NULL AND TABLE1.pipNpdidFromFacility IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#pipelineFromFacility> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

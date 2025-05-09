@@ -1,0 +1,8 @@
+
+     
+     name = 151a-cities-onisland-atwater-non-opt
+     orderNum = 27
+
+     sql =   Select C_City."name" as "?N", Intern0_Island."name" as "?IN", Intern1_Water."name" as "?SN" From mondial_rdf2sql_standard."locatedOnIsland" C_locatedOnIsland, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Island" Intern0_Island, mondial_rdf2sql_standard."locatedAt" C_locatedAt, mondial_rdf2sql_standard."Water" Intern1_Water Where (C_City."URI" = C_locatedOnIsland."Entity") and (Intern0_Island."URI" = C_locatedOnIsland."Island") and (C_City."URI" = C_locatedAt."City") and (Intern1_Water."URI" = C_locatedAt."Water") and (Intern1_Water."rdftype" = 'Sea')   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?IN ?SN    WHERE {                    ?C a :City; :name ?N ;                     :locatedOnIsland ?I ;            :locatedAt ?S .         ?I :name ?IN .         ?S a :Sea; :name ?SN .    }      

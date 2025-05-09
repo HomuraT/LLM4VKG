@@ -1,0 +1,8 @@
+
+     
+     name = 177-sea-merges-with-symmetric
+     orderNum = 39
+
+     sql =     (Select S1_Water."name" as "?N1", S2_Water."name" as "?N2"    From mondial_rdf2sql_standard."mergesWith" mergeswith, mondial_rdf2sql_standard."Water" S1_Water, mondial_rdf2sql_standard."Water" S2_Water    Where (S1_Water."rdftype" = 'Sea') and (S1_Water."URI" = mergesWith."Sea1") and (S2_Water."URI" = mergesWith."Sea2") and (S2_Water."rdftype" = 'Sea')   ) UNION    (Select S1_Water."name" as "?N1", S2_Water."name" as "?N2"    From mondial_rdf2sql_standard."mergesWith" mergeswith, mondial_rdf2sql_standard."Water" S1_Water, mondial_rdf2sql_standard."Water" S2_Water    Where (S1_Water."rdftype" = 'Sea') and (S1_Water."URI" = mergesWith."Sea2") and (S2_Water."URI" = mergesWith."Sea1") and (S2_Water."rdftype" = 'Sea')   )    
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N1 ?N2    WHERE {           ?S1 a :Sea; :name ?N1; :mergesWith ?C2 .           ?S2 a :Sea; :name ?N2.    }          

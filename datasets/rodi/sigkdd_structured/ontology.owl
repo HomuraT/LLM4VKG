@@ -1,0 +1,1321 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://sigkdd"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://sigkdd">
+    <Prefix name="" IRI="http://sigkdd#"/>
+    <Prefix name="geo" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#ACM_SIGKDD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author_of_paper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author_of_paper_student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Award"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Best_Applications_Paper_Award"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Best_Paper_Awards_Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Best_Research_Paper_Award"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Best_Student_Paper_Award"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Best_Student_Paper_Supporter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bronze_Supporter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_hall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deadline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deadline_Abstract_Submission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deadline_Author_notification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deadline_Paper_Submission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Document"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exhibitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#General_Chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gold_Supporter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Invited_Speaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Listener"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Main_office"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizing_Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizing_Committee_member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platinum_Supporter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Program_Chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Program_Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Program_Committee_member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registration_Non-Member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registration_SIGKDD_Member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registration_SIGMOD_Member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registration_Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registration_fee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Review"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Silver_Supporter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Speaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sponzor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sponzor_fee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Webmaster"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#award"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#awarded_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#can_stay_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#design"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#designed_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCommittee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReview"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hold"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#holded_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCommitteeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isReviewOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#notification_until"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obtain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pay"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#payed_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#presentation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#presentationed_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#search"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#searched_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#submit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#submit_until"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#City_of_conference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Currency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#E-mail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#End_of_conference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name_of_conference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name_of_sponsor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Price"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Start_of_conference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPostalCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStreet"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasText"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo:lat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo:long"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Abstract"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#submit_until"/>
+            <Class IRI="#Deadline_Abstract_Submission"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Author"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#submit"/>
+            <Class IRI="#Paper"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Award"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#awarded_by"/>
+            <Class IRI="#Organizator"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Paper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#submit_until"/>
+            <Class IRI="#Deadline_Paper_Submission"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#pay"/>
+            <Class IRI="#Registration_fee"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Speaker"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#presentation"/>
+            <Class IRI="#Document"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sponzor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#pay"/>
+            <Class IRI="#Sponzor_fee"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ACM_SIGKDD"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ACM_SIGKDD"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#design"/>
+            <Class IRI="#Deadline"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ACM_SIGKDD"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hold"/>
+            <Class IRI="#Conference"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ACM_SIGKDD"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#search"/>
+            <Class IRI="#Sponzor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Abstract"/>
+        <Class IRI="#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author"/>
+        <Class IRI="#Speaker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#notification_until"/>
+            <Class IRI="#Deadline_Author_notification"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author_of_paper"/>
+        <Class IRI="#Author"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author_of_paper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#obtain"/>
+            <Class IRI="#Best_Applications_Paper_Award"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author_of_paper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#obtain"/>
+            <Class IRI="#Best_Research_Paper_Award"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author_of_paper_student"/>
+        <Class IRI="#Author"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author_of_paper_student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#obtain"/>
+            <Class IRI="#Best_Student_Paper_Award"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Best_Applications_Paper_Award"/>
+        <Class IRI="#Award"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Best_Paper_Awards_Committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Best_Research_Paper_Award"/>
+        <Class IRI="#Award"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Best_Student_Paper_Award"/>
+        <Class IRI="#Award"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Best_Student_Paper_Supporter"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bronze_Supporter"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_hall"/>
+        <Class IRI="#Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deadline_Abstract_Submission"/>
+        <Class IRI="#Deadline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deadline_Author_notification"/>
+        <Class IRI="#Deadline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deadline_Paper_Submission"/>
+        <Class IRI="#Deadline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Exhibitor"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#General_Chair"/>
+        <Class IRI="#Organizator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gold_Supporter"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Invited_Speaker"/>
+        <Class IRI="#Speaker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Listener"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Main_office"/>
+        <Class IRI="#Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizator"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizing_Committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizing_Committee_member"/>
+        <Class IRI="#Organizator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Paper"/>
+        <Class IRI="#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#can_stay_in"/>
+            <Class IRI="#Hotel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Platinum_Supporter"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Program_Chair"/>
+        <Class IRI="#Organizator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Program_Committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Program_Committee_member"/>
+        <Class IRI="#Organizator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registration_Non-Member"/>
+        <Class IRI="#Registration_fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registration_SIGKDD_Member"/>
+        <Class IRI="#Registration_fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registration_SIGMOD_Member"/>
+        <Class IRI="#Registration_fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registration_Student"/>
+        <Class IRI="#Registration_fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registration_fee"/>
+        <Class IRI="#Fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review"/>
+        <Class IRI="#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Silver_Supporter"/>
+        <Class IRI="#Sponzor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Speaker"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sponzor_fee"/>
+        <Class IRI="#Fee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Webmaster"/>
+        <Class IRI="#Organizator"/>
+    </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#award"/>
+        <ObjectProperty IRI="#awarded_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#design"/>
+        <ObjectProperty IRI="#designed_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#holded_by"/>
+        <ObjectProperty IRI="#hold"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#pay"/>
+        <ObjectProperty IRI="#payed_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#presentation"/>
+        <ObjectProperty IRI="#presentationed_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#search"/>
+        <ObjectProperty IRI="#searched_by"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#award"/>
+        <Class IRI="#Best_Paper_Awards_Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#awarded_by"/>
+        <Class IRI="#Award"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#can_stay_in"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#design"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#designed_by"/>
+        <Class IRI="#Deadline"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCommittee"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReview"/>
+        <Class IRI="#Paper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hold"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#holded_by"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCommitteeOf"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <Class IRI="#Review"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#notification_until"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obtain"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pay"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#payed_by"/>
+        <Class IRI="#Registration_fee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#presentation"/>
+        <Class IRI="#Speaker"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#presentationed_by"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#search"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#searched_by"/>
+        <Class IRI="#Sponzor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#submit"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#submit_until"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#award"/>
+        <Class IRI="#Award"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#awarded_by"/>
+        <Class IRI="#Best_Paper_Awards_Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#can_stay_in"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#design"/>
+        <Class IRI="#Deadline"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#designed_by"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCommittee"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReview"/>
+        <Class IRI="#Review"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hold"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#holded_by"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCommitteeOf"/>
+        <Class IRI="#Conference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <ObjectUnionOf>
+            <Class IRI="#Abstract"/>
+            <Class IRI="#Paper"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#notification_until"/>
+        <Class IRI="#Deadline_Author_notification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obtain"/>
+        <Class IRI="#Award"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pay"/>
+        <Class IRI="#Registration_fee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#payed_by"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#presentation"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#presentationed_by"/>
+        <Class IRI="#Speaker"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#search"/>
+        <Class IRI="#Sponzor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#searched_by"/>
+        <Class IRI="#ACM_SIGKDD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#submit"/>
+        <Class IRI="#Paper"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#submit_until"/>
+        <Class IRI="#Deadline"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#City_of_conference"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Currency"/>
+        <Class IRI="#Fee"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Date"/>
+        <Class IRI="#Deadline"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#E-mail"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#End_of_conference"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name_of_conference"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name_of_sponsor"/>
+        <Class IRI="#Sponzor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nation"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Price"/>
+        <Class IRI="#Fee"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Start_of_conference"/>
+        <Class IRI="#Conference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasID"/>
+        <Class IRI="#Review"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPostalCode"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStreet"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasText"/>
+        <Class IRI="#Review"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTitle"/>
+        <ObjectUnionOf>
+            <Class IRI="#Abstract"/>
+            <Class IRI="#Paper"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo:lat"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo:long"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#City_of_conference"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Currency"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Date"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#E-mail"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#End_of_conference"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Name_of_conference"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Name_of_sponsor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nation"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Price"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Start_of_conference"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPostalCode"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStreet"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTitle"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo:lat"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo:long"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ACM_SIGKDD</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">KDD provides the premier forum for advancement and adoption of the &quot;science&quot; of knowledge discovery and data mining</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abstract</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The abstract of a paper, that is a brief introduction to its content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person who composes an article, or other written work.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author_of_paper</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person who composes a paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author_of_paper_student</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A student who composes a paper or a senior scientist lightly involved in a paper mainly authored by students.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Award</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Something awarded or granted, as for merit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Best_Applications_Paper_Award</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Paper award for the best application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Best_Paper_Awards_Committee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A committee in charge of selecting the best paper to be awarded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Best_Research_Paper_Award</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Paper award for the best research paper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Best_Student_Paper_Award</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Paper award for the best paper mainly authored by one or more students</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Best_Student_Paper_Supporter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A sponsor paying for the price of the best student paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bronze_Supporter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The entry level for being a sponsor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City_of_conference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">the name of the city in which the conference edition is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Committee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A group of people officially delegated to perform a function, such as investigating, considering, reporting, or acting on a matter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An academic conference or symposium is a conference for researchers (not necessarily academics) to present and discuss their work. Together with academic or scientific journals, conferences provide an important channel for exchange of information between researchers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_hall</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A conference hall or conference room is a room provided for singular events such as business conferences and meetings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Currency</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The currency in which the registration fee is expressed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Date</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The date associated with a deadline.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deadline</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A time limit for an activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deadline_Abstract_Submission</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time limit for abstract submission.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deadline_Author_notification</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time limit for notifying an author about its submitted contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deadline_Paper_Submission</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time limit for submitting a paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Document</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A writing that contains information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#E-mail</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The electronic mail address of a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#End_of_conference</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The ending date of a conference edition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Exhibitor</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A sponsor that organizes an exhibit of its own activities and products.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A fixed sum charged, as by an institution or by law, for a privilege.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#General_Chair</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person with the purpose of overseeing the activities of all conference committee chairs, of ensuring that the objectives of the conference as established by the Steering Committee are met, and of serving as a focal point for communications between the involved entities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Gold_Supporter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An advanced level of sponsorship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hotel</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An establishment that provides lodging and usually meals and other services for travelers and other paying guests.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Invited_Speaker</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A prominent person required to give a public speech at the conference on a topic of shared interest.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Listener</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person participating at a conference as a listener for others&apos; presentations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Main_office</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The office that serves as the administrative center of an enterprise or an event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Name</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The name of a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Name_of_conference</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The name of a conference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Name_of_sponsor</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The name of a sponsor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The nation a person comes from.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organizator</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person who organizes or is capable of organizing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organizing_Committee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The Local Organizing Committee is charged with the planning and direction of all (non-scientific) program facets of the conference including selection of venue. The Organizing Committee is responsible for planning and executing all financial aspects of the Conference and reports to the Executive Committee. The Local Organizing Committee shall include representatives of the host country and/or institution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organizing_Committee_member</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person that is part of the organizing committee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Paper</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A scientific article around a subject of interest.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Person</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An individual human being.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Place</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A building or an area set aside for a specified purpose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Platinum_Supporter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The most advanced level of sponsorship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Price</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The registration fee amount.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Program_Chair</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person that is in charge of overseeing the activities of all Program Committee members in putting together a technical program which supports the objectives of the conference, and producing the conference proceedings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Program_Committee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The Scientific Committee has the following responsibilities: suggesting keynote speakers and approving the Organising Committee’s final list of keynote speakers; Approving the Organising Committee’s proposal concerning section profiles and titles; Reviewing abstracts after initial review by the Organising Committee; Giving feedback to the Organising Committee on the proposed programme; Adhering to the deadlines agreed to with the Organising Committee; Participating in the event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Program_Committee_member</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A member of the program committee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Registration_Non-Member</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Registration fee for person not member of SIGKDD organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Registration_SIGKDD_Member</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Registration fee for person that are member of SIGKDD organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Registration_SIGMOD_Member</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Registration fee for person that are member of SIGMOD organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Registration_Student</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Registration fee for students, usually at a reduced price.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Registration_fee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Fee requested for registering and participating at a conference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Review</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The document with the outcome of a read through of a paper in order to correct possible errors and formulate a judgement on the quality of the work and appropriateness for the intended conference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reviewer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">One who reviews, especially one who writes reviews for correcting errors and ensuring quality.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Silver_Supporter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A mid-level for sponsorhip.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Speaker</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person participating at a conference as a speaker in an activity involving an oral presentation,</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sponzor</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A commercial organization that pays all or part of the cost of putting on an event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sponzor_fee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The fee that sponsor need to pay to be considered as such.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Start_of_conference</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The starting date of a conference edition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Webmaster</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person whose occupation is designing, developing, marketing, or maintaining websites.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#award</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a person and the award he has been awarded with.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awarded_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between an award and the awarded person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#can_stay_in</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a person and a place he can be located at.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#design</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a person or an institution and the entity that has been designed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#designed_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the designed entity a the person or an institution that designed it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCommittee</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relation associating a conference with its committees..</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasID</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Numerical identifier, supposed to be unique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPostalCode</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The postal code (ZIP code).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReview</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship linking a paper with its reviewes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStreet</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The name of a street.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hold</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the person or institution holding an activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#holded_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the an holded activity and the person or institution holding it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isCommitteeOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relation associating a committee with the conferences.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isReviewOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The review associated to a paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#notification_until</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the person or institution to be notified and the deadline for the notification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#obtain</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a person and the award he has been awarded with.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pay</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a person or institution paying an amount of money and the fee for which the money has been payed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#payed_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a fee for which the money has been payed and the person or institution paying that amount of money.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#presentation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the speaker of a presentation and the document that is presented.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#presentationed_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a document to be presented and the speaker presenting it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#search</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between the conference organizing association searching for sponsors and a conference sponsor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#searched_by</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship between a conference sponsor and the conference organizing association searching for sponsors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#submit</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship identyfing the papers submitted by an author,</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#submit_until</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The relationship identyfing before which deadline a document is submitted,</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 1.3.8.1099) http://owlapi.sourceforge.net -->
+

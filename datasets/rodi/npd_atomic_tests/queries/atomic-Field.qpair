@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#Field>
+orderNum=45
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/field/', CAST(TABLE1.fldNpdidField AS CHARACTER VARYING)) AS x FROM field TABLE1 WHERE TABLE1.fldNpdidField IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#Field> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-0

@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#ProductionLicenceAreaPerBlock>
+orderNum=97
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/block/', CAST(TABLE1.blcName AS CHARACTER VARYING), '/polyno/', CAST(TABLE1.prlAreaPolyPolyNo AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlAreaPolyDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.prlAreaPolyDateValidTo AS CHARACTER VARYING)) AS x FROM prlAreaSplitByBlock TABLE1 WHERE TABLE1.blcName IS NOT NULL AND TABLE1.prlAreaPolyDateValidFrom IS NOT NULL AND TABLE1.prlAreaPolyDateValidTo IS NOT NULL AND TABLE1.prlAreaPolyPolyNo IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/block/', CAST(TABLE1.prlAreaPolyBlockName AS CHARACTER VARYING), '/polyno/', CAST(TABLE1.prlAreaPolyPolyNo AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlAreaPolyDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.prlAreaPolyDateValidTo AS CHARACTER VARYING)) AS x FROM licence_area_poly_hst TABLE1 WHERE TABLE1.prlAreaPolyBlockName IS NOT NULL AND TABLE1.prlAreaPolyPolyNo IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL AND TABLE1.prlAreaPolyDateValidFrom IS NOT NULL AND TABLE1.prlAreaPolyDateValidTo IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#ProductionLicenceAreaPerBlock> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-1

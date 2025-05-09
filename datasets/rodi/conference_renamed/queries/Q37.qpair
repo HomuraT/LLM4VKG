@@ -1,0 +1,12 @@
+name=Q37 (Abstracts' Full Text, Linked from Abstracts)
+orderNum=410
+
+sql=SELECT extended_abstracts.text \n\
+FROM extended_abstracts NATURAL JOIN abstracts
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?text \n\
+WHERE {?abs rdf:type :Abstract; :has_text ?text}
+
+categories=attrib,other-table

@@ -1,0 +1,20 @@
+name=Q44 (Papers <-> Reviews)
+orderNum=490
+
+sql=SELECT COUNT(*) \n\
+FROM reviews \n\
+	JOIN reviewed_contributions ON reviews.reviews = reviewed_contributions.id \n\
+	JOIN submitted_contributions ON reviewed_contributions.id = submitted_contributions.id \n\
+	JOIN written_contributions ON submitted_contributions.id = written_contributions.id \n\
+	JOIN regular_contributions ON written_contributions.id = regular_contributions.id \n\
+	JOIN papers ON regular_contributions.id = papers.id
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?review rdf:type :Review . \n\
+	?paper rdf:type :Paper; :has_a_review ?review}
+	
+categories=link,path-X,path-5
+
+comment=The same could be achieved by a free (non FK-supported) join Review.reviews/Paper.ID

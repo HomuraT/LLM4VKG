@@ -1,0 +1,8 @@
+
+     
+     name = 004-simple-orghq-count
+     orderNum = 0
+
+     sql =   Select COUNT(*) AS cnt From mondial_rdf2sql_standard."Organization" WHERE "hasHeadq" is not NULL   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT (count(?O) AS ?cnt) WHERE { ?O a :Organization; :hasHeadq ?h }          

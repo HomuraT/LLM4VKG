@@ -1,0 +1,16 @@
+name=Q47 (PCs <-> Conferences)
+orderNum=520
+
+sql=SELECT COUNT(*) \n\
+	FROM "Committee" \n\
+		JOIN "Conference_volume" ON "Committee"."was_a_program_committee_of" \n\
+			= "Conference_volume"."ID"
+			
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?pc rdf:type :Program_committee; \n\
+		:was_a_program_committee_of ?cnf . \n\
+		?cnf rdf:type :Conference_volume }
+
+categories=link,path-1,no-fk

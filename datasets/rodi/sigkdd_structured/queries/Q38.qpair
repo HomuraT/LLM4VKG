@@ -1,0 +1,12 @@
+name=Q38 (Review Texts)
+orderNum=430
+
+sql=SELECT "Review"."hasText" \n\
+FROM "Review"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?text \n\
+WHERE {?rev rdf:type :Review; :hasText ?text}
+
+categories=attrib,in-table

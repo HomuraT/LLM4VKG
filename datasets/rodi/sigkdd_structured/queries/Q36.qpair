@@ -1,0 +1,12 @@
+name=Q36 (Abstract Titles)
+orderNum=400
+
+sql=SELECT "Document"."hasTitle" \n\
+FROM "Document" WHERE "Document"."TYPE" = 2 
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?title \n\
+WHERE {?c rdf:type :Abstract; :hasTitle ?title}
+
+categories=attrib,in-table

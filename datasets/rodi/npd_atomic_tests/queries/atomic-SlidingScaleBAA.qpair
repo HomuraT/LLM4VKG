@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#SlidingScaleBAA>
+orderNum=124
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING)) AS x FROM bsns_arr_area TABLE1 WHERE (TABLE1.baaKind = 'SLIDING SCALE') AND TABLE1.baaNpdidBsnsArrArea IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#SlidingScaleBAA> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-0

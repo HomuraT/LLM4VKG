@@ -1,0 +1,8 @@
+
+     
+     name = 182-cyclic-headq-capital-member
+     orderNum = 41
+
+     sql =   Select X_Country."name" as "?CN", O_Organization."abbrev" as "?OA", C_City."name" as "?CapN" From mondial_rdf2sql_standard."Organization" O_Organization, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Country" X_Country, mondial_rdf2sql_standard."Membership" X_Membership Where (O_Organization."hasHeadq" = C_City."URI") and (X_Country."capital" = C_City."URI") and (X_Country."URI" = X_Membership."ofMember") and (O_Organization."URI" = X_Membership."inOrganization")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?OA ?CapN    WHERE {           ?O a :Organization . ?O :abbrev ?OA .           ?O :hasHeadq ?C .           ?X a :Country; :name ?CN ; :capital ?C ; :isMember ?O .            ?C :name ?CapN .          }   

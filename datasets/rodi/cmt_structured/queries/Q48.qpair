@@ -1,0 +1,16 @@
+name=Q48 (Persons <-> Conferences)
+orderNum=530
+
+sql=SELECT COUNT(*) \n\
+	FROM "Conference" \n\
+		JOIN "hasConferenceMember" ON "Conference"."ID" = "hasConferenceMember"."Conference" \n\
+		JOIN "Person" ON "hasConferenceMember"."ConferenceMember" = "Person"."ID"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?c rdf:type :Conference; \n\
+		:hasConferenceMember ?p . \n\
+		?p rdf:type :Person }
+
+categories=link,path-X,path-2

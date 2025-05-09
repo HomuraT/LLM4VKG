@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#isMarketAvailable>
+orderNum=284
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE1.seaSurveyName AS CHARACTER VARYING), '/multiline') AS x, 'true' AS y FROM seaMultiline TABLE1 WHERE (TABLE1.seaMarketAvailable = 'Ja') AND TABLE1.seaSurveyName IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE1.seaSurveyName AS CHARACTER VARYING), '/multiline') AS x, 'false' AS y FROM seaMultiline TABLE1 WHERE (TABLE1.seaMarketAvailable = 'Nei') AND TABLE1.seaSurveyName IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE1.seaSurveyName AS CHARACTER VARYING), '/area') AS x, 'false' AS y FROM seaArea TABLE1 WHERE (TABLE1.seaMarketAvailable = 'Nei') AND TABLE1.seaSurveyName IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE1.seaSurveyName AS CHARACTER VARYING), '/area') AS x, 'true' AS y FROM seaArea TABLE1 WHERE (TABLE1.seaMarketAvailable = 'Ja') AND TABLE1.seaSurveyName IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#isMarketAvailable> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-3

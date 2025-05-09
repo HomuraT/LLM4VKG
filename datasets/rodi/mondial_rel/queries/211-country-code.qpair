@@ -1,0 +1,8 @@
+
+     
+     name = 211-country-code
+     orderNum = 44
+
+     sql =     Select C_Country."carCode" as "?CC"   From mondial_rdf2sql_standard."Country" C_Country   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CC   WHERE {           ?C a :Country; :carCode ?CC.    }          

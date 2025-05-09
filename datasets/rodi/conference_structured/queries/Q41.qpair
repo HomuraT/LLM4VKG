@@ -1,0 +1,16 @@
+name=Q41 (Papers <-> Authors)
+orderNum=460
+
+sql=SELECT COUNT(*) \n\
+FROM "contributes" \n\
+	JOIN "Person" ON "contributes"."Person" = "Person"."ID" \n\
+	JOIN "Conference_document" ON "contributes"."Conference_document" = "Conference_document"."ID" \n\
+WHERE "Person"."is_Contribution_1th-author" = true
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?paper rdf:type :Paper . \n\
+	?person rdf:type :Contribution_1th-author; :contributes ?paper}
+
+categories=link,path-X,path-2

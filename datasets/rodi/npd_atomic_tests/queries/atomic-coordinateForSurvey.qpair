@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#coordinateForSurvey>
+orderNum=174
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE1.seaSurveyName AS CHARACTER VARYING), '/point/', CAST(TABLE1.seaPolygonPointNumber AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/survey/', CAST(TABLE2.seaName AS CHARACTER VARYING)) AS y FROM seis_acquisition_coordinates_inc_turnarea TABLE1, seis_acquisition TABLE2 WHERE (TABLE1.seaNpdidSurvey = TABLE2.seaNpdidSurvey) AND TABLE2.seaName IS NOT NULL AND TABLE1.seaSurveyName IS NOT NULL AND TABLE1.seaPolygonPointNumber IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#coordinateForSurvey> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-1, link, union-0

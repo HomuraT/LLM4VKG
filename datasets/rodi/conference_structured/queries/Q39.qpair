@@ -1,0 +1,12 @@
+name=Q39 (Website URLs, Linked from Website) 
+orderNum=440
+
+sql=SELECT "Conference_document"."has_a_URL" \n\
+FROM "Conference_document" WHERE "Conference_document"."TYPE" = 2
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?ws \n\
+WHERE {?ws rdf:type :Conference_www; :has_a_URL ?url}
+
+categories=attrib,in-table

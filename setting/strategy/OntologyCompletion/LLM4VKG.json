@@ -1,0 +1,11 @@
+{
+	"modules": {
+		"prompt::column_filter": {"type":"prompt", "id":"column_filter", "template_format": "jinja2"},
+		"prompt::pair_classification": {"type":"prompt", "id":"pair_classification", "template_format": "jinja2"},
+		"prompt::pair_prediction": {"type":"prompt", "id":"pair_prediction", "template_format": "jinja2"},
+		"prompt::generate_variable_name": {"type":"prompt", "id":"generate_variable_name", "template_format": "jinja2"},
+		"prompt::judge_order_and_rename": {"type":"prompt", "id":"judge_order_and_rename", "template_format": "jinja2"},
+		"llm::free_talk": {"type":"llm", "response_format":null},
+		"parser::to_json": {"type":"parser", "class":"JsonOutPutPaser"}
+	}
+}

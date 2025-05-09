@@ -1,0 +1,8 @@
+
+     
+     name = 111-simple-country-population
+     orderNum = 1
+
+     sql =   Select C_Country."name" as "?N", C_Country."population" as "?P" From mondial_rdf2sql_standard."Country" C_Country Where (C_Country."population" > 10000000)   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?P    WHERE {           ?C a :Country; :name ?N; :population ?P           FILTER (?P > 10000000)    }          

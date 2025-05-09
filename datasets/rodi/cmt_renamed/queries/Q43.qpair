@@ -1,0 +1,15 @@
+name=Q43 (Papers <-> Reviewers)
+orderNum=480
+
+sql=SELECT COUNT(*) \n\
+FROM paper_full_versions NATURAL JOIN papers \n\
+	JOIN paper_reviewer ON papers.id = paper_reviewer.pid \n\
+	JOIN reviewers ON paper_reviewer.rid = reviewers.id
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?paper rdf:type :PaperFullVersion . \n\
+	?author rdf:type :Reviewer; :hasBeenAssigned ?paper }
+
+categories=link,path-X,path-3

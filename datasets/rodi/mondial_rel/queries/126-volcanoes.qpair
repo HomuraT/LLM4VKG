@@ -1,0 +1,8 @@
+
+     
+     name = 126-volcanoes
+     orderNum = 17
+
+     sql =   Select M_Mountain."name" as "?N", M_Mountain."elevation" as "?E" From mondial_rdf2sql_standard."Mountain" M_Mountain Where (M_Mountain."rdftype" = 'Volcano')   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?E    WHERE {           ?M a :Mountain; :name ?N ; :elevation ?E .           ?M a :Volcano.    }          

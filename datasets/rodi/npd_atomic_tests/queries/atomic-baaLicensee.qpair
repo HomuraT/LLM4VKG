@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#baaLicensee>
+orderNum=160
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING), '/licensee/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.baaLicenseeDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.baaLicenseeDateValidTo AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/company/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING)) AS y FROM bsns_arr_area_licensee_hst TABLE1 WHERE TABLE1.baaNpdidBsnsArrArea IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL AND TABLE1.baaLicenseeDateValidFrom IS NOT NULL AND TABLE1.baaLicenseeDateValidTo IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#baaLicensee> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

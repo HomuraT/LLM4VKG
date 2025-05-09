@@ -1,0 +1,8 @@
+
+     
+     name = 117-city-isCapitalOf-and-locatedIn
+     orderNum = 10
+
+     sql =      (SELECT c."name", x."name", x."area"     FROM mondial_rdf2sql_standard."City" c, mondial_rdf2sql_standard."Country" x, mondial_rdf2sql_standard."cityIn" ci     WHERE  x."capital" = c."URI"     AND  c."URI" =  ci."City" AND ci."AdministrativeArea"=x."URI"     AND x."area" is not null)    UNION    (SELECT c."name", x."name", x."area"     FROM mondial_rdf2sql_standard."City" c, mondial_rdf2sql_standard."Province" x, mondial_rdf2sql_standard."cityIn" ci     WHERE  x."capital" = c."URI"       AND  c."URI" =  ci."City" AND ci."AdministrativeArea"=x."URI"       AND x."area" is not null)  
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?XN ?A    WHERE {?Cty a :City; :name ?N; :isCapitalOf ?X ; :cityIn ?X.           ?X :name ?XN; :area ?A.    }          

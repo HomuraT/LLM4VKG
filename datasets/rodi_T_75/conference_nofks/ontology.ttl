@@ -1,0 +1,160 @@
+@prefix : <http://conference#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://conference> a owl:Ontology .
+
+:Conference_participant a owl:Class ;
+    rdfs:label "Conference participant" ;
+    rdfs:subClassOf :Person .
+
+:Paid_applicant a owl:Class ;
+    rdfs:subClassOf :Registeered_applicant .
+
+:amount a owl:DatatypeProperty ;
+    rdfs:label "amount in USD" .
+
+:has_a_date_of_issue a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has issue date" ;
+    rdfs:domain :Conference_document ;
+    rdfs:range xsd:date .
+
+:has_a_publisher a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has publisher" .
+
+:has_a_review a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has review" .
+
+:has_an_organizing_committee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_a_commtitee .
+
+:has_detailed_comments a owl:DatatypeProperty ;
+    rdfs:label "review comments" .
+
+:has_gender a owl:DatatypeProperty ;
+    rdfs:label "has gender" ;
+    rdfs:domain :Person ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "female"^^xsd:string ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "male"^^xsd:string ;
+                            rdf:rest () ] ] ] .
+
+:has_workshops a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_parts .
+
+:invited_by a owl:ObjectProperty ;
+    rdfs:label "invited by" .
+
+:is_a_full_paper_submission_date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "full paper submission deadline" ;
+    rdfs:range xsd:date .
+
+:is_an_ending_date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ending date" ;
+    rdfs:range xsd:date .
+
+:was_a_committee_of a owl:ObjectProperty ;
+    owl:inverseOf :has_a_commtitee .
+
+:Accepted_contribution a owl:Class .
+
+:Conference a owl:Class ;
+    rdfs:label "Conference" ;
+    rdfs:comment "A (scientific) conference" .
+
+:Conference_applicant a owl:Class ;
+    rdfs:label "Conference applicant" ;
+    rdfs:subClassOf :Person .
+
+:Conference_contributor a owl:Class ;
+    rdfs:label "Conference contributor" ;
+    rdfs:subClassOf :Person .
+
+:Extended_abstract a owl:Class ;
+    rdfs:label "Extended abstract" ;
+    rdfs:subClassOf :Regular_contribution .
+
+:Registeered_applicant a owl:Class ;
+    rdfs:subClassOf :Conference_applicant .
+
+:Regular_author a owl:Class ;
+    rdfs:subClassOf :Conference_contributor .
+
+:belongs_to_reviewers a owl:ObjectProperty ;
+    rdfs:label "belongs to reviewers" .
+
+:has_members a owl:ObjectProperty ;
+    rdfs:label "has member" ;
+    rdfs:range :Committee_member .
+
+:has_parts a owl:ObjectProperty ;
+    rdfs:label "has part" ;
+    rdfs:range :Conference_part ;
+    owl:inverseOf :is_part_of_conference_volumes .
+
+:is_part_of_conference_volumes a owl:ObjectProperty ;
+    rdfs:label "is part of" ;
+    rdfs:domain :Conference_part .
+
+:was_a_member_of a owl:ObjectProperty ;
+    rdfs:domain :Committee_member ;
+    owl:inverseOf :has_members .
+
+:Conference_document a owl:Class ;
+    rdfs:comment "Conference document",
+        "Documents created for primary use at the conference, including submissions of all sorts as well as public announcements, calls, etc." .
+
+:has_a_commtitee a owl:ObjectProperty ;
+    rdfs:label "has committee" .
+
+:Committee_member a owl:Class ;
+    rdfs:label "Committee member" ;
+    rdfs:subClassOf :Person ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :was_a_member_of ] .
+
+:Conference_contribution a owl:Class ;
+    rdfs:label "Conference contribution" ;
+    rdfs:comment "Any contribution to the conference in any format, both peer-reviewed submissions and invited contributions." ;
+    rdfs:subClassOf :Conference_document .
+
+:Conference_part a owl:Class ;
+    rdfs:label "Part of conference" ;
+    rdfs:comment "Block of events of conference (e.g., tracks), also including satellite events." .
+
+:Presentation a owl:Class ;
+    rdfs:label "Presentation" ;
+    rdfs:subClassOf :Conference_contribution .
+
+:Written_contribution a owl:Class ;
+    rdfs:label "Written contribution" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf [ rdf:rest ( :Regular_contribution ) ] ],
+        :Conference_contribution .
+
+xsd:date a rdfs:Datatype .
+
+:Regular_contribution a owl:Class ;
+    rdfs:label "Regular conference contribution" ;
+    rdfs:subClassOf :Written_contribution .
+
+:Submitted_contribution a owl:Class ;
+    rdfs:label "Submitted contribution" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf [ rdf:rest ( :Regular_contribution ) ] ],
+        :Written_contribution .
+
+:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "People associated with the conference" .
+

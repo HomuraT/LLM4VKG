@@ -1,0 +1,130 @@
+@prefix : <http://cmt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt> a owl:Ontology .
+
+:Decision a owl:Class ;
+    rdfs:label "Decision"@en ;
+    owl:disjointWith :Document,
+        :Person .
+
+:acceptsHardcopySubmissions a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "accepts hardopy submissions"@en ;
+    rdfs:range xsd:boolean .
+
+:addProgramCommitteeMember a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "add program committee member"@en ;
+    rdfs:range :ProgramCommitteeMember ;
+    owl:inverseOf :addedBy .
+
+:adjustBid a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "adjust bid"@en ;
+    rdfs:domain :Reviewer .
+
+:assignedByAdministrator a owl:ObjectProperty ;
+    rdfs:label "assigned by administrator"@en ;
+    rdfs:domain :Reviewer .
+
+:co-writePaper a owl:ObjectProperty ;
+    rdfs:label "co-write paper"@en ;
+    rdfs:range :Paper .
+
+:endReview a owl:ObjectProperty ;
+    rdfs:label "end review"@en ;
+    rdfs:range :Review .
+
+:enterConferenceDetails a owl:ObjectProperty ;
+    rdfs:label "enter conference details"@en .
+
+:hasBid a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has bid"@en ;
+    rdfs:comment "Each paper gets a bid assigned to evaluate it."@en ;
+    rdfs:domain :Paper .
+
+:hasSubjectArea a owl:ObjectProperty ;
+    rdfs:label "has subject area"@en ;
+    rdfs:domain :Paper .
+
+:printHardcopyMailingManifests a owl:ObjectProperty ;
+    rdfs:label "print hardcopy mailing manifests"@en .
+
+:reviewerBiddingStartedBy a owl:ObjectProperty ;
+    rdfs:label "reviewer bidding started by"@en .
+
+:siteURL a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "site URL"@en ;
+    rdfs:range xsd:anyURI .
+
+xsd:date a rdfs:Datatype .
+
+:Author a owl:Class ;
+    rdfs:label "Author"@en ;
+    rdfs:subClassOf :User .
+
+:addedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "added by"@en ;
+    rdfs:domain :ProgramCommitteeMember .
+
+:readByReviewer a owl:ObjectProperty ;
+    rdfs:label "read by reviewer"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range :Reviewer ;
+    owl:inverseOf :readPaper .
+
+:readPaper a owl:ObjectProperty ;
+    rdfs:label "read paper"@en ;
+    rdfs:domain :Reviewer ;
+    rdfs:range :Paper .
+
+:reviewsPerPaper a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "reviews per paper"@en ;
+    rdfs:range xsd:int .
+
+:ProgramCommitteeMember a owl:Class ;
+    rdfs:label "Porgram Committee Member"@en ;
+    rdfs:comment "The Program Committee consists of all members of the conference except for Authors who are not also Reviewers."^^xsd:string ;
+    rdfs:subClassOf :Person .
+
+:Review a owl:Class ;
+    rdfs:label "Review"@en ;
+    rdfs:subClassOf :Document .
+
+:User a owl:Class ;
+    rdfs:label "User"@en ;
+    rdfs:subClassOf :Person .
+
+:Document a owl:Class ;
+    rdfs:label "Document"@en ;
+    owl:disjointWith :Person .
+
+:Paper a owl:Class ;
+    rdfs:label "Paper"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :readByReviewer ],
+        :Document ;
+    owl:disjointWith :Review .
+
+:Person a owl:Class ;
+    rdfs:label "Person"@en .
+
+:Reviewer a owl:Class ;
+    rdfs:label "Reviewer"@en ;
+    rdfs:subClassOf :User .
+

@@ -1,0 +1,249 @@
+@prefix : <http://conference#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://conference> a owl:Ontology .
+
+:Conference_participant a owl:Class ;
+    rdfs:label "Conference participant" ;
+    rdfs:subClassOf :Person .
+
+:Paid_applicant a owl:Class ;
+    rdfs:subClassOf :Registeered_applicant .
+
+:has_a_program_committee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_a_commtitee .
+
+:has_a_steering_committee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_a_commtitee .
+
+:has_an_email a owl:DatatypeProperty ;
+    rdfs:label "has e-mail" ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:has_an_expertise a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has level of expertise" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "high"^^xsd:string ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "low"^^xsd:string ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "medium"^^xsd:string ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first "very high"^^xsd:string ;
+                                            rdf:rest () ] ] ] ] ] .
+
+:has_an_organizing_committee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_a_commtitee .
+
+:has_gender a owl:DatatypeProperty ;
+    rdfs:label "has gender" ;
+    rdfs:domain :Person ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "female"^^xsd:string ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "male"^^xsd:string ;
+                            rdf:rest () ] ] ] .
+
+:has_text a owl:DatatypeProperty ;
+    rdfs:label "abstract text" ;
+    rdfs:comment "Abstract (as plain text)" ;
+    rdfs:domain :Extended_abstract .
+
+:has_the_first_name a owl:DatatypeProperty ;
+    rdfs:label "has first name" ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:has_workshops a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_parts .
+
+:invited_by a owl:ObjectProperty ;
+    rdfs:label "invited by" .
+
+:is_a_date_of_camera_ready_paper_submission a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "date of CR deadline" ;
+    rdfs:range xsd:date .
+
+:was_a_committee_of a owl:ObjectProperty ;
+    rdfs:domain :Committee ;
+    owl:inverseOf :has_a_commtitee .
+
+:Conference a owl:Class ;
+    rdfs:label "Conference" ;
+    rdfs:comment "A (scientific) conference" .
+
+:Conference_contributor a owl:Class ;
+    rdfs:label "Conference contributor" ;
+    rdfs:subClassOf :Person .
+
+:Conference_document a owl:Class ;
+    rdfs:comment "Conference document",
+        "Documents created for primary use at the conference, including submissions of all sorts as well as public announcements, calls, etc." .
+
+:Registeered_applicant a owl:Class .
+
+:Regular_author a owl:Class ;
+    rdfs:subClassOf :Conference_contributor .
+
+:Reviewed_contribution a owl:Class ;
+    rdfs:label "Peer reviewed contribution" ;
+    rdfs:subClassOf :Submitted_contribution .
+
+:has_members a owl:ObjectProperty ;
+    rdfs:label "has member" ;
+    rdfs:domain :Committee ;
+    rdfs:range :Committee_member .
+
+:has_parts a owl:ObjectProperty ;
+    rdfs:label "has part" ;
+    owl:inverseOf :is_part_of_conference_volumes .
+
+:is_part_of_conference_volumes a owl:ObjectProperty ;
+    rdfs:label "is part of" .
+
+:was_a_committee_chair_of a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:range :Committee ;
+    rdfs:subPropertyOf :was_a_member_of .
+
+xsd:date a rdfs:Datatype .
+
+:Extended_abstract a owl:Class ;
+    rdfs:label "Extended abstract" ;
+    rdfs:subClassOf :Regular_contribution .
+
+:was_a_member_of a owl:ObjectProperty ;
+    rdfs:domain :Committee_member ;
+    rdfs:range :Committee ;
+    owl:inverseOf :has_members .
+
+:Committee_member a owl:Class ;
+    rdfs:label "Committee member" ;
+    rdfs:subClassOf :Person ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :was_a_member_of ;
+            owl:someValuesFrom :Committee ] .
+
+:Conference_contribution a owl:Class ;
+    rdfs:label "Conference contribution" ;
+    rdfs:comment "Any contribution to the conference in any format, both peer-reviewed submissions and invited contributions." ;
+    rdfs:subClassOf :Conference_document .
+
+:Presentation a owl:Class ;
+    rdfs:label "Presentation" ;
+    rdfs:subClassOf :Conference_contribution .
+
+:Written_contribution a owl:Class ;
+    rdfs:label "Written contribution" ;
+    rdfs:subClassOf :Conference_contribution .
+
+:Regular_contribution a owl:Class ;
+    rdfs:label "Regular conference contribution" ;
+    rdfs:subClassOf :Written_contribution .
+
+:has_a_commtitee a owl:ObjectProperty ;
+    rdfs:label "has committee" ;
+    rdfs:range :Committee .
+
+:Submitted_contribution a owl:Class ;
+    rdfs:label "Submitted contribution" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf [ rdf:rest ( :Regular_contribution ) ] ],
+        :Written_contribution .
+
+:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "People associated with the conference" .
+
+:Committee a owl:Class ;
+    rdfs:label "Conference Committee" ;
+    rdfs:comment "Any conference committee, such as, e.g., the program committee." .
+
+[] rdf:rest [ rdf:rest ( :Presentation ) ] .
+
+[] rdf:first :Submitted_contribution ;
+    rdf:rest [ rdf:rest () ] .
+
+[] rdf:rest [ rdf:rest ( :Presentation ) ] .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] rdf:first :Committee ;
+    rdf:rest [ rdf:first :Conference ;
+            rdf:rest [ rdf:rest [ rdf:rest [ rdf:rest [ rdf:rest [ rdf:rest () ] ] ] ] ] ] .
+
+[] rdf:rest ( :Reviewed_contribution ) .
+
+[] a owl:Class ;
+    owl:unionOf [ rdf:rest ( :Regular_author ) ] .
+
+[] a owl:Restriction ;
+    owl:onProperty :was_a_committee_chair_of ;
+    owl:someValuesFrom :Committee .
+
+[] a owl:Restriction ;
+    owl:someValuesFrom :Committee .
+
+[] rdf:rest [ rdf:rest [ rdf:rest () ] ] .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] rdf:rest [ rdf:rest ( :Regular_contribution ) ] .
+
+[] rdf:first :Presentation ;
+    rdf:rest ( :Written_contribution ) .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] a owl:Restriction .
+
+[] a owl:Class ;
+    owl:unionOf [ rdf:first :Committee_member ;
+            rdf:rest [ rdf:rest () ] ] .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] rdf:rest ( [ a owl:Restriction ;
+                owl:someValuesFrom :Conference_contribution ] ) .
+
+[] rdf:first :Extended_abstract ;
+    rdf:rest [ rdf:rest () ] .
+
+[] a owl:Restriction .
+
+[] a owl:Restriction .
+
+[] a owl:Restriction ;
+    owl:someValuesFrom :Submitted_contribution .
+
+[] rdf:first :Submitted_contribution ;
+    rdf:rest [ rdf:rest () ] .
+
+[] a owl:Restriction .
+
+[] rdf:first :Submitted_contribution ;
+    rdf:rest [ rdf:rest () ] .
+
+[] a owl:Restriction .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] a owl:Restriction .
+
+[] rdf:rest [ rdf:rest () ] .
+
+[] rdf:rest ( :Regular_contribution ) .
+

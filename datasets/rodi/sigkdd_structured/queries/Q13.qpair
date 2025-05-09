@@ -1,0 +1,12 @@
+name=Q13 (Students)
+orderNum=120
+
+sql=SELECT COUNT(*) \n\
+FROM "Person" WHERE "Person"."is_Author_of_paper_student"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT (COUNT(?pc) AS ?count) \n\
+WHERE {?pc rdf:type :Author_of_paper_student}
+
+categories=class,n-1

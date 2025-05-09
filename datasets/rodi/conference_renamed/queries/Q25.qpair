@@ -1,0 +1,12 @@
+name=Q25 (Conference Names)
+orderNum=290
+
+sql=SELECT conferences.name \n\
+FROM conference_volumes NATURAL JOIN conferences 
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?name \n\
+WHERE {?c rdf:type :Conference_volume; :has_a_name ?name}
+
+categories=attrib,other-table

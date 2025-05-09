@@ -1,0 +1,8 @@
+
+     
+     name = 123-mvd-locatedonisland-pairs
+     orderNum = 14
+
+     sql =   Select C_City."name" as "?CN", M_Mountain."name" as "?MN", I_Island."name" as "?IN" From mondial_rdf2sql_standard."locatedOnIsland" C_locatedOnIsland, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Island" I_Island, mondial_rdf2sql_standard."Mountain" M_Mountain Where (C_City."URI" = C_locatedOnIsland."Entity") and (I_Island."URI" = C_locatedOnIsland."Island") and (M_Mountain."locatedOnIsland" = I_Island."URI")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?MN ?IN    WHERE {           ?C a :City; :name ?CN; :locatedOnIsland ?I .           ?M a :Mountain; :name ?MN; :locatedOnIsland ?I .           ?I :name ?IN .    }          

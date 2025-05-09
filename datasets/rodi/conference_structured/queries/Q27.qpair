@@ -1,0 +1,12 @@
+name=Q27 (Conference Cities)
+orderNum=310
+
+sql=SELECT "Conference_volume"."has_a_location" \n\
+FROM "Conference_volume" 
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?city \n\
+WHERE {?c rdf:type :Conference_volume; :has_a_location ?city}
+
+categories=attrib,in-table

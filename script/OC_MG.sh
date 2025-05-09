@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com python OC_MG.py

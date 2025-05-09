@@ -1,0 +1,197 @@
+@prefix : <http://sigkdd#> .
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sigkdd> a owl:Ontology .
+
+:Best_Paper_Awards_Committee a owl:Class ;
+    rdfs:comment "A committee in charge of selecting the best paper to be awarded"@en ;
+    rdfs:subClassOf :Committee .
+
+:Best_Student_Paper_Supporter a owl:Class ;
+    rdfs:comment "A sponsor paying for the price of the best student paper."@en ;
+    rdfs:subClassOf :Sponzor .
+
+:Bronze_Supporter a owl:Class ;
+    rdfs:comment "The entry level for being a sponsor."@en ;
+    rdfs:subClassOf :Sponzor .
+
+:City_of_conference a owl:DatatypeProperty ;
+    rdfs:comment "the name of the city in which the conference edition is located." ;
+    rdfs:range xsd:string .
+
+:Conference_hall a owl:Class ;
+    rdfs:comment "A conference hall or conference room is a room provided for singular events such as business conferences and meetings."@en ;
+    rdfs:subClassOf :Place .
+
+:Date a owl:DatatypeProperty ;
+    rdfs:comment "The date associated with a deadline."@en ;
+    rdfs:domain :Deadline ;
+    rdfs:range xsd:dateTime .
+
+:Gold_Supporter a owl:Class ;
+    rdfs:comment "An advanced level of sponsorship."@en ;
+    rdfs:subClassOf :Sponzor .
+
+:Name_of_conference a owl:DatatypeProperty ;
+    rdfs:comment "The name of a conference."@en ;
+    rdfs:range xsd:string .
+
+:Name_of_sponsor a owl:DatatypeProperty ;
+    rdfs:comment "The name of a sponsor."@en ;
+    rdfs:domain :Sponzor ;
+    rdfs:range xsd:string .
+
+:Organizing_Committee_member a owl:Class ;
+    rdfs:comment "A person that is part of the organizing committee."@en ;
+    rdfs:subClassOf :Organizator .
+
+:Registration_SIGMOD_Member a owl:Class ;
+    rdfs:comment "Registration fee for person that are member of SIGMOD organization."@en ;
+    rdfs:subClassOf :Registration_fee .
+
+:Registration_Student a owl:Class ;
+    rdfs:comment "Registration fee for students, usually at a reduced price."@en ;
+    rdfs:subClassOf :Registration_fee .
+
+:Reviewer rdfs:comment "One who reviews, especially one who writes reviews for correcting errors and ensuring quality."@en .
+
+:Silver_Supporter a owl:Class ;
+    rdfs:comment "A mid-level for sponsorhip."@en ;
+    rdfs:subClassOf :Sponzor .
+
+:Webmaster a owl:Class ;
+    rdfs:comment "A person whose occupation is designing, developing, marketing, or maintaining websites."@en ;
+    rdfs:subClassOf :Organizator .
+
+:hasCommittee a owl:ObjectProperty ;
+    rdfs:comment "The relation associating a conference with its committees.."@en ;
+    rdfs:range :Committee .
+
+:hasPostalCode a owl:DatatypeProperty ;
+    rdfs:comment "The postal code (ZIP code)."@en ;
+    rdfs:domain :Place ;
+    rdfs:range xsd:int .
+
+:hasReview a owl:ObjectProperty ;
+    rdfs:comment "The relationship linking a paper with its reviewes."@en .
+
+:hasStreet a owl:DatatypeProperty ;
+    rdfs:comment "The name of a street."@en ;
+    rdfs:domain :Place ;
+    rdfs:range xsd:string .
+
+:hasTitle a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:holded_by a owl:ObjectProperty ;
+    rdfs:comment "The relationship between the an holded activity and the person or institution holding it."@en .
+
+:isReviewOf a owl:ObjectProperty ;
+    rdfs:comment "The review associated to a paper."@en .
+
+:searched_by a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a conference sponsor and the conference organizing association searching for sponsors."@en ;
+    rdfs:domain :Sponzor .
+
+geo1:lat a owl:DatatypeProperty ;
+    rdfs:domain :Place ;
+    rdfs:range xsd:float .
+
+geo1:long a owl:DatatypeProperty ;
+    rdfs:domain :Place ;
+    rdfs:range xsd:float .
+
+:Best_Applications_Paper_Award a owl:Class ;
+    rdfs:comment "Paper award for the best application"@en ;
+    rdfs:subClassOf :Award .
+
+:Best_Research_Paper_Award a owl:Class ;
+    rdfs:comment "Paper award for the best research paper"@en ;
+    rdfs:subClassOf :Award .
+
+:Document a owl:Class ;
+    rdfs:comment "A writing that contains information."@en .
+
+:Fee a owl:Class ;
+    rdfs:comment "A fixed sum charged, as by an institution or by law, for a privilege."@en .
+
+:Speaker a owl:Class ;
+    rdfs:comment "A person participating at a conference as a speaker in an activity involving an oral presentation,"@en ;
+    rdfs:subClassOf :Person ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:someValuesFrom :Document ] .
+
+:design a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a person or an institution and the entity that has been designed."@en ;
+    rdfs:range :Deadline ;
+    owl:inverseOf :designed_by .
+
+:designed_by a owl:ObjectProperty ;
+    rdfs:comment "The relationship between the designed entity a the person or an institution that designed it."@en ;
+    rdfs:domain :Deadline .
+
+:payed_by a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a fee for which the money has been payed and the person or institution paying that amount of money."@en ;
+    rdfs:domain :Registration_fee ;
+    rdfs:range :Person .
+
+:submit a owl:ObjectProperty ;
+    rdfs:comment "The relationship identyfing the papers submitted by an author,"@en ;
+    rdfs:domain :Author .
+
+:Author a owl:Class ;
+    rdfs:comment "A person who composes an article, or other written work."@en ;
+    rdfs:subClassOf [ a owl:Restriction ],
+        :Speaker ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :submit ] .
+
+:Committee a owl:Class ;
+    rdfs:comment "A group of people officially delegated to perform a function, such as investigating, considering, reporting, or acting on a matter"@en .
+
+:pay a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a person or institution paying an amount of money and the fee for which the money has been payed."@en ;
+    rdfs:domain :Person ;
+    rdfs:range :Registration_fee ;
+    owl:inverseOf :payed_by .
+
+:Award a owl:Class ;
+    rdfs:comment "Something awarded or granted, as for merit"@en ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:someValuesFrom :Organizator ] .
+
+:Organizator a owl:Class ;
+    rdfs:comment "A person who organizes or is capable of organizing."@en ;
+    rdfs:subClassOf :Person .
+
+:obtain a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a person and the award he has been awarded with."@en ;
+    rdfs:domain :Author ;
+    rdfs:range :Award .
+
+:Deadline a owl:Class ;
+    rdfs:comment "A time limit for an activity"@en .
+
+:Person a owl:Class ;
+    rdfs:comment "An individual human being."@en ;
+    rdfs:subClassOf [ a owl:Restriction ],
+        owl:Thing ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :pay ;
+            owl:someValuesFrom :Registration_fee ] .
+
+:Place a owl:Class ;
+    rdfs:comment "A building or an area set aside for a specified purpose."@en .
+
+:Registration_fee a owl:Class ;
+    rdfs:comment "Fee requested for registering and participating at a conference."@en ;
+    rdfs:subClassOf :Fee .
+
+:Sponzor a owl:Class ;
+    rdfs:comment "A commercial organization that pays all or part of the cost of putting on an event."@en ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :pay ] .

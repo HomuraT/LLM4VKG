@@ -1,0 +1,131 @@
+2025-01-03 20:45:19,131 - INFO - Logging initialized. Log file at ../rodi_T/rodi_T_75/conference_structured/deletion.log
+2025-01-03 20:45:19,132 - INFO - Processing ontology: ../rodi_T/rodi/conference_structured/ontology.ttl
+2025-01-03 20:45:19,165 - INFO - Ontology loaded from ../rodi_T/rodi/conference_structured/ontology.ttl
+2025-01-03 20:45:19,169 - INFO - Total classes: 83
+2025-01-03 20:45:19,169 - INFO - Total object properties: 46
+2025-01-03 20:45:19,170 - INFO - Total data properties: 22
+2025-01-03 20:45:19,170 - INFO - Deleting 62 classes out of 83 (75.0%)
+2025-01-03 20:45:19,170 - INFO - Deleted classes: http://conference#Paper
+2025-01-03 20:45:19,170 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b57
+2025-01-03 20:45:19,171 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b54
+2025-01-03 20:45:19,171 - INFO - Deleted classes: http://conference#Abstract
+2025-01-03 20:45:19,171 - INFO - Deleted classes: http://conference#Invited_speaker
+2025-01-03 20:45:19,171 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b64
+2025-01-03 20:45:19,171 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b4
+2025-01-03 20:45:19,171 - INFO - Deleted classes: http://conference#Contribution_co-author
+2025-01-03 20:45:19,171 - INFO - Deleted classes: http://conference#Conference_volume
+2025-01-03 20:45:19,171 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b85
+2025-01-03 20:45:19,171 - INFO - Deleted classes: http://conference#Steering_committee
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Publisher
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Camera_ready_contribution
+2025-01-03 20:45:19,172 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b68
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Organizer
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Track-workshop_chair
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Conference_fees
+2025-01-03 20:45:19,172 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b7
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Information_for_participants
+2025-01-03 20:45:19,172 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b10
+2025-01-03 20:45:19,172 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b14
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Organizing_committee
+2025-01-03 20:45:19,172 - INFO - Deleted classes: http://conference#Workshop
+2025-01-03 20:45:19,172 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b17
+2025-01-03 20:45:19,173 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b45
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Important_dates
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Call_for_paper
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Tutorial
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Rejected_contribution
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Conference_www
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Conference_announcement
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Topic
+2025-01-03 20:45:19,173 - INFO - Deleted classes: http://conference#Track
+2025-01-03 20:45:19,173 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b74
+2025-01-03 20:45:19,173 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b1
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Review_preference
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Early_paid_applicant
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Co-chair
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Late_paid_applicant
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Chair
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Conference_proceedings
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Invited_talk
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Contribution_1th-author
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Organization
+2025-01-03 20:45:19,174 - INFO - Deleted classes: http://conference#Program_committee
+2025-01-03 20:45:19,174 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b50
+2025-01-03 20:45:19,175 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b29
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Call_for_participation
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Review
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Poster
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Passive_conference_participant
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Reviewer
+2025-01-03 20:45:19,175 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b21
+2025-01-03 20:45:19,175 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b81
+2025-01-03 20:45:19,175 - INFO - Deleted classes: http://conference#Review_expertise
+2025-01-03 20:45:19,175 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b92
+2025-01-03 20:45:19,176 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b67
+2025-01-03 20:45:19,176 - INFO - Deleted classes: http://conference#Active_conference_participant
+2025-01-03 20:45:19,176 - INFO - Deleted a total of 58 classes.
+2025-01-03 20:45:19,176 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b61
+2025-01-03 20:45:19,176 - INFO - Deleted classes: http://conference#Written_contribution
+2025-01-03 20:45:19,176 - INFO - Deleted classes: n8a1537c298f74970b1a6d778a80d0872b78
+2025-01-03 20:45:19,176 - INFO - Deleted classes: http://conference#Conference_part
+2025-01-03 20:45:19,176 - INFO - Deleted a total of 4 classes.
+2025-01-03 20:45:19,176 - INFO - Deleted classes: http://conference#Presentation
+2025-01-03 20:45:19,176 - INFO - Deleted a total of 1 classes.
+2025-01-03 20:45:19,176 - INFO - Completed deletion of 63 classes.
+2025-01-03 20:45:19,176 - INFO - Deleting 34 object properties out of 46 (75.0%)
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#has_a_committee_chair
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#invited_by
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#has_a_program_committee
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#has_a_committee_co-chair
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#has_authors
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#was_a_committe_co-chair_of
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#reviews
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#invites_co-reviewers
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#belong_to_a_conference_volume
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#issues
+2025-01-03 20:45:19,177 - INFO - Deleted object properties: http://conference#has_a_submitted_contribution
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#is_submitted_at
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_an_organizing_committee
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#is_given_by
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#is_the_1th_part_of
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_a_review_expertise
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_workshops
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_a_track-workshop-tutorial_chair
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_contributions
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_a_topic_or_a_submission_contribution
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#was_a_committee_chair_of
+2025-01-03 20:45:19,178 - INFO - Deleted object properties: http://conference#has_a_track-workshop-tutorial_topic
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#was_a_track-workshop_chair_of
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#belongs_to_reviewers
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#has_important_dates
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#has_a_review
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#belongs_to_a_review_reference
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#is_part_of_conference_volumes
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#has_been_assigned_a_review_reference
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#gives_presentations
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#has_a_publisher
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#was_a_program_committee_of
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#has_an_abstract
+2025-01-03 20:45:19,179 - INFO - Deleted object properties: http://conference#contributes
+2025-01-03 20:45:19,179 - INFO - Deleted a total of 34 object properties.
+2025-01-03 20:45:19,179 - INFO - Completed deletion of 34 object properties.
+2025-01-03 20:45:19,180 - INFO - Deleting 16 data properties out of 22 (75.0%)
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_a_paper_title
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_detailed_comments
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#amount
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_text
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_an_email
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#is_a_starting_date
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_a_date_of_issue
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_gender
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_the_first_name
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_the_last_name
+2025-01-03 20:45:19,180 - INFO - Deleted data properties: http://conference#has_a_URL
+2025-01-03 20:45:19,181 - INFO - Deleted data properties: http://conference#is_a_date_of_acceptance_announcement
+2025-01-03 20:45:19,181 - INFO - Deleted data properties: http://conference#is_an_abstract_submission_date
+2025-01-03 20:45:19,181 - INFO - Deleted data properties: http://conference#has_an_ISBN
+2025-01-03 20:45:19,181 - INFO - Deleted data properties: http://conference#is_a_full_paper_submission_date
+2025-01-03 20:45:19,181 - INFO - Deleted data properties: http://conference#has_a_name
+2025-01-03 20:45:19,181 - INFO - Deleted a total of 16 data properties.
+2025-01-03 20:45:19,181 - INFO - Completed deletion of 16 data properties.
+2025-01-03 20:45:19,190 - INFO - Modified ontology saved to ../rodi_T/rodi_T_75/conference_structured/ontology.ttl

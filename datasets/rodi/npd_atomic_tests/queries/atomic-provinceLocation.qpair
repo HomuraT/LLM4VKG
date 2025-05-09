@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#provinceLocation>
+orderNum=349
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/quadrant/', CAST(TABLE1.qdrName AS CHARACTER VARYING), '/block/', CAST(TABLE1.blkName AS CHARACTER VARYING), '/award/', CAST(TABLE1.prvName AS CHARACTER VARYING), '/area/', CAST(TABLE1.apaAreaNet_id AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/province/', CAST(TABLE1.prvName AS CHARACTER VARYING)) AS y FROM apaAreaNet TABLE1 WHERE TABLE1.blkName IS NOT NULL AND TABLE1.prvName IS NOT NULL AND TABLE1.apaAreaNet_id IS NOT NULL AND TABLE1.qdrName IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#provinceLocation> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

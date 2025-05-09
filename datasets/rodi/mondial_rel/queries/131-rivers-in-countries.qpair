@@ -1,0 +1,8 @@
+
+     
+     name = 131-rivers-in-countries
+     orderNum = 19
+
+     sql =   Select R_Water."name" as "?N", C_Country."name" as "?CN" From mondial_rdf2sql_standard."locatedIn" R_locatedIn, mondial_rdf2sql_standard."Water" R_Water, mondial_rdf2sql_standard."Country" C_Country Where (R_Water."rdftype" = 'River') and (R_Water."URI" = R_locatedIn."Entity") and (C_Country."URI" = R_locatedIn."Area")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?CN    WHERE {           ?R a :River; :name ?N; :locatedIn ?C .           ?C a :Country; :name ?CN .    }          

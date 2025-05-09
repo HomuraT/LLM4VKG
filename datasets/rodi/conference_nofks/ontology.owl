@@ -1,0 +1,2150 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://conference"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://conference">
+    <Prefix name="" IRI="http://conference#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Accepted_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Active_conference_participant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Call_for_paper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Call_for_participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Camera_ready_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Co-chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Committee_member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_announcement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_applicant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_document"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_fees"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_part"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_participant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_proceedings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_www"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contribution_1th-author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contribution_co-author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Early_paid_applicant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Extended_abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Important_dates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_for_participants"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Invited_speaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Invited_talk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Late_paid_applicant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizing_committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paid_applicant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Passive_conference_participant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Poster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Presentation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Program_committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publisher"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Registeered_applicant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Regular_author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Regular_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rejected_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Review"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Review_expertise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Review_preference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reviewed_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reviewer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Steering_committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Submitted_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Track"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Track-workshop_chair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tutorial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Workshop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Written_contribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belong_to_a_conference_volume"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongs_to_a_review_reference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongs_to_reviewers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contributes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#gives_presentations"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_committee_co-chair"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_publisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_review"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_review_expertise"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_review_reference_or_expertise"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_submitted_contribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_chair"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_topic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_an_abstract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_authors"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_been_assigned_a_review_reference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_contributions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_important_dates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_members"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_parts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_tracks"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_tutorials"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_workshops"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#invited_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#invites_co-reviewers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_a_topis_of_conference_parts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_given_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_part_of_conference_volumes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_submitted_at"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_1th_part_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#issues"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reviews"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_member_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#amount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_URL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_date_of_issue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_degree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_paper_title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_a_volume"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_an_ISBN"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_an_email"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_an_expertise"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_detailed_comments"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_gender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_text"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_the_first_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_the_last_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_a_date_of_acceptance_announcement"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_a_date_of_camera_ready_paper_submission"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_a_full_paper_submission_date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_a_starting_date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_an_abstract_submission_date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_an_ending_date"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Chair"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#was_a_committee_chair_of"/>
+            <Class IRI="#Committee"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Co-chair"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+            <Class IRI="#Committee"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Committee"/>
+        <ObjectUnionOf>
+            <Class IRI="#Organizing_committee"/>
+            <Class IRI="#Program_committee"/>
+            <Class IRI="#Steering_committee"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Committee_member"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#was_a_member_of"/>
+            <Class IRI="#Committee"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Conference_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Invited_talk"/>
+            <Class IRI="#Poster"/>
+            <Class IRI="#Regular_contribution"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Conference_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Presentation"/>
+            <Class IRI="#Written_contribution"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Conference_participant"/>
+        <ObjectUnionOf>
+            <Class IRI="#Active_conference_participant"/>
+            <Class IRI="#Passive_conference_participant"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Invited_speaker"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#contributes"/>
+            <Class IRI="#Invited_talk"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Paid_applicant"/>
+        <ObjectUnionOf>
+            <Class IRI="#Early_paid_applicant"/>
+            <Class IRI="#Late_paid_applicant"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Regular_author"/>
+        <ObjectIntersectionOf>
+            <ObjectUnionOf>
+                <Class IRI="#Contribution_1th-author"/>
+                <Class IRI="#Contribution_co-author"/>
+            </ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#contributes"/>
+                <Class IRI="#Conference_contribution"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Regular_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Extended_abstract"/>
+            <Class IRI="#Paper"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Reviewed_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Accepted_contribution"/>
+            <Class IRI="#Rejected_contribution"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Track-workshop_chair"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+            <ObjectUnionOf>
+                <Class IRI="#Track"/>
+                <Class IRI="#Workshop"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Abstract"/>
+        <Class IRI="#Extended_abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Accepted_contribution"/>
+        <Class IRI="#Reviewed_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Active_conference_participant"/>
+        <Class IRI="#Conference_contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Active_conference_participant"/>
+        <Class IRI="#Conference_participant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Active_conference_participant"/>
+        <ObjectUnionOf>
+            <Class IRI="#Invited_speaker"/>
+            <Class IRI="#Regular_author"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Call_for_paper"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Call_for_participation"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera_ready_contribution"/>
+        <Class IRI="#Accepted_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chair"/>
+        <Class IRI="#Committee_member"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Co-chair"/>
+        <Class IRI="#Committee_member"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Committee_member"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_announcement"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_applicant"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_contribution"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_contributor"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_participant"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_volume"/>
+        <Class IRI="#Conference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_www"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Contribution_1th-author"/>
+        <Class IRI="#Regular_author"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Contribution_co-author"/>
+        <Class IRI="#Regular_author"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Early_paid_applicant"/>
+        <Class IRI="#Paid_applicant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Extended_abstract"/>
+        <Class IRI="#Regular_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Information_for_participants"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Invited_speaker"/>
+        <Class IRI="#Conference_contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Invited_talk"/>
+        <Class IRI="#Presentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Late_paid_applicant"/>
+        <Class IRI="#Paid_applicant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizer"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizer"/>
+        <ObjectUnionOf>
+            <Class IRI="#Committee_member"/>
+            <Class IRI="#Organization"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizing_committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Paid_applicant"/>
+        <Class IRI="#Registeered_applicant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Paper"/>
+        <Class IRI="#Regular_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Passive_conference_participant"/>
+        <Class IRI="#Conference_participant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Poster"/>
+        <Class IRI="#Conference_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Presentation"/>
+        <Class IRI="#Conference_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Program_committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Registeered_applicant"/>
+        <Class IRI="#Conference_applicant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Regular_author"/>
+        <Class IRI="#Conference_contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Regular_contribution"/>
+        <Class IRI="#Written_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rejected_contribution"/>
+        <Class IRI="#Reviewed_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review"/>
+        <Class IRI="#Conference_document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#has_authors"/>
+            <Class IRI="#Reviewer"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_expertise"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_expertise"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#belongs_to_reviewers"/>
+            <Class IRI="#Reviewer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_expertise"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_a_submitted_contribution"/>
+            <Class IRI="#Submitted_contribution"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_preference"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_preference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#belongs_to_reviewers"/>
+            <Class IRI="#Reviewer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_preference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+            <ObjectUnionOf>
+                <Class IRI="#Submitted_contribution"/>
+                <Class IRI="#Topic"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reviewed_contribution"/>
+        <Class IRI="#Submitted_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reviewer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Steering_committee"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Submitted_contribution"/>
+        <Class IRI="#Written_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Submitted_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Poster"/>
+            <Class IRI="#Regular_contribution"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Track"/>
+        <Class IRI="#Conference_part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Track-workshop_chair"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tutorial"/>
+        <Class IRI="#Conference_part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workshop"/>
+        <Class IRI="#Conference_part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Written_contribution"/>
+        <Class IRI="#Conference_contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Written_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Poster"/>
+            <Class IRI="#Regular_contribution"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Accepted_contribution"/>
+        <Class IRI="#Rejected_contribution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Active_conference_participant"/>
+        <Class IRI="#Passive_conference_participant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Contribution_1th-author"/>
+        <Class IRI="#Contribution_co-author"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Early_paid_applicant"/>
+        <Class IRI="#Late_paid_applicant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Extended_abstract"/>
+        <Class IRI="#Paper"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Invited_talk"/>
+        <Class IRI="#Poster"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Invited_talk"/>
+        <Class IRI="#Regular_contribution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organizing_committee"/>
+        <Class IRI="#Program_committee"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organizing_committee"/>
+        <Class IRI="#Steering_committee"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Poster"/>
+        <Class IRI="#Regular_contribution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Program_committee"/>
+        <Class IRI="#Steering_committee"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Track"/>
+        <Class IRI="#Tutorial"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Track"/>
+        <Class IRI="#Workshop"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Tutorial"/>
+        <Class IRI="#Workshop"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+        <ObjectProperty IRI="#has_members"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_a_committee_co-chair"/>
+        <ObjectProperty IRI="#has_members"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_tracks"/>
+        <ObjectProperty IRI="#has_parts"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_tutorials"/>
+        <ObjectProperty IRI="#has_parts"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_workshops"/>
+        <ObjectProperty IRI="#has_parts"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+        <ObjectProperty IRI="#was_a_member_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+        <ObjectProperty IRI="#was_a_member_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_important_dates"/>
+        <ObjectProperty IRI="#belong_to_a_conference_volume"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongs_to_reviewers"/>
+        <ObjectProperty IRI="#has_a_review_reference_or_expertise"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_authors"/>
+        <ObjectProperty IRI="#contributes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#gives_presentations"/>
+        <ObjectProperty IRI="#is_given_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_a_committee_co-chair"/>
+        <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#issues"/>
+        <ObjectProperty IRI="#has_a_publisher"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_a_review"/>
+        <ObjectProperty IRI="#reviews"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_a_review_expertise"/>
+        <ObjectProperty IRI="#has_a_submitted_contribution"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_been_assigned_a_review_reference"/>
+        <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_chair"/>
+        <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_topic"/>
+        <ObjectProperty IRI="#is_a_topis_of_conference_parts"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_an_abstract"/>
+        <ObjectProperty IRI="#is_the_1th_part_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_submitted_at"/>
+        <ObjectProperty IRI="#has_contributions"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_a_member_of"/>
+        <ObjectProperty IRI="#has_members"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_parts"/>
+        <ObjectProperty IRI="#is_part_of_conference_volumes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#invites_co-reviewers"/>
+        <ObjectProperty IRI="#invited_by"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_publisher"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_submitted_contribution"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_chair"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_an_abstract"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_important_dates"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#reviews"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#belong_to_a_conference_volume"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#belongs_to_a_review_reference"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_review"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#has_a_review_expertise"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#has_been_assigned_a_review_reference"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#is_the_1th_part_of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#issues"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belong_to_a_conference_volume"/>
+        <Class IRI="#Important_dates"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongs_to_a_review_reference"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongs_to_reviewers"/>
+        <ObjectUnionOf>
+            <Class IRI="#Review_expertise"/>
+            <Class IRI="#Review_preference"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contributes"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#gives_presentations"/>
+        <Class IRI="#Active_conference_participant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_committee_co-chair"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_publisher"/>
+        <Class IRI="#Conference_proceedings"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_review"/>
+        <Class IRI="#Reviewed_contribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_review_expertise"/>
+        <Class IRI="#Submitted_contribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_review_reference_or_expertise"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_submitted_contribution"/>
+        <Class IRI="#Review_expertise"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+        <Class IRI="#Review_preference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_chair"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_topic"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_an_abstract"/>
+        <ObjectUnionOf>
+            <Class IRI="#Paper"/>
+            <Class IRI="#Poster"/>
+            <Class IRI="#Presentation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_authors"/>
+        <Class IRI="#Conference_document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_been_assigned_a_review_reference"/>
+        <ObjectUnionOf>
+            <Class IRI="#Submitted_contribution"/>
+            <Class IRI="#Topic"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_contributions"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_important_dates"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_members"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_parts"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_tracks"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_tutorials"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_workshops"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#invited_by"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#invites_co-reviewers"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_a_topis_of_conference_parts"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_given_by"/>
+        <Class IRI="#Presentation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_part_of_conference_volumes"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_submitted_at"/>
+        <Class IRI="#Conference_contribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_the_1th_part_of"/>
+        <Class IRI="#Abstract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#issues"/>
+        <Class IRI="#Publisher"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reviews"/>
+        <Class IRI="#Review"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+        <Class IRI="#Co-chair"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+        <Class IRI="#Chair"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_member_of"/>
+        <Class IRI="#Committee_member"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+        <Class IRI="#Program_committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+        <Class IRI="#Steering_committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+        <Class IRI="#Track-workshop_chair"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+        <Class IRI="#Organizing_committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belong_to_a_conference_volume"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongs_to_a_review_reference"/>
+        <Class IRI="#Review_preference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongs_to_reviewers"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contributes"/>
+        <Class IRI="#Conference_document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#gives_presentations"/>
+        <Class IRI="#Presentation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_committee_chair"/>
+        <Class IRI="#Chair"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_committee_co-chair"/>
+        <Class IRI="#Co-chair"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_commtitee"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_program_committee"/>
+        <Class IRI="#Program_committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_publisher"/>
+        <Class IRI="#Publisher"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_review"/>
+        <Class IRI="#Review"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_review_expertise"/>
+        <Class IRI="#Review_expertise"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_review_reference_or_expertise"/>
+        <ObjectUnionOf>
+            <Class IRI="#Review_expertise"/>
+            <Class IRI="#Review_preference"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_steering_committee"/>
+        <Class IRI="#Steering_committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_submitted_contribution"/>
+        <Class IRI="#Submitted_contribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_topic_or_a_submission_contribution"/>
+        <ObjectUnionOf>
+            <Class IRI="#Submitted_contribution"/>
+            <Class IRI="#Topic"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_chair"/>
+        <Class IRI="#Track-workshop_chair"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_a_track-workshop-tutorial_topic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_an_abstract"/>
+        <Class IRI="#Abstract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_an_organizing_committee"/>
+        <Class IRI="#Organizing_committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_authors"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_been_assigned_a_review_reference"/>
+        <Class IRI="#Review_preference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_contributions"/>
+        <Class IRI="#Conference_contribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_important_dates"/>
+        <Class IRI="#Important_dates"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_members"/>
+        <Class IRI="#Committee_member"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_parts"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_tracks"/>
+        <Class IRI="#Track"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_tutorials"/>
+        <Class IRI="#Tutorial"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_workshops"/>
+        <Class IRI="#Workshop"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#invited_by"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#invites_co-reviewers"/>
+        <Class IRI="#Reviewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_a_topis_of_conference_parts"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_given_by"/>
+        <Class IRI="#Active_conference_participant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_part_of_conference_volumes"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_submitted_at"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_the_1th_part_of"/>
+        <ObjectUnionOf>
+            <Class IRI="#Paper"/>
+            <Class IRI="#Poster"/>
+            <Class IRI="#Presentation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#issues"/>
+        <Class IRI="#Conference_proceedings"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviews"/>
+        <Class IRI="#Reviewed_contribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_committe_co-chair_of"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_committee_chair_of"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_committee_of"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_member_of"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_program_committee_of"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_steering_committee_of"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_a_track-workshop_chair_of"/>
+        <Class IRI="#Conference_part"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_an_organizing_committee_of"/>
+        <Class IRI="#Conference_volume"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_a_URL"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_a_date_of_issue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_a_degree"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_a_name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_a_volume"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_an_ISBN"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#has_an_expertise"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_a_date_of_acceptance_announcement"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_a_date_of_camera_ready_paper_submission"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_a_full_paper_submission_date"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_a_starting_date"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_an_abstract_submission_date"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#is_an_ending_date"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#amount"/>
+        <Class IRI="#Conference_fees"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_URL"/>
+        <Class IRI="#Conference_www"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_date_of_issue"/>
+        <Class IRI="#Conference_document"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_degree"/>
+        <Class IRI="#Review_preference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_location"/>
+        <Class IRI="#Conference_volume"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_name"/>
+        <ObjectUnionOf>
+            <Class IRI="#Committee"/>
+            <Class IRI="#Conference"/>
+            <Class IRI="#Conference_part"/>
+            <Class IRI="#Conference_proceedings"/>
+            <Class IRI="#Organization"/>
+            <Class IRI="#Publisher"/>
+            <Class IRI="#Topic"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_paper_title"/>
+        <ObjectUnionOf>
+            <Class IRI="#Paper"/>
+            <Class IRI="#Reviewed_contribution"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_a_volume"/>
+        <Class IRI="#Conference_proceedings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_an_ISBN"/>
+        <Class IRI="#Conference_proceedings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_an_email"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_an_expertise"/>
+        <Class IRI="#Review_expertise"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_detailed_comments"/>
+        <Class IRI="#Review"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_gender"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_text"/>
+        <Class IRI="#Extended_abstract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_the_first_name"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_the_last_name"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_a_date_of_acceptance_announcement"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_a_date_of_camera_ready_paper_submission"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_a_full_paper_submission_date"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_a_starting_date"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_an_abstract_submission_date"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_an_ending_date"/>
+        <Class IRI="#Important_dates"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_URL"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_date_of_issue"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_degree"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_location"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_a_volume"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_an_ISBN"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_an_email"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_an_expertise"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">high</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">low</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">medium</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">very high</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_gender"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">female</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">male</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_the_first_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_the_last_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_a_date_of_acceptance_announcement"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_a_date_of_camera_ready_paper_submission"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_a_full_paper_submission_date"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_a_starting_date"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_an_abstract_submission_date"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#is_an_ending_date"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Abstract</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Abstract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Call_for_paper</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Call for papers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Call_for_participation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Call for participation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Committee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Any conference committee, such as, e.g., the program committee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Committee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference Committee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Committee_member</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Committee member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A (scientific) conference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_announcement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Announcements made on behalf of the conference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_announcement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference announcement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_applicant</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference applicant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Any contribution to the conference in any format, both peer-reviewed submissions and invited contributions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_contributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference contributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_document</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference document</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_document</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Documents created for primary use at the conference, including submissions of all sorts as well as public announcements, calls, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_fees</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference fee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_part</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Block of events of conference (e.g., tracks), also including satellite events.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_part</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Part of conference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_participant</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference participant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_proceedings</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference proceedings</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_volume</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference Volume</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conference_www</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Conference website</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Extended_abstract</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Extended abstract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Important_dates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">List of important dates, usually deadlines for calls, registration etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Important_dates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Important dates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Information_for_participants</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Information for participants</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Invited_talk</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Invited talk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Organization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organizer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Organizer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Paper</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Full Paper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Person</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">People associated with the conference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Person</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Poster</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Poster</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Presentation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Presentation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Publisher</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Publisher</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Regular_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Regular conference contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Review</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Review</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Review_expertise</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Review expertise</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Review_preference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Review preference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Reviewed_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Peer reviewed contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Reviewer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Reviewer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Submitted_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Submitted contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Topic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Track-workshop_chair</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Track or workshop chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Written_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Written contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#amount</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">amount in USD</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#belong_to_a_conference_volume</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">date belongs to conference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#belongs_to_a_review_reference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">topic of review preference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#belongs_to_reviewers</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">belongs to reviewers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contributes</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">contributes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#gives_presentations</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">gives presentation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_URL</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has URL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_committee_chair</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has committee chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_committee_co-chair</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has committee co-chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_commtitee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has committee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_date_of_issue</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has issue date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_a_degree</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A weight factor specifying the degree of preference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_degree</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has degree</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_a_location</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Name of conference location (city, country).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_location</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_name</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_paper_title</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_publisher</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has publisher</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_review</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has review</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_review_expertise</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">reviewed with expertise level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_review_reference_or_expertise</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">reviewer has reference or expertise</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_submitted_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has submitted topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_topic_or_a_submission_contribution</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prefers topic/contribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_track-workshop-tutorial_chair</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_track-workshop-tutorial_topic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_a_volume</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has volume</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_an_ISBN</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has ISBN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_an_abstract</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has abstract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_an_email</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has e-mail</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_an_expertise</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has level of expertise</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_authors</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has author</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_been_assigned_a_review_reference</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has assigned preference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_contributions</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has contributions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_detailed_comments</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">review comments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_gender</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has gender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_important_dates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has important dates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_members</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_parts</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_text</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Abstract (as plain text)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_text</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">abstract text</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_the_first_name</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has first name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_the_last_name</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has last name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#invited_by</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">invited by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#invites_co-reviewers</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has invited for co-review</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_a_date_of_acceptance_announcement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">date of acceptance notification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_a_date_of_camera_ready_paper_submission</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">date of CR deadline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_a_full_paper_submission_date</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">full paper submission deadline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_a_starting_date</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">starting date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_a_topis_of_conference_parts</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is topic of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_an_abstract_submission_date</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">abstract submission deadline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_an_ending_date</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ending date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_given_by</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">given by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_part_of_conference_volumes</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is part of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_submitted_at</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">submitted at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_the_1th_part_of</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is first part of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#issues</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">publishes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reviews</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is review for</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 1.3.8.1099) http://owlapi.sourceforge.net -->
+

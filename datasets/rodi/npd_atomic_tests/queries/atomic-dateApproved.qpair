@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#dateApproved>
+orderNum=192
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/baa/', CAST(TABLE1.baaNpdidBsnsArrArea AS CHARACTER VARYING)) AS x, CAST(TABLE1.baaDateApproved AS CHARACTER VARYING) AS y FROM bsns_arr_area TABLE1 WHERE ('9999-12-31T00:00:00' <> TABLE1.baaDateApproved) AND TABLE1.baaNpdidBsnsArrArea IS NOT NULL AND TABLE1.baaDateApproved IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#dateApproved> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-0

@@ -1,0 +1,8 @@
+
+     
+     name = 113-mvd-literal-othername
+     orderNum = 3
+
+     sql =   Select C_City."name" as "?N", C_othername."VALUE" as "?O" From mondial_rdf2sql_standard."othername" C_othername, mondial_rdf2sql_standard."City" C_City Where (C_City."URI" = C_othername."Entity") and (C_City."population" < 1000000)    
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?O     WHERE {           ?C a :City; :name ?N; :othername ?O; :population ?P .           FILTER (?P < 1000000)    }          

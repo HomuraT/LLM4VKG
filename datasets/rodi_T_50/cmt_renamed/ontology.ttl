@@ -1,0 +1,275 @@
+@prefix : <http://cmt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmt> a owl:Ontology .
+
+:Decision a owl:Class ;
+    rdfs:label "Decision"@en ;
+    owl:disjointWith :Document,
+        :Person,
+        :Preference .
+
+:ExternalReviewer a owl:Class ;
+    rdfs:label "External Reviewer"@en ;
+    rdfs:comment "An External Reviewer is a person that has been assigned to review a paper for another Reviewer, but is not themselves a Reviewer. "^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ],
+        :Person ;
+    owl:disjointWith :Reviewer .
+
+:SubjectArea a owl:Class ;
+    rdfs:label "Subject Area"@en .
+
+:acceptPaper a owl:FunctionalProperty,
+        owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "accept paper"@en ;
+    rdfs:domain :Administrator ;
+    rdfs:range :Paper .
+
+:addProgramCommitteeMember a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "add program committee member"@en ;
+    rdfs:domain :Administrator ;
+    rdfs:range :ProgramCommitteeMember ;
+    owl:inverseOf :addedBy .
+
+:assignedByAdministrator a owl:ObjectProperty ;
+    rdfs:label "assigned by administrator"@en ;
+    rdfs:domain :Reviewer ;
+    rdfs:range :Administrator .
+
+:assignedTo a owl:ObjectProperty ;
+    rdfs:label "assigned to"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range :Reviewer .
+
+:co-writePaper a owl:ObjectProperty ;
+    rdfs:label "co-write paper"@en ;
+    rdfs:domain :Co-author ;
+    rdfs:range :Paper ;
+    owl:inverseOf :hasCo-author .
+
+:detailsEnteredBy a owl:ObjectProperty ;
+    rdfs:label "details entered by"@en ;
+    rdfs:range :Administrator .
+
+:finalizePaperAssignment a owl:ObjectProperty ;
+    rdfs:label "finalize paper assignment"@en ;
+    rdfs:domain :Administrator .
+
+:hardcopyMailingManifestsPrintedBy a owl:ObjectProperty ;
+    rdfs:label "hardcopy mailing manifests printed by"@en ;
+    rdfs:range :Administrator ;
+    owl:inverseOf :printHardcopyMailingManifests .
+
+:hasAuthor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has author"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range :Author .
+
+:hasBid a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has bid"@en ;
+    rdfs:comment "Each paper gets a bid assigned to evaluate it."@en ;
+    rdfs:domain :Paper .
+
+:hasConferenceMember a owl:ObjectProperty ;
+    rdfs:label "has conference member"@en ;
+    rdfs:range :ConferenceMember .
+
+:hasConflictOfInterest a owl:ObjectProperty ;
+    rdfs:label "has conflict of interest"@en ;
+    rdfs:comment "A person can mark a conflict of interest for not reviewing a paper."@en ;
+    rdfs:domain :Person ;
+    rdfs:range :Document .
+
+:hasProgramCommitteeMember a owl:ObjectProperty ;
+    rdfs:label "has program committee member"@en ;
+    rdfs:range :ProgramCommitteeMember ;
+    owl:inverseOf :memberOfProgramCommittee .
+
+:logoURL a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "logoURL"@en ;
+    rdfs:range xsd:anyURI .
+
+:markConflictOfInterest a owl:ObjectProperty ;
+    rdfs:label "mark conflict of interest"@en ;
+    rdfs:comment """In CMT terms, a ‘Conflict of Interest’ is an association between a specific Reviewer and a specific Paper that states there is a conflict of interest between that Reviewer and that paper. Conflicts can be marked by Authors (during paper submission) or by Reviewers (in Phase 2) or by Chairmen (in Phase 3).
+
+Based on that conflict, the reviewer will not be able to bid on the paper, be assigned to that paper (either automatically by the system or manually by a Chairman) or view review submissions for that paper.
+"""^^xsd:string ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ rdf:first :Author ;
+                    rdf:rest [ rdf:rest ( :Reviewer ) ] ] ] ;
+    rdfs:range :Paper .
+
+:paperID a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "paper ID"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range xsd:unsignedLong .
+
+:readPaper a owl:ObjectProperty ;
+    rdfs:label "read paper"@en ;
+    rdfs:domain :Reviewer ;
+    rdfs:range :Paper .
+
+:rejectedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "rejected by"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range :Administrator .
+
+:review a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "review" ;
+    rdfs:comment "description of paper, strong and weak points, remarks" .
+
+:reviewCriteriaEnteredBy a owl:ObjectProperty ;
+    rdfs:label "review criteria entered by"@en ;
+    rdfs:range :Administrator ;
+    owl:inverseOf :enterReviewCriteria .
+
+:runPaperAssignmentTools a owl:ObjectProperty ;
+    rdfs:label "run paper assignment tools"@en ;
+    rdfs:domain :Administrator .
+
+:setMaxPapers a owl:ObjectProperty ;
+    rdfs:label "set max papers"@en ;
+    rdfs:comment "The maximal number od papers."@en ;
+    rdfs:domain :Administrator ;
+    rdfs:range :ProgramCommitteeMember .
+
+:title a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "title"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range xsd:string .
+
+:ProgramCommitteeChair a owl:Class ;
+    rdfs:label "Program Committee Chair"@en ;
+    rdfs:subClassOf :ProgramCommitteeMember .
+
+:Review a owl:Class ;
+    rdfs:label "Review"@en ;
+    rdfs:subClassOf :Document .
+
+:addedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "added by"@en ;
+    rdfs:domain :ProgramCommitteeMember ;
+    rdfs:range :Administrator .
+
+:date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "date"@en ;
+    rdfs:range xsd:date .
+
+:enterReviewCriteria a owl:ObjectProperty ;
+    rdfs:label "enter review criteria"@en ;
+    rdfs:domain :Administrator .
+
+:hasCo-author a owl:ObjectProperty ;
+    rdfs:label "has co-author"@en ;
+    rdfs:domain :Paper ;
+    rdfs:range :Co-author .
+
+:memberOfProgramCommittee a owl:ObjectProperty ;
+    rdfs:label "member of program committee"@en ;
+    rdfs:domain :ProgramCommitteeMember .
+
+:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "name"@en ;
+    rdfs:range xsd:string .
+
+:printHardcopyMailingManifests a owl:ObjectProperty ;
+    rdfs:label "print hardcopy mailing manifests"@en ;
+    rdfs:domain :Administrator .
+
+:readByMeta-Reviewer a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "read by meta-reviewer"@en ;
+    rdfs:domain :Paper .
+
+xsd:date a rdfs:Datatype .
+
+:Co-author a owl:Class ;
+    rdfs:label "Co-author"@en ;
+    rdfs:subClassOf :Author .
+
+:Author a owl:Class ;
+    rdfs:label "Author"@en ;
+    rdfs:subClassOf :ConferenceMember,
+        :User .
+
+:Preference a owl:Class ;
+    rdfs:label "Preference"@en .
+
+:User a owl:Class ;
+    rdfs:label "User"@en ;
+    rdfs:subClassOf :Person .
+
+:ConferenceMember a owl:Class ;
+    rdfs:label "Conference Member"@en ;
+    rdfs:subClassOf :Person .
+
+:Document a owl:Class ;
+    rdfs:label "Document"@en ;
+    owl:disjointWith :Person,
+        :Preference .
+
+:Reviewer a owl:Class ;
+    rdfs:label "Reviewer"@en ;
+    rdfs:subClassOf :ConferenceMember,
+        :User .
+
+:ProgramCommitteeMember a owl:Class ;
+    rdfs:label "Porgram Committee Member"@en ;
+    rdfs:comment "The Program Committee consists of all members of the conference except for Authors who are not also Reviewers."^^xsd:string ;
+    rdfs:subClassOf :ConferenceMember,
+        :Person .
+
+:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    owl:disjointWith :Preference .
+
+:Paper a owl:Class ;
+    rdfs:label "Paper"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :readByMeta-Reviewer ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ],
+        :Document ;
+    owl:disjointWith :Review .
+
+:Administrator a owl:Class ;
+    rdfs:label "Administrator"@en ;
+    rdfs:subClassOf :User .
+
+[] a owl:Restriction ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+[] a owl:Restriction ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty :name .
+
+[] a owl:Restriction ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty :date .
+
+[] rdf:rest ( :Person ) .
+
+[] rdf:rest [ rdf:rest ( :ProgramCommitteeChair ) ] .
+

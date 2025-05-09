@@ -1,0 +1,12 @@
+name=Q27 (Conference Cities)
+orderNum=310
+
+sql=SELECT "Conference"."City_of_conference" \n\
+FROM "Conference" 
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?city \n\
+WHERE {?c rdf:type :Conference; :City_of_conference ?city}
+
+categories=attrib,in-table

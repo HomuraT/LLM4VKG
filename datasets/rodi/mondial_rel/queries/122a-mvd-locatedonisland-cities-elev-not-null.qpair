@@ -1,0 +1,8 @@
+
+     
+     name = 122a-mvd-locatedonisland-cities-elev-not-null
+     orderNum = 12
+
+     sql =   Select C_City."name" as "?CN", C_City."elevation" as "?CE", I_Island."name" as "?IN", I_Island."elevation" as "?IE" From mondial_rdf2sql_standard."locatedOnIsland" C_locatedOnIsland, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Island" I_Island Where (C_City."URI" = C_locatedOnIsland."Entity") and (I_Island."URI" = C_locatedOnIsland."Island")    AND C_City."elevation" is not null AND I_Island."elevation" IS NOT NULL   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?CE ?IN ?IE    WHERE {           ?C a :City; :name ?CN; :elevation ?CE; :locatedOnIsland ?I .           ?I :name ?IN ; :elevation ?IE.    }          

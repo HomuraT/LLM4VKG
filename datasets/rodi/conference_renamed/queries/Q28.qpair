@@ -1,0 +1,12 @@
+name=Q28 (PC Names)
+orderNum=320
+
+sql=SELECT committees.name \n\
+FROM committees NATURAL JOIN program_committees
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?pcn \n\
+WHERE {?pc rdf:type :Program_committee; :has_a_name ?pcn}
+
+categories=attrib,other-table

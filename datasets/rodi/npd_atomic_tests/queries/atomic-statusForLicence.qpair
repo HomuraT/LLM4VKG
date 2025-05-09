@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#statusForLicence>
+orderNum=382
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/phase/', CAST(TABLE1.prlPhase AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlDatePhaseValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.prlDatePhaseValidTo AS CHARACTER VARYING)) AS x, CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING)) AS y FROM licence_phase_hst TABLE1 WHERE TABLE1.prlPhase IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL AND TABLE1.prlDatePhaseValidFrom IS NOT NULL AND TABLE1.prlDatePhaseValidTo IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x <http://sws.ifi.uio.no/vocab/npd-v2#statusForLicence> ?y } 
+entityIdCols=
+entityIdVars=
+categories=join-0, link, union-0

@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#coreIntervalBottom>
+orderNum=177
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/wellbore/', CAST(TABLE1.wlbnpdidwellbore AS CHARACTER VARYING), '/core/', CAST(TABLE1.wlbcorenumber AS CHARACTER VARYING)) AS x, CAST(TABLE1.wlbcoreintervalbottomft AS CHARACTER VARYING) AS y FROM (SELECT wellbore_core_id, wlbNpdidWellbore, wlbCoreNumber, wlbCoreIntervalBottom * 0.3048 AS wlbCoreIntervalBottomFT FROM wellbore_core WHERE wlbCoreIntervalUom = '[ft ]') TABLE1 WHERE TABLE1.wlbcoreintervalbottomft IS NOT NULL AND TABLE1.wlbnpdidwellbore IS NOT NULL AND TABLE1.wlbcorenumber IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/wellbore/', CAST(TABLE1.wlbNpdidWellbore AS CHARACTER VARYING), '/core/', CAST(TABLE1.wlbCoreNumber AS CHARACTER VARYING)) AS x, CAST(TABLE1.wlbCoreIntervalBottom AS CHARACTER VARYING) AS y FROM wellbore_core TABLE1 WHERE (TABLE1.wlbCoreIntervalUom = '[m ]') AND TABLE1.wlbCoreIntervalBottom IS NOT NULL AND TABLE1.wlbNpdidWellbore IS NOT NULL AND TABLE1.wlbCoreNumber IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#coreIntervalBottom> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-1

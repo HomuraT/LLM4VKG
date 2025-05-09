@@ -1,0 +1,8 @@
+
+     
+     name = 173-Border-Countries_C1-B_C2-B
+     orderNum = 37
+
+     sql =    (Select C1_Country."name" as "?N1", C2_Country."name" as "?N2"    From mondial_rdf2sql_standard."Border" border, mondial_rdf2sql_standard."Country" C1_Country, mondial_rdf2sql_standard."Country" C2_Country    Where (C1_Country."URI" = Border."Country1") and (C2_Country."URI" = Border."Country2")   ) UNION    (Select C1_Country."name" as "?N1", C2_Country."name" as "?N2"    From mondial_rdf2sql_standard."Border" border, mondial_rdf2sql_standard."Country" C1_Country, mondial_rdf2sql_standard."Country" C2_Country    Where (C1_Country."URI" = Border."Country2") and (C2_Country."URI" = Border."Country1")   )    
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N1 ?N2    WHERE {           ?C1 a :Country; :name ?N1; :hasBorder ?B .           ?C2 a :Country; :name ?N2; :hasBorder ?B .           ?B a :Border .           FILTER (?N1 != ?N2)    }          

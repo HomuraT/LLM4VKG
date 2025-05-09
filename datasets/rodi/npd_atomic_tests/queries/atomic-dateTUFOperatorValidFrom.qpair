@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#dateTUFOperatorValidFrom>
+orderNum=230
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.tufNpdidTuf AS CHARACTER VARYING), '/operator/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.tufOperDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.tufOperDateValidTo AS CHARACTER VARYING)) AS x, CAST(TABLE1.tufOperDateValidFrom AS CHARACTER VARYING) AS y FROM tuf_operator_hst TABLE1 WHERE ('9999-12-31T00:00:00' <> TABLE1.tufOperDateValidFrom) AND TABLE1.tufOperDateValidTo IS NOT NULL AND TABLE1.tufNpdidTuf IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL AND TABLE1.tufOperDateValidFrom IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#dateTUFOperatorValidFrom> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-0

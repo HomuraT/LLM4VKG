@@ -1,0 +1,12 @@
+name=Q23 (E-mail Addresses)
+orderNum=270
+
+sql=SELECT "has_an_email"."VALUE" \n\
+FROM "has_an_email"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?email \n\
+WHERE {?p rdf:type :Person; :has_an_email ?email}
+
+categories=attrib,other-table,no-fk

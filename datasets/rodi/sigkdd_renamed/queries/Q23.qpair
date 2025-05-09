@@ -1,0 +1,12 @@
+name=Q23 (E-mail Addresses)
+orderNum=270
+
+sql=SELECT e_mails.value \n\
+FROM e_mails
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?email \n\
+WHERE {?p rdf:type :Person; :E-mail ?email}
+
+categories=attrib,other-table

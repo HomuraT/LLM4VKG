@@ -1,0 +1,8 @@
+
+     
+     name = 133-all-waters-flows-into-all-waters
+     orderNum = 22
+
+     sql =   Select W_Water."name" as "?WN", W2_Water."name" as "?WN2" From mondial_rdf2sql_standard."Water" W_Water, mondial_rdf2sql_standard."Water" W2_Water Where (W_Water."flowsInto" = W2_Water."URI")    and NOT ((W_Water."rdftype" = 'Lake') and (W2_Water."rdftype" = 'Sea'))   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?WN ?WN2    WHERE {           ?W a :Water; :name ?WN; :flowsInto ?W2 .           ?W2 a :Water; :name ?WN2 .           FILTER NOT EXISTS { ?W a :Lake . ?W2 a :Sea }    }          

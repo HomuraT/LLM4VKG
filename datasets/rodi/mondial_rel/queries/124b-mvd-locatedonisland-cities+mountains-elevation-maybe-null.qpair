@@ -1,0 +1,8 @@
+
+     
+     name = 124b-mvd-locatedonisland-cities+mountains-elevation-maybe-null
+     orderNum = 16
+
+     sql =   Select X_Union."?N" as "?N", X_Union."?E" as "?E", I_Island."name" as "?IN" From ( 	(  		Select X_Mountain."name" as "?N", X_Mountain."URI" as "?X", X_Mountain."locatedOnIsland" as "?I", X_Mountain."elevation" as "?E"  		From mondial_rdf2sql_standard."Mountain" X_Mountain) 	Union 	(  		Select X_City."name" as "?N", X_City."URI" as "?X", X_locatedOnIsland."Island" as "?I", X_City."elevation" as "?E"  		From mondial_rdf2sql_standard."City" X_City, mondial_rdf2sql_standard."locatedOnIsland" X_locatedOnIsland 		Where(X_City."URI" = X_locatedOnIsland."Entity"))) X_Union, mondial_rdf2sql_standard."Island" I_Island Where (X_Union."?I" = I_Island."URI")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?N ?E ?IN    WHERE {           ?X :name ?N ; :locatedOnIsland ?I .           ?I :name ?IN .           OPTIONAL { ?X :elevation ?E }    }          

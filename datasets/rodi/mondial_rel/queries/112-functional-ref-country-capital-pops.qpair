@@ -1,0 +1,8 @@
+
+     
+     name = 112-functional-ref-country-capital-pops
+     orderNum = 2
+
+     sql =   Select C_Country."name" as "?CN", Cty_City."name" as "?CapN", C_Country."population" as "?CPop", Cty_City."population" as "?CapPop" From mondial_rdf2sql_standard."Country" C_Country, mondial_rdf2sql_standard."City" Cty_City Where (C_Country."capital" = Cty_City."URI") and (C_Country."population" < (4 * Cty_City."population"))   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?CapN ?CPop ?CapPop    WHERE {           ?C a :Country; :name ?CN; :capital ?Cty; :population ?CPop .           ?Cty a :City; :name ?CapN; :population ?CapPop .           FILTER (?CPop < 4 * ?CapPop)    }          

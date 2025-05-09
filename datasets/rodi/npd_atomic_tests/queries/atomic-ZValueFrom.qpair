@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#ZValueFrom>
+orderNum=156
+sql=SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/area/', CAST(TABLE1.prlArea_id AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlAreaPolyDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.prlAreaPolyDateValidTo AS CHARACTER VARYING)) AS x, CAST(TABLE1.prlAreaPolyFromZvalue AS CHARACTER VARYING) AS y FROM prlArea TABLE1 WHERE TABLE1.prlArea_id IS NOT NULL AND TABLE1.prlAreaPolyDateValidFrom IS NOT NULL AND TABLE1.prlAreaPolyDateValidTo IS NOT NULL AND TABLE1.prlAreaPolyFromZvalue IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL UNION ALL SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/licence/', CAST(TABLE1.prlNpdidLicence AS CHARACTER VARYING), '/block/', CAST(TABLE1.blcName AS CHARACTER VARYING), '/polyno/', CAST(TABLE1.prlAreaPolyPolyNo AS CHARACTER VARYING), '/history/', CAST(TABLE1.prlAreaPolyDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.prlAreaPolyDateValidTo AS CHARACTER VARYING)) AS x, CAST(TABLE1.prlAreaPolyFromZvalue AS CHARACTER VARYING) AS y FROM prlAreaSplitByBlock TABLE1 WHERE TABLE1.blcName IS NOT NULL AND TABLE1.prlAreaPolyDateValidFrom IS NOT NULL AND TABLE1.prlAreaPolyDateValidTo IS NOT NULL AND TABLE1.prlAreaPolyPolyNo IS NOT NULL AND TABLE1.prlNpdidLicence IS NOT NULL AND TABLE1.prlAreaPolyFromZvalue IS NOT NULL
+sparql=SELECT ?x ?y { ?x <http://sws.ifi.uio.no/vocab/npd-v2#ZValueFrom> ?y } 
+entityIdCols=0
+entityIdVars=0
+categories=attrib, in-table, join-0, union-1

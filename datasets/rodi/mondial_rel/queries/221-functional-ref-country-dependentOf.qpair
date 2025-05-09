@@ -1,0 +1,8 @@
+
+     
+     name = 221-functional-ref-country-dependentOf
+     orderNum = 47
+
+     sql =     Select C1."carCode" as "?CC", C2."carCode" as "?CC2"   From mondial_rdf2sql_standard."Country" C1, mondial_rdf2sql_standard."Country" C2   Where (C1."dependentOf" = C2."URI")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CC ?CC2    WHERE {           ?C a :Country; :carCode ?CC; :dependentOf ?C2.           ?C2 a :Country; :carCode ?CC2.    }          

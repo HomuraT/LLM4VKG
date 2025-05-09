@@ -1,0 +1,18 @@
+name=Q46 (PCs <-> Persons)
+orderNum=510
+
+sql=SELECT COUNT(*) \n\
+ FROM program_committees \n\
+		JOIN committees ON program_committees.id = committees.id \n\
+		JOIN committee_committee_member ON committees.id = committee_committee_member.committee \n\
+		JOIN committee_members ON committee_committee_member.committee_member = committee_members.id \n\
+		JOIN persons ON committee_members.id = persons.id
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?c rdf:type :Program_committee; \n\
+		:has_members ?p . \n\
+		?p rdf:type :Person}
+	
+categories=link,path-X,path-4

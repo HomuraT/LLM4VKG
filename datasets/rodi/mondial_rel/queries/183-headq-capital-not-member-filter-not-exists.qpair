@@ -1,0 +1,8 @@
+
+     
+     name = 183-headq-capital-not-member-filter-not-exists
+     orderNum = 42
+
+     sql =     Select X_Country."name" as "?CN", O_Organization."abbrev" as "?OA",        C_City."name" as "?CapN"   From mondial_rdf2sql_standard."Organization" O_Organization, mondial_rdf2sql_standard."City" C_City, mondial_rdf2sql_standard."Country" X_Country   Where (O_Organization."hasHeadq" = C_City."URI")     and (X_Country."capital" = C_City."URI")     and NOT EXISTS (Select O_Organization."URI" as "?O", X_Country."URI" as "?X"                     From mondial_rdf2sql_standard."Membership" X_Membership                     Where (X_Country."URI" = X_Membership."ofMember") and                         (O_Organization."URI" = X_Membership."inOrganization"))   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CN ?OA ?CapN    WHERE {           ?O a :Organization . ?O :abbrev ?OA .           ?O :hasHeadq ?C .           ?X a :Country ; :name ?CN ; :capital ?C .            ?C :name ?CapN .           filter not exists { ?X :isMember ?O }          }   

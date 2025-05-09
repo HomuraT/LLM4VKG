@@ -1,0 +1,110 @@
+@prefix : <http://sigkdd#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sigkdd> a owl:Ontology .
+
+:Author a owl:Class ;
+    rdfs:comment "A person who composes an article, or other written work."@en ;
+    rdfs:subClassOf [ a owl:Restriction ],
+        :Speaker ;
+    owl:equivalentClass [ a owl:Restriction ] .
+
+:Award a owl:Class ;
+    rdfs:comment "Something awarded or granted, as for merit"@en ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:someValuesFrom :Organizator ] .
+
+:City_of_conference a owl:DatatypeProperty ;
+    rdfs:comment "the name of the city in which the conference edition is located." ;
+    rdfs:range xsd:string .
+
+:Committee a owl:Class ;
+    rdfs:comment "A group of people officially delegated to perform a function, such as investigating, considering, reporting, or acting on a matter"@en .
+
+:Name a owl:DatatypeProperty ;
+    rdfs:comment "The name of a person."@en ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:Nation a owl:DatatypeProperty ;
+    rdfs:comment "The nation a person comes from."@en ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:Place a owl:Class ;
+    rdfs:comment "A building or an area set aside for a specified purpose."@en .
+
+:Price a owl:DatatypeProperty ;
+    rdfs:comment "The registration fee amount."@en ;
+    rdfs:domain :Fee ;
+    rdfs:range xsd:int .
+
+:Reviewer rdfs:comment "One who reviews, especially one who writes reviews for correcting errors and ensuring quality."@en .
+
+:hasTitle a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:payed_by a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a fee for which the money has been payed and the person or institution paying that amount of money."@en ;
+    rdfs:domain :Registration_fee ;
+    rdfs:range :Person .
+
+:Organizator a owl:Class ;
+    rdfs:comment "A person who organizes or is capable of organizing."@en ;
+    rdfs:subClassOf :Person .
+
+:design a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a person or an institution and the entity that has been designed."@en ;
+    rdfs:range :Deadline .
+
+:hold a owl:ObjectProperty ;
+    rdfs:comment "The relationship between the person or institution holding an activity."@en .
+
+:presentation a owl:ObjectProperty ;
+    rdfs:comment "The relationship between the speaker of a presentation and the document that is presented."@en ;
+    rdfs:domain :Speaker ;
+    rdfs:range :Document .
+
+:search a owl:ObjectProperty ;
+    rdfs:comment "The relationship between the conference organizing association searching for sponsors and a conference sponsor."@en ;
+    rdfs:range :Sponzor .
+
+:Fee a owl:Class ;
+    rdfs:comment "A fixed sum charged, as by an institution or by law, for a privilege."@en .
+
+:Registration_fee a owl:Class ;
+    rdfs:comment "Fee requested for registering and participating at a conference."@en ;
+    rdfs:subClassOf :Fee .
+
+:Speaker a owl:Class ;
+    rdfs:comment "A person participating at a conference as a speaker in an activity involving an oral presentation,"@en ;
+    rdfs:subClassOf :Person ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :presentation ;
+            owl:someValuesFrom :Document ] .
+
+:Sponzor a owl:Class ;
+    rdfs:comment "A commercial organization that pays all or part of the cost of putting on an event."@en ;
+    owl:equivalentClass [ a owl:Restriction ] .
+
+:submit_until a owl:ObjectProperty ;
+    rdfs:comment "The relationship identyfing before which deadline a document is submitted,"@en ;
+    rdfs:domain :Document ;
+    rdfs:range :Deadline .
+
+:Deadline a owl:Class ;
+    rdfs:comment "A time limit for an activity"@en .
+
+:Document a owl:Class ;
+    rdfs:comment "A writing that contains information."@en .
+
+:Person a owl:Class ;
+    rdfs:comment "An individual human being."@en ;
+    rdfs:subClassOf [ a owl:Restriction ],
+        owl:Thing ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:someValuesFrom :Registration_fee ] .
+

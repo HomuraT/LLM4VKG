@@ -1,0 +1,8 @@
+
+     
+     name = 212-org-abbrev
+     orderNum = 45
+
+     sql =     Select "abbrev" as "?A"   From mondial_rdf2sql_standard."Organization"   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?A    WHERE {           ?O a :Organization; :abbrev ?A.    }          

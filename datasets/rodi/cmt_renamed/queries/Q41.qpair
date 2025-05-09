@@ -1,0 +1,14 @@
+name=Q41 (Papers <-> Authors)
+orderNum=460
+
+sql=SELECT COUNT(*) \n\
+FROM paper_full_versions NATURAL JOIN papers \n\
+	JOIN authors ON papers.author = authors.id
+	
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://cmt#> \n\
+SELECT (COUNT(*) AS ?cnt) \n\
+	WHERE {?paper rdf:type :PaperFullVersion; :hasAuthor ?author . \n\
+	?author rdf:type :Author }
+
+categories=link,path-X,path-2

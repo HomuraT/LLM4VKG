@@ -1,0 +1,12 @@
+name=Q15 (Conference Listeners)
+orderNum=170
+
+sql=SELECT COUNT(*) \n\
+FROM passive_conference_partics
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT (COUNT(?participant) AS ?count) \n\
+WHERE {?participant rdf:type :Passive_conference_participant}
+
+categories=class,1-1

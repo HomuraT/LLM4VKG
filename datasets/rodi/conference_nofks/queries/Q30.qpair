@@ -1,0 +1,12 @@
+name=Q30 (ISBN of Proceedings)
+orderNum=340
+
+sql=SELECT "Conference_proceedings"."has_an_ISBN" \n\
+FROM "Conference_proceedings"
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://conference#> \n\
+SELECT ?isbn \n\
+WHERE {?proc rdf:type :Conference_proceedings; :has_an_isbn ?isbn}
+
+categories=attrib,in-table

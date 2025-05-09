@@ -1,0 +1,7 @@
+name=Atomic query: <http://sws.ifi.uio.no/vocab/npd-v2#TUFOperator>
+orderNum=131
+sql=SELECT COUNT(*) FROM (SELECT CONCAT('http://sws.ifi.uio.no/data/npd-v2/facility/', CAST(TABLE1.tufNpdidTuf AS CHARACTER VARYING), '/operator/', CAST(TABLE1.cmpNpdidCompany AS CHARACTER VARYING), '/history/', CAST(TABLE1.tufOperDateValidFrom AS CHARACTER VARYING), '/', CAST(TABLE1.tufOperDateValidTo AS CHARACTER VARYING)) AS x FROM tuf_operator_hst TABLE1 WHERE TABLE1.tufOperDateValidTo IS NOT NULL AND TABLE1.tufNpdidTuf IS NOT NULL AND TABLE1.cmpNpdidCompany IS NOT NULL AND TABLE1.tufOperDateValidFrom IS NOT NULL) AS T
+sparql=SELECT (COUNT(*) AS ?count) { ?x a <http://sws.ifi.uio.no/vocab/npd-v2#TUFOperator> } 
+entityIdCols=
+entityIdVars=
+categories=class, join-0, union-0

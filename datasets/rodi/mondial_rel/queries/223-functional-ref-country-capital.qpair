@@ -1,0 +1,8 @@
+
+     
+     name = 223-functional-ref-country-capital
+     orderNum = 49
+
+     sql =     Select C_Country."carCode" as "?CC", Cty_City."name" as "?CapN"   From mondial_rdf2sql_standard."Country" C_Country, mondial_rdf2sql_standard."City" Cty_City   Where (C_Country."capital" = Cty_City."URI")   
+
+     sparql =     prefix : <http://www.semwebtech.org/mondial/10/meta#>    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>    SELECT ?CC ?CapN    WHERE {           ?C a :Country; :carCode ?CC; :capital ?Cty .           ?Cty a :City; :name ?CapN .    }          

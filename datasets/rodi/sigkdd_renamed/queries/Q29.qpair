@@ -1,0 +1,12 @@
+name=Q29 (Amount of Conference Fees)
+orderNum=330
+
+sql=SELECT fees.price \n\
+FROM registration_fees JOIN fees ON registration_fees.id = fees.id
+
+sparql=prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\
+prefix : <http://sigkdd#> \n\
+SELECT ?amount \n\
+WHERE {?fee rdf:type :Registration_fee; :Price ?amount}
+
+categories=attrib,other-table
