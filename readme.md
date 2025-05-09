@@ -1,16 +1,10 @@
 # LLM4VKG: Leveraging Large Language Models for Virtual Knowledge Graph Construction
 
-In this work, we propose LLM4VKG, a framework that leverages LLMs for  VKG construction. By integrating established mapping patterns, LLM4VKG effectively structures and maps ontologies, making them more comprehensive and practical. Additionally, we developed an automated evaluation framework to simplify the assessment process.
+LLM4VKG is a framework that leverages Large Language Models (LLMs) for Virtual Knowledge Graph (VKG) construction. By integrating established mapping patterns, LLM4VKG effectively structures and maps ontologies, making them more comprehensive and practical. Additionally, we developed an automated evaluation framework to simplify the assessment process.
 
 # Requirements
 
-```text
-torch==2.4.1
-tqdm
-sentence_transformers==3.3.0
-rdflib
-psycopg2
-```
+Please refer to the `requirements.txt` file for a list of dependencies.
 
 # Resources
 
@@ -18,7 +12,7 @@ ontop: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
 
 logmap: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
 
-Download the above resources and place them in the corresponding directory of `./resources`
+The following external resources are required. Please download and place them in the `./resources` directory:
 
 # Prepare for Run
 
@@ -37,7 +31,7 @@ The directory `outputs/` will contain the full outputs of LLM4VKG. This includes
 
 # Acknowledgements
 
-This work utilizes the RODI (Relational-to-Ontology Mapping Quality Benchmark) dataset. We extend our gratitude to the creators and maintainers of the RODI benchmark.
+This work utilizes the RODI (Relational-to-Ontology Mapping Quality Benchmark) dataset. We thank the creators and maintainers for their contribution.
 
 The RODI benchmark can be found at: [https://github.com/chrpin/rodi](https://github.com/chrpin/rodi)
 
