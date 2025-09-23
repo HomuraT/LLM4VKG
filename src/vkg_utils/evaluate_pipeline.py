@@ -16,10 +16,10 @@ import signal
 
 
 # JDBC 配置信息模板，用于生成 ontology.properties 配置文件
-JDBC_TEMPLATE = """jdbc.url=jdbc:postgresql://##put db ip here##/{db_name}?options=-c%20search_path%3D{db_name}
+JDBC_TEMPLATE = """jdbc.url=jdbc:postgresql://localhost:5433/{db_name}?options=-c%20search_path%3D{db_name}
 jdbc.driver=org.postgresql.Driver
-jdbc.password=
-jdbc.user=
+jdbc.password=1123
+jdbc.user=postgres
 """
 
 endpoint_port = "8086"
@@ -336,7 +336,9 @@ def run_evaluation_pipeline(
     start_ontop_endpoint(obda_mapping_file, ontology_file, property_file, ontop_cli_path)
 
     # 检查服务可用性
-    check_ontop_server()
+    check_ontop_server(
+        f"http://127.0.0.1:{endpoint_port}",
+    )
 
     json_results = []
 
@@ -353,7 +355,7 @@ def run_evaluation_pipeline(
             except psycopg2.errors.UndefinedColumn as e:
                 continue
             sparql_query = extract_sparql_from_qpair(file_path)
-            sparql_results = execute_sparql_query_as_url(sparql_query)
+            sparql_results = execute_sparql_query_as_url(sparql_query, f"http://127.0.0.1:{endpoint_port}/sparql")
             precision, recall, f1 = calculate_precision_recall_f1(sparql_results, sql_results)
 
             json_results.append({

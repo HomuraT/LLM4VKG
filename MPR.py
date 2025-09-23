@@ -1,3 +1,4 @@
+import os
 from tqdm import tqdm
 
 from src.vkg_generation.mapping_pattern_recognition import DBSchemaGraph
@@ -5,8 +6,6 @@ from src.db_utils.db_utils import get_all_databases, get_table_structure, db_con
 
 if __name__ == "__main__":
     dbnames = get_all_databases(**db_config)
-    idx = dbnames.index("npd_user_tests")
-    dbname = 'mondial_rel'
     for dbname in tqdm(dbnames):
         db_schema = dbname
         if dbname.startswith("mondial"):

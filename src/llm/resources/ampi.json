@@ -1,8 +1,8 @@
 {
-     "gpt_4o": {
-          "url": "base_url",
-          "api_key": "api_key",
-          "model": "gpt-4o-2024-08-06",
-          "history": []
-     }
+  "gpt_4o_mini": {
+    "url": "https://api.oaipro.com/v1",
+    "api_key": "sk-2X6ByoQaKpeQ8wbcRkXNcYEHtyCVphEVkLMM4EsFwMwnFzNwLqQw",
+    "model": "gpt-4o-mini",
+    "history": []
+  }
 }

@@ -2,10 +2,10 @@ import psycopg2
 
 # for postgres
 db_config = {
-    "host": "",
-    "user": "",
-    "password": "",
-    "port": "",
+    "host": "localhost",
+    "user": "postgres",
+    "password": "1123",
+    "port": "5433",
 }
 
 def get_all_databases(user, password, host, port):
@@ -14,7 +14,7 @@ def get_all_databases(user, password, host, port):
     try:
         # 连接到 PostgreSQL 数据库（连接到默认的 postgres 数据库）
         conn = psycopg2.connect(
-            dbname='postgres',  # 使用 postgres 数据库来查询所有数据库
+            dbname='cmt_denormalized',  # 使用 postgres 数据库来查询所有数据库
             user=user,
             password=password,
             host=host,

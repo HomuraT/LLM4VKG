@@ -14,7 +14,7 @@ def evaluate_without_ontology_matching(db_name, base_path):
     ttl_mapping_file = os.path.join(base_path, f'rodi_{db_name}_generated_mapping.ttl')
     ontology_file = os.path.join(base_path, f'rodi_{db_name}_generated_ontology.ttl')
     property_file = os.path.join(base_path, "ontology.properties")
-    qpair_folder = os.path.join('./datasets/rodi/data', f"{db_name}/queries")
+    qpair_folder = os.path.join('./datasets/rodi/', f"{db_name}/queries")
     output_metrics_path = os.path.join(base_path, "metrics_details.json")
     output_f1_path = os.path.join(base_path, "f1.txt")
 
@@ -59,10 +59,12 @@ def evaluate_with_ontology_matching(db_name:str, rodi_path:str, base_path:str):
     source_ontology_file = os.path.join(source_ontology_dir, source_ontology_name)
 
     ontology_path = ontology_matching_by_logmap(target_ontology_file, source_ontology_file, output_dir, db_name, logmap_jar_path)
+    if not ontology_path:
+        ontology_path = source_ontology_file
     ttl_mapping_file = os.path.join(source_ontology_dir, f'rodi_{db_name}_generated_mapping.ttl')
 
     property_file = os.path.join(output_dir, "ontology.properties")
-    qpair_folder = os.path.join('./datasets/rodi/data', f"{db_name}/queries")
+    qpair_folder = os.path.join('./datasets/rodi/', f"{db_name}/queries")
     output_metrics_path = os.path.join(output_dir, "metrics_details.json")
     output_f1_path = os.path.join(output_dir, "f1.txt")
 
@@ -102,7 +104,8 @@ if __name__ == "__main__":
         nargs='+',
         help='结果组的路径列表，每个路径表示一组结果。',
         default=[
-            "outputs/rodi_LLM4VKG_gpt_4o"
+            # "outputs/rodi_LLM4VKG_gpt_4o",
+            "outputs/rodi/LLM4VKG_gpt_4o_mini"
         ]
     )
 

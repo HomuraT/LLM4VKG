@@ -176,21 +176,24 @@ class OntologyCompletion(Strategy):
             oname = target[-2]
             iri = target[-1]
 
-            iri_type = get_owl_entity_type(iri, ontology.graph)
-            if iri_type == "owl:Class":
-                # property
-                add_func = ontology.add_class
-            elif iri_type == "owl:ObjectProperty":
-                # class
-                add_func = ontology.add_object_property
-            elif iri_type == "owl:DataProperty":
-                add_func = ontology.add_data_property
-            elif "table" in source and "column" in source:
-                # property
-                add_func = ontology.add_data_property
+            if iri is None:
+                pass
             else:
-                # class
-                add_func = ontology.add_class
+                iri_type = get_owl_entity_type(iri, ontology.graph)
+                if iri_type == "owl:Class":
+                    # property
+                    add_func = ontology.add_class
+                elif iri_type == "owl:ObjectProperty":
+                    # class
+                    add_func = ontology.add_object_property
+                elif iri_type == "owl:DataProperty":
+                    add_func = ontology.add_data_property
+                elif "table" in source and "column" in source:
+                    # property
+                    add_func = ontology.add_data_property
+                else:
+                    # class
+                    add_func = ontology.add_class
 
             if label == self.match_labels[0]:
                 # highly matching

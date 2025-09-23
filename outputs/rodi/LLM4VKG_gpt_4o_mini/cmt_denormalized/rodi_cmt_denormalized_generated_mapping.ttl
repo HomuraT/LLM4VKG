@@ -1,0 +1,174 @@
+@prefix : <http://cmt#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:r2rml:SE-Author> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Author\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Author ;
+            rr:template "http://cmt#Person/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Bid> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Bid\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Bid ;
+            rr:template "http://cmt#Bid/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Conference> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Conference\"" ] ;
+    rr:predicateObjectMap [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "reviewsPerPaper" ;
+                    rr:datatype xsd:int ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :reviewsPerPaper ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "date" ;
+                    rr:datatype xsd:date ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :date ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "siteURL" ;
+                    rr:datatype xsd:anyURI ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :siteURL ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "name" ;
+                    rr:datatype xsd:string ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :name ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "logoURL" ;
+                    rr:datatype xsd:anyURI ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :logoURL ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "acceptsHardcopySubmissions" ;
+                    rr:datatype xsd:boolean ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :acceptsHardcopySubmissions ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Conference ;
+            rr:template "http://cmt#Conference/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Document> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Document\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Document ;
+            rr:template "http://cmt#Document/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Person> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Person\"" ] ;
+    rr:predicateObjectMap [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "name" ;
+                    rr:datatype xsd:string ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :name ],
+        [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "email" ;
+                    rr:datatype xsd:string ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :email ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Person ;
+            rr:template "http://cmt#Person/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Preference> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Preference\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Preference ;
+            rr:template "http://cmt#Preference/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-ProgramCommittee> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"ProgramCommittee\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :ProgramCommittee ;
+            rr:template "http://cmt#ProgramCommittee/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-ProgramCommitteeChair> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"ProgramCommitteeChair\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :ProgramCommitteeChair ;
+            rr:template "http://cmt#Person/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-ProgramCommitteeMember> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"ProgramCommitteeMember\"" ] ;
+    rr:predicateObjectMap [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ObjectMap,
+                        rr:TermMap ;
+                    rr:column "maxPapers" ;
+                    rr:datatype xsd:int ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate :maxPapers ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :ProgramCommitteeMember ;
+            rr:template "http://cmt#Person/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-Rejection> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"Rejection\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :Rejection ;
+            rr:template "http://cmt#Decision/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-SubjectArea> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"SubjectArea\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :SubjectArea ;
+            rr:template "http://cmt#SubjectArea/{ID}" ;
+            rr:termType rr:IRI ] .
+
+<urn:r2rml:SE-User> a rr:TriplesMap ;
+    rr:logicalTable [ a rr:R2RMLView ;
+            rr:sqlQuery "SELECT * FROM \"cmt_denormalized\".\"User\"" ] ;
+    rr:subjectMap [ a rr:SubjectMap,
+                rr:TermMap ;
+            rr:class :User ;
+            rr:template "http://cmt#Person/{ID}" ;
+            rr:termType rr:IRI ] .
