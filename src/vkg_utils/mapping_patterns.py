@@ -1,14 +1,14 @@
 mapping_pattern_query = {}
-mapping_pattern_query['SE'] = """
-PREFIX ex: <http://example.org/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT ?s_table ?s_pk 
-WHERE {
-  ?s_table a ex:table .
-  ?s_table ex:hasPK ?s_pk .
-  ?s_table ex:hasC ?s_c .
-}
-"""
+# mapping_pattern_query['SE'] = """
+# PREFIX ex: <http://example.org/>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# SELECT DISTINCT ?s_table ?s_pk 
+# WHERE {
+#   ?s_table a ex:table .
+#   ?s_table ex:hasPK ?s_pk .
+#   ?s_table ex:hasC ?s_c .
+# }
+# """
 
 mapping_pattern_query['SE'] = """
 PREFIX ex: <http://example.org/>

@@ -14,7 +14,7 @@ def ontology_matching_by_logmap(
 
     :param target_ontology_file_path: the target ontology file path *.ttl/*.owl
     :param source_ontology_file_path: the source ontology file path *.ttl/*.owl
-    :param output_dir_path: the output directory path
+    :param output_dir_path: the infk directory path
     :param db_name: the db name
     :param logmap_jar_path: the logmap jar
     :return: merged ontology file path

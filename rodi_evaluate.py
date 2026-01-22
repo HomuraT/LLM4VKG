@@ -14,7 +14,7 @@ def evaluate_without_ontology_matching(db_name, base_path):
     ttl_mapping_file = os.path.join(base_path, f'rodi_{db_name}_generated_mapping.ttl')
     ontology_file = os.path.join(base_path, f'rodi_{db_name}_generated_ontology.ttl')
     property_file = os.path.join(base_path, "ontology.properties")
-    qpair_folder = os.path.join('./datasets/rodi/', f"{db_name}/queries")
+    qpair_folder = os.path.join('datasets/rodi/', f"{db_name}/queries")
     output_metrics_path = os.path.join(base_path, "metrics_details.json")
     output_f1_path = os.path.join(base_path, "f1.txt")
 
@@ -48,7 +48,7 @@ def evaluate_with_ontology_matching(db_name:str, rodi_path:str, base_path:str):
     logmap_jar_path = "./resources/logmap/target/logmap-matcher-4.0.jar"
     ontop_cli_path = os.path.abspath(os.path.join('./resources', "ontop"))
     # 定义 data 和 tool 文件夹路径
-    target_ontology_dir = os.path.join(rodi_path, "data", db_name)
+    target_ontology_dir = os.path.join(rodi_path, db_name)
     source_ontology_dir = base_path
     output_dir = base_path
 
@@ -64,7 +64,7 @@ def evaluate_with_ontology_matching(db_name:str, rodi_path:str, base_path:str):
     ttl_mapping_file = os.path.join(source_ontology_dir, f'rodi_{db_name}_generated_mapping.ttl')
 
     property_file = os.path.join(output_dir, "ontology.properties")
-    qpair_folder = os.path.join('./datasets/rodi/', f"{db_name}/queries")
+    qpair_folder = os.path.join('datasets/rodi/', f"{db_name}/queries")
     output_metrics_path = os.path.join(output_dir, "metrics_details.json")
     output_f1_path = os.path.join(output_dir, "f1.txt")
 
@@ -93,7 +93,7 @@ def evaluate_w_om_for_dir(dir_path, skip_done=False):
         db_name = filename
         base_path = os.path.join(dir_path, db_name)
         try:
-            evaluate_with_ontology_matching(db_name=db_name, base_path=base_path, rodi_path="./datasets/rodi/")
+            evaluate_with_ontology_matching(db_name=db_name, base_path=base_path, rodi_path="datasets/rodi/")
         except Exception as e:
             print(e)
 
@@ -104,13 +104,15 @@ if __name__ == "__main__":
         nargs='+',
         help='结果组的路径列表，每个路径表示一组结果。',
         default=[
-            # "outputs/rodi_LLM4VKG_gpt_4o",
-            "outputs/rodi/LLM4VKG_gpt_4o_mini"
+            "outputs/rodi/LLM4VKG_gpt_4o_nofk",
+            "outputs/rodi/LLM4VKG_gpt_4o_mini_nofk"
         ]
     )
 
-    parser.add_argument('--skip_done', type=bool, default=True)
-    parser.add_argument('--ontology_matching', type=bool, default=True)
+    parser.add_argument('--skip_done', action='store_true', default=True)
+    parser.add_argument('--no_skip_done', action='store_false', dest='skip_done')
+    parser.add_argument('--ontology_matching', action='store_true', default=True)
+    parser.add_argument('--no_ontology_matching', action='store_false', dest='ontology_matching')
     args = parser.parse_args()
     for path in tqdm(args.paths):
         base_path = path

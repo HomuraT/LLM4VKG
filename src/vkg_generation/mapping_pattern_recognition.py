@@ -17,6 +17,7 @@ class DBSchemaGraph:
         self.sep = '/'
         self.graph = None
         self._build_graph()
+        
 
     def _build_graph(self, table_info=None):
         if table_info is None:
@@ -70,11 +71,13 @@ class DBSchemaGraph:
         self.graph = graph
 
     def recognize_mapping_pattern(self, pattern_type)->list[list[str]]:
+        #？ 这里会抛出异常
         assert pattern_type in self.mapping_pattern_types
         query = mapping_pattern_query[pattern_type]
         # 执行查询
         query_results = self.graph.query(query)
 
+        # 简化数据
         results = []
         for result in query_results:
             r = []

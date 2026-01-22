@@ -112,7 +112,7 @@ def merge_ontologies(ontology1, ontology2, mappings_file, output_file, ontology1
             # Default to `owl:equivalentClass` if type information is not available
             merged_graph.add((source, OWL.equivalentClass, target))
 
-    # Serialize the merged graph to the specified output file
+    # Serialize the merged graph to the specified infk file
     merged_graph.serialize(destination=output_file, format="turtle")  # Use Turtle format for better readability
 
 if __name__ == "__main__":

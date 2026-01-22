@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com python OC_MG.py
+CUDA_VISIBLE_DEVICES=3 HF_ENDPOINT=https://hf-mirror.com uv run python OC_MG.py

@@ -33,9 +33,9 @@ trash/
 *.rdf
 *.obda
 
-# Log files
+# Log files (but keep logmap-log.out as it's tracked)
 *.log
-logmap-log.out
+!logmap-log.out
 
 # Temporary files
 test.py
@@ -47,6 +47,10 @@ fix_mapping_relations.py
 # Temporary data directories
 infk/
 nofk/
+src/dataEnrichment/input/
+src/dataEnrichment/input_backup_*/
+src/dataEnrichment/input_nofk/
+src/dataEnrichment/output/
 
 # OS files
 .DS_Store

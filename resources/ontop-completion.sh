@@ -132,7 +132,7 @@ function _complete_ontop_command_query() {
         echo ${COMPREPLY[@]}
         return 0
         ;;
-      -o|--output)
+      -o|--infk)
         COMPREPLY=( $(compgen -W "${ARG_VALUES} ${ARG_GENERATED_VALUES}" -- ${CURR_WORD}) )
         echo ${COMPREPLY[@]}
         return 0
@@ -242,7 +242,7 @@ function _complete_ontop_command_materialize() {
         echo ${COMPREPLY[@]}
         return 0
         ;;
-      -o|--output)
+      -o|--infk)
         COMPREPLY=( $(compgen -W "${ARG_VALUES} ${ARG_GENERATED_VALUES}" -- ${CURR_WORD}) )
         echo ${COMPREPLY[@]}
         return 0
@@ -582,7 +582,7 @@ function _complete_ontop_command_extractdbmetadata() {
         echo ${COMPREPLY[@]}
         return 0
         ;;
-      -o|--output)
+      -o|--infk)
         COMPREPLY=( $(compgen -W "${ARG_VALUES} ${ARG_GENERATED_VALUES}" -- ${CURR_WORD}) )
         echo ${COMPREPLY[@]}
         return 0

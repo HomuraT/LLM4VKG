@@ -1,12 +1,7 @@
 import psycopg2
 
 # for postgres
-db_config = {
-    "host": "localhost",
-    "user": "postgres",
-    "password": "1123",
-    "port": "5433",
-}
+from config import db_config
 
 def get_all_databases(user, password, host, port):
     db_list = []  # 用于存储所有数据库名称

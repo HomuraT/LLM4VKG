@@ -13,16 +13,17 @@ import requests
 from tqdm import tqdm
 import os
 import signal
+from config import db_config
 
 
 # JDBC 配置信息模板，用于生成 ontology.properties 配置文件
-JDBC_TEMPLATE = """jdbc.url=jdbc:postgresql://localhost:5433/{db_name}?options=-c%20search_path%3D{db_name}
+JDBC_TEMPLATE = """jdbc.url=jdbc:postgresql://{host}:{port}/{db_name}?options=-c%20search_path%3D{db_name}
 jdbc.driver=org.postgresql.Driver
-jdbc.password=1123
-jdbc.user=postgres
+jdbc.password={password}
+jdbc.user={user}
 """
 
-endpoint_port = "8086"
+endpoint_port = "8089"
 
 def kill_process(pid: Optional[int] = None, port: Optional[int] = None) -> None:
     """
@@ -86,7 +87,13 @@ def create_properties_file(file_path:str, db_name:str)->None:
     print("生成配置文件")
     # 将 JDBC 配置信息写入文件
     with open(properties_file_path, "w") as file:
-        file.write(JDBC_TEMPLATE.format(db_name=db_name))
+        file.write(JDBC_TEMPLATE.format(
+            host=db_config["host"],
+            port=db_config["port"],
+            db_name=db_name,
+            password=db_config["password"],
+            user=db_config["user"]
+        ))
     print(f"生成配置文件: {properties_file_path}")
 
 
@@ -98,11 +105,15 @@ def convert_ttl_to_obda(input_ttl, output_obda, ontop_cli_path):
         "-o", output_obda.replace("\\", "/")
     ]
     try:
-        # subprocess.run(command, cwd=ontop_cli_path, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # 添加超时设置，避免程序卡住
+        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
         print(f"[INFO] 转换成功: {input_ttl} -> {output_obda}")
+    except subprocess.TimeoutExpired:
+        print(f"[ERROR] 转换超时: {input_ttl} -> {output_obda}")
+        raise
     except subprocess.CalledProcessError as e:
-        print(f"[ERROR] 转换失败: {input_ttl} -> {output_obda}\n错误信息: {e}")
+        print(f"[ERROR] 转换失败: {input_ttl} -> {output_obda}\n错误信息: {e.stderr.decode('utf-8') if e.stderr else str(e)}")
+        raise
 
 
 # 启动 Ontop Endpoint

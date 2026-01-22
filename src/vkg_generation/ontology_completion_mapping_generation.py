@@ -511,7 +511,7 @@ class MappingGeneration(OntologyCompletion):
         # decide the true order of a pair of symmetric tuples
         # generate a new object property for the tuple with wrong order
         # e.g. (Student, teaches, Teacher) and (Teacher, teaches, Student)
-        # output: (Student, taughtBy, Teacher) and (Teacher, teaches, Student)
+        # infk: (Student, taughtBy, Teacher) and (Teacher, teaches, Student)
         chain_judge_order_and_rename = self._getm_list(["prompt::judge_order_and_rename", "llm::free_talk", "llm::free_talk", "parser::to_json"])
         for p in tqdm(pattern_pair, desc="_handle_SR_judge_order"):
             po1 = [p[0][0], p[0][3], p[0][6]]

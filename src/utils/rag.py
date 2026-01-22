@@ -3,6 +3,12 @@ import numpy as np
 
 from sentence_transformers import SentenceTransformer, util
 import hashlib
+import os
+import sys
+
+# 添加项目根目录到sys.path以便导入config
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from config import SENTENCE_TRANSFORMERS_CACHE
 
 
 def get_top_n_sentences(query, documents, top_n=50):
@@ -54,7 +60,9 @@ class SentenceSimilarity:
         """
         if self.model is None:
             print(f"Initializing model: {self.model_name}")
-            self.model = SentenceTransformer(self.model_name)
+            # 使用配置文件中的缓存目录，避免重复下载
+            os.makedirs(SENTENCE_TRANSFORMERS_CACHE, exist_ok=True)
+            self.model = SentenceTransformer(self.model_name, cache_folder=SENTENCE_TRANSFORMERS_CACHE)
 
     def _get_sentence_hash(self, sentence):
         """
