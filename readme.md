@@ -2,30 +2,34 @@
 
 LLM4VKG is a framework that leverages Large Language Models (LLMs) for Virtual Knowledge Graph (VKG) construction. By integrating established mapping patterns, LLM4VKG effectively structures and maps ontologies, making them more comprehensive and practical. Additionally, we developed an automated evaluation framework to simplify the assessment process.
 
-# Requirements
+## Requirements
 
 Please refer to the `requirements.txt` file for a list of dependencies.
 
-# Resources
-
-ontop: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
-
-logmap: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
+## Resources
 
 The following external resources are required. Please download and place them in the `./resources` directory:
 
-# Prepare for Run
+- **ontop**: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
+- **logmap**: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
+
+## Prepare for Run
 
 1. Instantiate the database according to the SQL dump file in `./datasets/rodi/*/dump.sql`. And then set the corresponding DB config in `src/db_utils/db_utils.py`.
-2. Set api config for LLMs in `src/llm/resources/ampi.json`.
+2. Set API config for LLMs in `src/llm/resources/ampi.json`.
 
-# How to Run
+## How to Run
 
-1. mapping pattern recognition: `python MPR.py`
-2. ontology completion and mapping generation: `python OC_MG.py`
-3. evaluate: `python rodi_evaluate.py`
+1. **Mapping pattern recognition**: `python MPR.py`
+2. **Ontology completion and mapping generation**: `python OC_MG.py`
+3. **Evaluate**: `python rodi_evaluate.py`
 
-# Results
+### Alternative Scripts
+
+- `MPR_infk.py` / `MPR_nofk.py`: Mapping pattern recognition with different configurations
+- `OC_MG_infk.py` / `OC_MG_nofk.py`: Ontology completion and mapping generation with different configurations
+
+## Results
 
 The directory `outputs/` will contain the full outputs of LLM4VKG. This includes the generated ontology, mappings, and a comprehensive evaluation report detailing performance metrics and validation outcomes.
 

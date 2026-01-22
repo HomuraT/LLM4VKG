@@ -1,7 +1,53 @@
+# IDE and editor files
 .idea 
+.vscode
 .ipynb_checkpoints
-.ven
-__pycache__
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# External resources (need to be downloaded separately)
 resources/ontop
 resources/logmap
-outputs/mapping_patterns
+
+# Output directories
+outputs/
+outputs-*/
+trash/
+*.pt
+*.owl
+*.rdf
+*.obda
+
+# Log files
+*.log
+logmap-log.out
+
+# Temporary files
+test.py
+config.py
+parameters.txt
+comparison_report.md
+fix_mapping_relations.py
+
+# Temporary data directories
+infk/
+nofk/
+
+# OS files
+.DS_Store
+Thumbs.db
