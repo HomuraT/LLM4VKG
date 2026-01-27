@@ -1,3 +1,5 @@
+在使用这个项目之前，你要先在你的电脑上装上UV
+
 # LLM4VKG: Leveraging Large Language Models for Virtual Knowledge Graph Construction
 
 LLM4VKG is a framework that leverages Large Language Models (LLMs) for Virtual Knowledge Graph (VKG) construction. By integrating established mapping patterns, LLM4VKG effectively structures and maps ontologies, making them more comprehensive and practical. Additionally, we developed an automated evaluation framework to simplify the assessment process.
