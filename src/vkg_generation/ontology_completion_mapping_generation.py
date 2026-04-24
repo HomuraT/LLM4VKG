@@ -141,81 +141,120 @@ class OntologyCompletion(Strategy):
         # 还需要实现data properties
         return ontology, db2o
 
-    def run_ontology_completion(self, ontology:OntologyDataset, table:TableDataset, retrive_num=50):
+    def run_ontology_completion(self, ontology: OntologyDataset, table: TableDataset, retrive_num=50):
         table_names = table.get_table_names()
+        col_names = table.get_column_names()
+
         class_names, class_uris = ontology.get_attr_names("class")
         obj_names, obj_uris = ontology.get_attr_names("object property")
         class_names = class_names + obj_names
         class_uris = class_uris + obj_uris
         class_retrived_idxes, class_retrived_values = self._retrive_topk(table_names, class_names, retrive_num)
-
         class_pair_match = self._predict_matching_label_v2(table_names, class_names, class_uris, class_retrived_idxes, class_retrived_values)
 
-        col_names = table.get_column_names()
         data_names, data_uris = ontology.get_attr_names("data property")
         data_retrived_idxes, data_retrived_values = self._retrive_topk(col_names, data_names, retrive_num)
         data_pair_match = self._predict_matching_label_v2(col_names, data_names, data_uris, data_retrived_idxes, data_retrived_values)
 
-        pair_match = class_pair_match + data_pair_match
-
-        # torch.save(pair_match, 'outputs/test/OC-pair_match.pt')
-        # pair_match = torch.load('outputs/test/OC-pair_match.pt')
-        db2o = {}
-        variable_name_model = DynamicModelBuilder.build(
-            "variable_name_model",
-            attrs=[
-                ("name", str),
-            ]
-        )
+        variable_name_model = DynamicModelBuilder.build("variable_name_model", attrs=[("name", str)])
         chain_generate_name = self._getm_list(["prompt::generate_variable_name", "llm::free_talk", "parser::to_json"])
         chain_generate_name.steps[-2].response_format = variable_name_model
 
-        for matched in tqdm(pair_match, desc="OC-pair-matching"):
-            source, target = matched
-            label = target[1]
-            oname = target[-2]
-            iri = target[-1]
+        def apply_pair_match(pair_match, default_add_func, desc, match_kind):
+            db2o = {}
 
-            if iri is None:
-                pass
-            else:
-                iri_type = get_owl_entity_type(iri, ontology.graph)
-                if iri_type == "owl:Class":
-                    # property
-                    add_func = ontology.add_class
-                elif iri_type == "owl:ObjectProperty":
-                    # class
-                    add_func = ontology.add_object_property
-                elif iri_type == "owl:DataProperty":
-                    add_func = ontology.add_data_property
-                elif "table" in source and "column" in source:
-                    # property
-                    add_func = ontology.add_data_property
+            def get_expected_owl_type(add_func):
+                if add_func == ontology.add_class:
+                    return "owl:Class"
+                if add_func == ontology.add_object_property:
+                    return "owl:ObjectProperty"
+                if add_func == ontology.add_data_property:
+                    return "owl:DatatypeProperty"
+                raise NotImplementedError(f"Unsupported add_func: {add_func}")
+
+            def get_add_func_from_owl_type(owl_type):
+                if owl_type == "owl:Class":
+                    return ontology.add_class
+                if owl_type == "owl:ObjectProperty":
+                    return ontology.add_object_property
+                if owl_type == "owl:DatatypeProperty":
+                    return ontology.add_data_property
+                return None
+
+            def get_existing_entity(name):
+                for s in ontology.graph.subjects():
+                    local_name = str(s).split("#")[-1].split("/")[-1]
+                    if local_name == name:
+                        existing_iri = str(s)
+                        existing_type = get_owl_entity_type(existing_iri, ontology.graph)
+                        return URIRef(existing_iri), existing_type
+                return None, None
+
+            def get_or_create_iri(generated_name, add_func, parent_iri=None):
+                expected_type = get_expected_owl_type(add_func)
+                existing_iri, existing_type = get_existing_entity(generated_name)
+
+                if existing_iri is not None:
+                    if existing_type == expected_type:
+                        return existing_iri, add_func
+
+                    ontology_add_func = get_add_func_from_owl_type(existing_type)
+                    if ontology_add_func is None:
+                        raise ValueError(f"Existing ontology entity {existing_iri} has unsupported type {existing_type}")
+                    return existing_iri, ontology_add_func
+
+                if parent_iri is not None:
+                    return URIRef(add_func(generated_name, parent_iri=parent_iri)), add_func
+                return URIRef(add_func(generated_name)), add_func
+
+            for matched in tqdm(pair_match, desc=desc):
+                source, target = matched
+                label = target[1]
+                oname = target[-2]
+                iri = target[-1]
+
+                add_func = default_add_func
+                if iri is not None:
+                    iri_type = get_owl_entity_type(iri, ontology.graph)
+                    if iri_type == "owl:Class":
+                        add_func = ontology.add_class
+                    elif iri_type == "owl:ObjectProperty":
+                        add_func = ontology.add_object_property
+                    elif iri_type == "owl:DatatypeProperty":
+                        add_func = ontology.add_data_property
+
+                if label == self.match_labels[0]:
+                    selected_iri = URIRef(iri)
+
+                elif label == self.match_labels[1]:
+                    r = chain_generate_name.invoke({"source_DB_concept": source, "target_Ontology_concept": oname})
+                    generated_name = r["name"]
+                    selected_iri, add_func = get_or_create_iri(generated_name, add_func, parent_iri=iri)
+
+                elif label == self.match_labels[2]:
+                    r = chain_generate_name.invoke({"source_DB_concept": source})
+                    generated_name = r["name"]
+                    selected_iri, add_func = get_or_create_iri(generated_name, add_func)
+
                 else:
-                    # class
-                    add_func = ontology.add_class
+                    raise NotImplementedError(f"Unknown match label: {label}")
 
-            if label == self.match_labels[0]:
-                # highly matching
-                db2o[source] = (URIRef(iri), find_topmost_ancestor(ontology.graph, URIRef(iri)))
-            elif label == self.match_labels[1]:
-                r = chain_generate_name.invoke({"source_DB_concept": source, "target_Ontology_concept": oname})
-                sub_iri = add_func(r["name"], parent_iri=iri)
-                db2o[source] = (URIRef(sub_iri), find_topmost_ancestor(ontology.graph, URIRef(sub_iri)))
-            elif label == self.match_labels[2]:
-                r = chain_generate_name.invoke({"source_DB_concept": source})
-                iri = add_func(r["name"])
-                db2o[source] = (URIRef(iri), find_topmost_ancestor(ontology.graph, URIRef(iri)))
-            else:
-                raise NotImplementedError
+                db2o[source] = (selected_iri, find_topmost_ancestor(ontology.graph, selected_iri))
 
-        col_names = table.get_column_names()
+            return db2o
+
+        db2o = {}
+        db2o.update(apply_pair_match(class_pair_match, ontology.add_class, "OC-table-pair-matching", "TABLE"))
+        db2o.update(apply_pair_match(data_pair_match, ontology.add_data_property, "OC-column-pair-matching", "COLUMN"))
+
         col_dict_names = table.get_column_names(mode="dict")
-        for c, cd, in zip(col_names, col_dict_names):
+        for c, cd in zip(col_names, col_dict_names):
             new_desc = cd["table_name"] + table_col_sep + cd["column_name"]
             db2o[new_desc] = db2o[c]
             del db2o[c]
+
         return ontology, db2o
+
 
 class MappingGeneration(OntologyCompletion):
     def __init__(self, modules: Modules, db_schema:str, **kwargs):
