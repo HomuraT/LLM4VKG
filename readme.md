@@ -39,15 +39,63 @@ Please refer to `pyproject.toml` for the full dependency list.
 
 ## External resources
 
-The following external resources are required and should be placed in `./resources`:
+This project depends on the following external tools.
 
-- `ontop`: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
-- `logmap`: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
+### Ontop
 
-Expected paths used by the project include:
+LLM4VKG currently uses **Ontop 5.4.0**.
 
-- `./resources/ontop`
-- `./resources/logmap/target/logmap-matcher-4.0.jar`
+From the repository root, install it with:
+
+```bash
+mkdir -p resources
+cd resources
+
+curl -L -o ontop-cli-5.4.0.zip   https://github.com/ontop/ontop/releases/download/ontop-5.4.0/ontop-cli-5.4.0.zip
+
+mkdir -p ontop
+unzip ontop-cli-5.4.0.zip -d ontop
+
+chmod +x ontop/ontop
+rm -f ontop-cli-5.4.0.zip
+
+cd ..
+```
+
+After installation, the following file should exist:
+
+```bash
+resources/ontop/ontop
+```
+
+### LogMap
+
+LLM4VKG currently uses **LogMap matcher 4.0**.
+
+Requirements for building LogMap:
+
+- Java 8 or newer
+- Maven
+- Git
+
+From the repository root, install it with:
+
+```bash
+mkdir -p resources
+cd resources
+git clone https://github.com/ernestojimenezruiz/logmap-matcher.git logmap
+cd logmap
+mvn -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8 -DskipTests package
+cd ../..
+```
+
+After installation, the following files should exist:
+
+```bash
+resources/logmap/target/logmap-matcher-4.0.jar
+resources/logmap/target/parameters.txt
+resources/logmap/target/java-dependencies
+```
 
 ## Configuration
 

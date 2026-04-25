@@ -1,9 +1,20 @@
 #!/bin/bash
 set -e
 
+ENV_FILE=".env"
+
+if [ -f "$ENV_FILE" ]; then
+  set -a
+  source "$ENV_FILE"
+  set +a
+  DOCKER_ENV_ARGS=(--env-file "$ENV_FILE")
+else
+  DOCKER_ENV_ARGS=()
+fi
+
 CONTAINER_NAME="llm4vkg-pg"
 IMAGE_NAME="llm4vkg-postgres11"
-ENV_FILE=".env"
+HOST_PORT="${POSTGRES_PORT:-5433}"
 
 echo "Starting Docker PostgreSQL..."
 if docker ps -a --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
@@ -16,7 +27,11 @@ if docker ps -a --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
 else
   echo "Creating new container $CONTAINER_NAME"
   docker build -t "$IMAGE_NAME" .
-  docker run -d --name "$CONTAINER_NAME" --env-file "$ENV_FILE" -p 5433:5432 "$IMAGE_NAME"
+  docker run -d \
+    --name "$CONTAINER_NAME" \
+    "${DOCKER_ENV_ARGS[@]}" \
+    -p "${HOST_PORT}:5432" \
+    "$IMAGE_NAME"
 fi
 
 echo "Waiting for PostgreSQL to accept SQL connections..."

@@ -7,7 +7,7 @@ db_config = {
     "host": "localhost",
     "user": os.getenv("POSTGRES_USER", "postgres"),
     "password": os.getenv("POSTGRES_PASSWORD"),
-    "port": 5433, 
+    "port": int(os.getenv("POSTGRES_PORT", "5433")),
 }
 
 subset_names = [
