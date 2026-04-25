@@ -1,99 +1,169 @@
 # LLM4VKG: Leveraging Large Language Models for Virtual Knowledge Graph Construction
 
-LLM4VKG is a framework that leverages Large Language Models (LLMs) for Virtual Knowledge Graph (VKG) construction. By integrating established mapping patterns, LLM4VKG effectively structures and maps ontologies, making them more comprehensive and practical. Additionally, we developed an automated evaluation framework to simplify the assessment process.
+LLM4VKG is a framework that leverages Large Language Models (LLMs) for Virtual Knowledge Graph (VKG) construction. By integrating established mapping patterns, LLM4VKG structures and maps ontologies in a more comprehensive and practical way. The project also includes an automated evaluation framework for end-to-end assessment.
 
 ## Installation
 
 ### Install UV
 
-First, install UV (a fast Python package installer and resolver). You can install it using one of the following methods:
+First, install UV, a fast Python package installer and resolver.
 
-**Using pip:**
+Using pip:
 ```bash
 pip install uv
 ```
 
-**Using curl (Linux/macOS):**
+Using curl (Linux/macOS):
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-**Using Homebrew (macOS):**
+Using Homebrew (macOS):
 ```bash
 brew install uv
 ```
 
-For more installation options, visit: https://github.com/astral-sh/uv
+More installation options: [https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
 
-### Install Dependencies
-
-After installing UV, install the project dependencies:
+### Install dependencies
 
 ```bash
 uv sync
 ```
 
-This will create a virtual environment and install all dependencies specified in `pyproject.toml`.
+This creates a virtual environment and installs all dependencies from `pyproject.toml`.
 
 ## Requirements
 
-Please refer to the `pyproject.toml` file for a list of dependencies.
+Please refer to `pyproject.toml` for the full dependency list.
 
-## Resources
+## External resources
 
-The following external resources are required. Please download and place them in the `./resources` directory:
+The following external resources are required and should be placed in `./resources`:
 
-- **ontop**: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
-- **logmap**: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
+- `ontop`: [https://github.com/ontop/ontop](https://github.com/ontop/ontop)
+- `logmap`: [https://github.com/ernestojimenezruiz/logmap-matcher](https://github.com/ernestojimenezruiz/logmap-matcher)
 
-## Prepare for Run
+Expected paths used by the project include:
 
-1. Instantiate the database according to the SQL dump file in `./datasets/rodi/*/dump.sql`. And then set the corresponding DB config in `src/db_utils/db_utils.py`.
-2. Set API config for LLMs in `src/llm/resources/ampi.json`.
+- `./resources/ontop`
+- `./resources/logmap/target/logmap-matcher-4.0.jar`
 
-## How to Run
+## Configuration
 
-All scripts are located in the `script/` directory and use UV to run the Python programs. Make sure you have completed the installation steps above before running.
+Runtime configuration is centralized in `config.py`.
 
-1. **Mapping pattern recognition**: 
-   ```bash
-   ./script/MPR.sh
-   ```
+Typical settings include:
 
-2. **Ontology completion and mapping generation**: 
-   ```bash
-   ./script/OC_MG.sh
-   ```
+- PostgreSQL connection settings
+- enabled subsets
+- enabled LLM APIs
+- model settings such as embedding model, RAG model, device, and temperature
+- optional PostgreSQL client binary paths
 
-3. **Evaluate**: 
-   ```bash
-   uv run python rodi_evaluate.py
-   ```
+Secrets should be stored in a local `.env` file, not in tracked source files.
 
-### Alternative Scripts
+Example `.env`:
+```bash
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+YUNWU_API_KEY=your_yunwu_key
+ANTHROPIC_API_KEY=your_anthropic_key
+```
 
-- `script/MPR_infk.sh` / `script/MPR_nofk.sh`: Mapping pattern recognition with different configurations
-- `script/OC_MG_infk.sh` / `script/OC_MG_nofk.sh`: Ontology completion and mapping generation with different configurations
-- `script/dataEnrichment.sh`: Data enrichment script
+Make sure `.env` is ignored by git.
 
-**Note**: Make sure the scripts have execute permissions. If not, run:
+## Database setup
+
+The project expects the RODI dumps under `./datasets/rodi/*/dump.sql`.
+
+You can either load the dumps into PostgreSQL manually or use Docker.
+
+### Option 1: load dumps with Python
+
+```bash
+uv run python load_postgres_dumps.py
+```
+
+This creates one database per dataset folder and imports the corresponding `dump.sql`.
+
+### Option 2: run PostgreSQL 11 with Docker
+
+The repository includes a Docker-based setup for PostgreSQL 11 that imports all RODI dumps automatically on first startup.
+
+Typical usage:
+
+```bash
+docker build -t llm4vkg-postgres11 .
+docker run --name llm4vkg-pg --env-file .env -p 5433:5432 llm4vkg-postgres11
+```
+
+## How to run
+
+All convenience scripts are located in `script/`.
+
+Make sure they are executable:
+
 ```bash
 chmod +x script/*.sh
 ```
 
-## Results
+### Step-by-step
 
-The directory `outputs/` will contain the full outputs of LLM4VKG. This includes the generated ontology, mappings, and a comprehensive evaluation report detailing performance metrics and validation outcomes.
+1. Mapping pattern recognition:
+   ```bash
+   ./script/MPR.sh
+   ```
 
-# Acknowledgements
+2. Ontology completion and mapping generation:
+   ```bash
+   ./script/OC_MG.sh
+   ```
 
-This work utilizes the RODI (Relational-to-Ontology Mapping Quality Benchmark) dataset. We thank the creators and maintainers for their contribution.
+3. Evaluation:
+   ```bash
+   ./script/rodi_evaluate.sh
+   ```
 
-The RODI benchmark can be found at: [https://github.com/chrpin/rodi](https://github.com/chrpin/rodi)
+### End-to-end
 
-# Citation
+To run the full pipeline, use the combined script:
 
-If you find this work useful, please consider citing our paper accepted at IJCAI 2025:
+```bash
+./script/run_all.sh
+```
+
+This runs:
+
+1. Docker PostgreSQL startup
+2. mapping pattern recognition
+3. ontology completion and mapping generation
+4. evaluation
+
+## Outputs
+
+The `outputs/` directory contains the generated artifacts, including:
+
+- generated ontology files
+- generated mappings
+- evaluation results
+- detailed metrics reports
+
+## Notes
+
+- LLM API definitions are configured through `config.py`.
+- Secrets such as API keys and database passwords should be provided through `.env`.
+- If you use Docker for PostgreSQL initialization, the import scripts run only on first initialization of the data directory.
+
+## Acknowledgements
+
+This work uses the RODI (Relational-to-Ontology Mapping Quality Benchmark) dataset. We thank the creators and maintainers for their contribution.
+
+RODI benchmark: [https://github.com/chrpin/rodi](https://github.com/chrpin/rodi)
+
+## Citation
+
+If you find this work useful, please consider citing our IJCAI 2025 paper:
 
 ```bibtex
 @inproceedings{Xiao2025LLM4VKG,

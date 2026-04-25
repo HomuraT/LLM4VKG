@@ -115,36 +115,56 @@ def find_topmost_ancestor(g, iri, max_depth=10):
     return iri
 
 
-def get_owl_entity_type(iri, graph):
-    """
-    Function to determine if the given IRI is an owl:Class, owl:DatatypeProperty, or owl:ObjectProperty.
+def get_owl_entity_type(entity_iri, graph):
+    entity = URIRef(entity_iri) if not isinstance(entity_iri, URIRef) else entity_iri
 
-    Parameters:
-    - iri: The IRI whose type is to be checked.
-    - graph: The RDF graph in which to look up the IRI.
-
-    Returns:
-    - A string indicating whether the IRI is an owl:Class, owl:DatatypeProperty, or owl:ObjectProperty,
-      or None if the IRI type is unknown.
-    """
-    # Convert the IRI string to a URIRef
-    if not iri:
-        raise ValueError("IRI cannot be None")
-    iri_ref = URIRef(iri)
-
-    # Check if the IRI is an owl:Class
-    if (iri_ref, RDF.type, OWL.Class) in graph:
+    if (entity, RDF.type, OWL.Class) in graph:
         return "owl:Class"
-
-    # Check if the IRI is an owl:DatatypeProperty
-    if (iri_ref, RDF.type, OWL.DatatypeProperty) in graph:
+    if (entity, RDF.type, OWL.ObjectProperty) in graph:
+        return "owl:ObjectProperty"
+    if (entity, RDF.type, OWL.DatatypeProperty) in graph:
         return "owl:DatatypeProperty"
+    if (entity, RDF.type, RDF.Property) in graph:
+        return "rdf:Property"
 
-    # Check if the IRI is an owl:ObjectProperty
-    if (iri_ref, RDF.type, OWL.ObjectProperty) in graph:
+    class_predicates = [
+        RDFS.subClassOf,
+        OWL.disjointUnionOf,
+        OWL.unionOf,
+        OWL.intersectionOf,
+        OWL.disjointWith,
+        OWL.equivalentClass,
+        OWL.complementOf,
+    ]
+    for predicate in class_predicates:
+        if (entity, predicate, None) in graph:
+            return "owl:Class"
+
+    object_property_predicates = [
+        RDFS.subPropertyOf,
+        OWL.inverseOf,
+        OWL.propertyDisjointWith,
+        OWL.equivalentProperty,
+    ]
+    for predicate in object_property_predicates:
+        if (entity, predicate, None) in graph:
+            if (entity, RDFS.range, None) in graph or (entity, RDFS.domain, None) in graph:
+                return "owl:ObjectProperty"
+
+    if (entity, RDFS.domain, None) in graph or (entity, RDFS.range, None) in graph:
+        range_values = list(graph.objects(entity, RDFS.range))
+        datatype_namespaces = (
+            "http://www.w3.org/2001/XMLSchema#",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "http://www.w3.org/2000/01/rdf-schema#",
+        )
+        if any(str(r).startswith(datatype_namespaces) for r in range_values):
+            return "owl:DatatypeProperty"
         return "owl:ObjectProperty"
 
-    # If it's neither an owl:Class, owl:DatatypeProperty, nor owl:ObjectProperty
+    if (entity, OWL.onProperty, None) in graph:
+        return "owl:ObjectProperty"
+
     return None
 
 def retrive_topk(retriver, source, target, retrive_target_num=3):

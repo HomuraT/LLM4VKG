@@ -2,6 +2,8 @@ from rank_bm25 import BM25Okapi
 import numpy as np
 
 from sentence_transformers import SentenceTransformer, util
+from config import model_config
+
 import hashlib
 import os
 import sys
@@ -50,7 +52,7 @@ class SentenceSimilarity:
         初始化类，设置模型名称并准备嵌入缓存。
         :param model_name: SentenceTransformer 模型名称
         """
-        self.model_name = model_name
+        self.model_name = model_name or model_config["rag_model"]
         self.model = None  # 懒加载模型
         self.encoded_cache = {}  # 缓存已编码的句子及其向量
 

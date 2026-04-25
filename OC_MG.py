@@ -12,7 +12,7 @@ OC_MG.py - 本体补全和映射生成主程序
 from tqdm import tqdm  # 进度条库，用于显示处理进度
 
 # 导入配置文件
-from config import db_config, api_names, subset_names
+from config import db_config, llm_apis, subset_names
 # 导入数据库相关工具函数
 from src.db_utils.db_utils import get_table_structure
 # 导入语言模型相关工具
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     mapping_pattern_dir = 'outputs/mapping_patterns/'
     
     # 遍历不同的API模型（从配置文件中读取）
-    for api_name in api_names:
+    for api_name in llm_apis.keys():
         # 遍历不同的数据集子集（从配置文件中读取）
         for subset_name in subset_names:  
             # 构建RODI数据集路径

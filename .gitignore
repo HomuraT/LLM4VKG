@@ -39,7 +39,6 @@ trash/
 
 # Temporary files
 test.py
-config.py
 parameters.txt
 comparison_report.md
 fix_mapping_relations.py
@@ -55,3 +54,5 @@ src/dataEnrichment/output/
 # OS files
 .DS_Store
 Thumbs.db
+.env
+logmap-log.out

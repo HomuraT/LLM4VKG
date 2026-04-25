@@ -3,36 +3,27 @@ import psycopg2
 # for postgres
 from config import db_config
 
-def get_all_databases(user, password, host, port):
-    db_list = []  # 用于存储所有数据库名称
+def get_all_databases(user, password, host, port, admin_db="postgres"):
+    db_list = []
 
     try:
-        # 连接到 PostgreSQL 数据库（连接到默认的 postgres 数据库）
         conn = psycopg2.connect(
-            dbname='cmt_denormalized',  # 使用 postgres 数据库来查询所有数据库
+            dbname=admin_db,
             user=user,
             password=password,
             host=host,
-            port=port
+            port=port,
         )
-
-        # 创建一个游标对象
         cur = conn.cursor()
 
-        # 查询所有数据库名（排除模板数据库）
         cur.execute("""
             SELECT datname
             FROM pg_database
             WHERE datname NOT IN ('template0', 'template1', 'postgres');
         """)
 
-        # 获取所有数据库的名称
-        db_list = cur.fetchall()
+        db_list = [db[0] for db in cur.fetchall()]
 
-        # 提取数据库名称并存储为列表
-        db_list = [db[0] for db in db_list]
-
-        # 关闭游标和连接
         cur.close()
         conn.close()
 
@@ -40,6 +31,7 @@ def get_all_databases(user, password, host, port):
         print(f"Error: {e}")
 
     return db_list
+
 
 def get_table_structure(dbname, user, password, host, port, db_schema=None):
     if db_schema is None:

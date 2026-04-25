@@ -12,6 +12,8 @@ from src.vkg_generation.vkg_utils import get_default_namespace, add_subject_map,
     add_logical_table, find_topmost_ancestor, get_owl_entity_type, add_predicate_objectproperty_map, retrive_topk, \
     check_domain_and_range, check_domain_and_range_for_all_super_and_sub_class, get_all_related_iri
 
+import torch
+
 table_col_sep = "$$$$"
 
 class OntologyCompletion(Strategy):
@@ -20,7 +22,7 @@ class OntologyCompletion(Strategy):
         self.name = "OntologyCompletion"
         self.db_schema = db_schema
 
-        self.retriver = SentenceTransformer('BAAI/bge-m3', device="cuda")
+        self.retriver = SentenceTransformer('BAAI/bge-m3', device="cuda" if torch.cuda.is_available() else "cpu")
 
         # self.classifier = pipeline("zero-shot-classification", model=model_name, device="cuda")
 

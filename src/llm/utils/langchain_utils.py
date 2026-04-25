@@ -8,7 +8,14 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from pydantic import Field, PrivateAttr, BaseModel
 
-from src.llm.utils.gpt_utils import API_Manager
+from config import llm_apis
+from src.llm.utils.gpt_utils import API_Manager, OpenAI_API
+
+def build_api_manager():
+    manager = API_Manager()
+    for api_id, api_stat in llm_apis.items():
+        manager.add_api(api_id, OpenAI_API(**api_stat))
+    return manager
 
 
 class CustomLLM(LLM):
@@ -25,7 +32,7 @@ class CustomLLM(LLM):
     def __init__(self, **kwargs: Any):
         super().__init__(**kwargs)  # 先调用父类初始化
         # 初始化 api_tool
-        self._api_tool = API_Manager('src/llm/resources/ampi.json').load().get_api_by_id(self.api_id)
+        self._api_tool = build_api_manager().get_api_by_id(self.api_id)
         # 设置 api_url 和 api_key
         self.api_url = self._api_tool.url
         self.api_key = self._api_tool.api_key
@@ -51,7 +58,7 @@ class Modules:
         if self.set_all_api_id is not None:
             print(f"Set all api id to {self.set_all_api_id}")
 
-        self._api_tool = API_Manager('src/llm/resources/ampi.json').load()
+        self._api_tool = build_api_manager()
 
         self.modules = {}
         self.init_attrs = {}

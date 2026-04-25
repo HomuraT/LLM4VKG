@@ -10,10 +10,7 @@ from src.llm.utils.answer_format.utils import get_format_by_name
 from pydantic import TypeAdapter
 from pydantic import BaseModel
 
-OpenAI_config = {
-    'temperature': 0
-}
-
+from config import model_config
 
 class OpenAI_API:
     def __init__(self, url, model, api_key=None, history=None, max_new_tokens=None):
@@ -23,7 +20,7 @@ class OpenAI_API:
 
         openai.api_base = url
         openai.api_key = api_key if api_key else 'none'
-        self.temperature = OpenAI_config['temperature']
+        self.temperature = model_config["temperature"]
         self.max_new_tokens = max_new_tokens
 
         if 'glm' in model:

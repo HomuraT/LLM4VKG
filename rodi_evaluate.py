@@ -6,6 +6,7 @@ from tqdm import tqdm
 from src.vkg_utils.evaluate_pipeline import run_evaluation_pipeline
 from src.vkg_utils.ontology_matching_utils.utils import ontology_matching_by_logmap
 
+from config import llm_apis, subset_names
 
 def evaluate_without_ontology_matching(db_name, base_path):
     ontop_cli_path = os.path.abspath(os.path.join('./resources', "ontop"))
@@ -100,13 +101,14 @@ def evaluate_w_om_for_dir(dir_path, skip_done=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="汇总多个路径下各场景的 F1 分数并输出到 CSV。")
     parser.add_argument(
-        '--paths',
-        nargs='+',
-        help='结果组的路径列表，每个路径表示一组结果。',
+        "--paths",
+        nargs="+",
+        help="结果组的路径列表，每个路径表示一组结果。",
         default=[
-            "outputs/rodi/LLM4VKG_gpt_4o_nofk",
-            "outputs/rodi/LLM4VKG_gpt_4o_mini_nofk"
-        ]
+            f"outputs/{subset_name}/LLM4VKG_{api_name}"
+            for subset_name in subset_names
+            for api_name in llm_apis
+        ],
     )
 
     parser.add_argument('--skip_done', action='store_true', default=True)
