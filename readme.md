@@ -61,17 +61,20 @@ Typical settings include:
 - model settings such as embedding model, RAG model, device, and temperature
 - optional PostgreSQL client binary paths
 
-Secrets should be stored in a local `.env` file, not in tracked source files.
+Create a local environment file from the example template:
 
-Example `.env`:
+```bash
+cp .env.example .env
+```
+
+Then open `.env` and put your own credentials there. For example:
+
 ```bash
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+POSTGRES_PASSWORD=your_postgres_password
 YUNWU_API_KEY=your_yunwu_key
 ANTHROPIC_API_KEY=your_anthropic_key
 ```
-
-Make sure `.env` is ignored by git.
 
 ## Database setup
 
