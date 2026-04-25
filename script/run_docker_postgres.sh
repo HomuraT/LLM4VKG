@@ -27,7 +27,12 @@ docker run -d \
   "$IMAGE_NAME"
 
 echo "Waiting for PostgreSQL to accept host-side SQL connections..."
-until uv run python - <<'PY' >/dev/null 2>&1
+
+MAX_RETRIES=24
+RETRY=0
+PYTHON_BIN=".venv/bin/python"
+
+until "$PYTHON_BIN" - <<'PY' >/dev/null 2>&1
 import os
 import psycopg2
 
@@ -41,8 +46,15 @@ conn = psycopg2.connect(
 conn.close()
 PY
 do
-  echo "PostgreSQL not ready yet, retrying..."
+  RETRY=$((RETRY + 1))
+  if [ "$RETRY" -ge "$MAX_RETRIES" ]; then
+    echo "PostgreSQL did not become ready after $MAX_RETRIES attempts."
+    exit 1
+  fi
+
+  echo "PostgreSQL not ready yet, retrying... ($RETRY/$MAX_RETRIES)"
   sleep 5
 done
+
 
 echo "Docker PostgreSQL is ready."
