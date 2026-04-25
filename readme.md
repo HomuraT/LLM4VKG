@@ -142,12 +142,13 @@ This creates one database per dataset folder and imports the corresponding `dump
 
 The repository includes a Docker-based setup for PostgreSQL 11 that imports all RODI dumps automatically on first startup.
 
-Typical usage:
+Use the helper script:
 
 ```bash
-docker build -t llm4vkg-postgres11 .
-docker run --name llm4vkg-pg --env-file .env -p 5433:5432 llm4vkg-postgres11
+./script/run_docker_postgres.sh
 ```
+
+This script builds the Docker image, starts the PostgreSQL container, and waits until the database is ready to accept host-side SQL connections.
 
 ## How to run
 
@@ -159,19 +160,32 @@ Make sure they are executable:
 chmod +x script/*.sh
 ```
 
+### One-time setup
+
+To install Python dependencies, Ontop, and LogMap automatically, run:
+
+```bash
+./script/bootstrap.sh
+```
+
 ### Step-by-step
 
-1. Mapping pattern recognition:
+1. Start PostgreSQL with Docker:
+   ```bash
+   ./script/run_docker_postgres.sh
+   ```
+
+2. Mapping pattern recognition:
    ```bash
    ./script/MPR.sh
    ```
 
-2. Ontology completion and mapping generation:
+3. Ontology completion and mapping generation:
    ```bash
    ./script/OC_MG.sh
    ```
 
-3. Evaluation:
+4. Evaluation:
    ```bash
    ./script/rodi_evaluate.sh
    ```

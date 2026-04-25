@@ -4,6 +4,8 @@ set -e
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 need_cmd() {
   command -v "$1" >/dev/null 2>&1 || {
     echo "Missing required command: $1"
@@ -22,6 +24,10 @@ if ! command -v uv >/dev/null 2>&1; then
   echo "uv not found, installing..."
   curl -LsSf https://astral.sh/uv/install.sh | sh
   export PATH="$HOME/.local/bin:$PATH"
+
+  if ! grep -Fq 'export PATH="$HOME/.local/bin:$PATH"' ~/.zshrc 2>/dev/null; then
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+  fi
 fi
 
 echo "Installing Python dependencies..."

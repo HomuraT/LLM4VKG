@@ -59,16 +59,22 @@ llm_apis = {
     #     "model": "gpt-5-pro",
     #     "history": [],
     # },
-    "claude-sonnet-4-6": {
-        "url": "https://api.anthropic.com/v1",
-        "api_key": os.getenv("ANTHROPIC_API_KEY"),
-        "model": "claude-sonnet-4-6",
-        "history": [],
-    },
-    "claude-opus-4-1-20250805": {
-        "url": "https://api.anthropic.com/v1",
-        "api_key": os.getenv("ANTHROPIC_API_KEY"),
-        "model": "claude-opus-4-1-20250805",
+    # "claude-sonnet-4-6": {
+    #     "url": "https://api.anthropic.com/v1",
+    #     "api_key": os.getenv("ANTHROPIC_API_KEY"),
+    #     "model": "claude-sonnet-4-6",
+    #     "history": [],
+    # },
+    # "claude-opus-4-1-20250805": {
+    #     "url": "https://api.anthropic.com/v1",
+    #     "api_key": os.getenv("ANTHROPIC_API_KEY"),
+    #     "model": "claude-opus-4-1-20250805",
+    #     "history": [],
+    # },
+    "ollama_hpc_cluster_deepseek_r1_32b": {
+        "url": "http://localhost:5000/api/chat",
+        "api_key": "ollama",
+        "model": "deepseek-r1:32b",
         "history": [],
     }
 }
