@@ -57,15 +57,19 @@ mkdir -p ontop
 unzip ontop-cli-5.4.0.zip -d ontop
 
 chmod +x ontop/ontop
+mkdir -p ontop/jdbc
+curl -L -o ontop/jdbc/postgresql.jar \
+  https://jdbc.postgresql.org/download/postgresql-42.7.4.jar
 rm -f ontop-cli-5.4.0.zip
 
 cd ..
 ```
 
-After installation, the following file should exist:
+After installation, the following files should exist:
 
 ```bash
 resources/ontop/ontop
+resources/ontop/jdbc/postgresql.jar
 ```
 
 ### LogMap

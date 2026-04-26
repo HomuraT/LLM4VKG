@@ -42,6 +42,9 @@ curl -L -o ontop-cli-5.4.0.zip \
 mkdir -p ontop
 unzip ontop-cli-5.4.0.zip -d ontop
 chmod +x ontop/ontop
+mkdir -p ontop/jdbc
+curl -L -o ontop/jdbc/postgresql.jar \
+  https://jdbc.postgresql.org/download/postgresql-42.7.4.jar
 rm -f ontop-cli-5.4.0.zip
 cd ..
 
