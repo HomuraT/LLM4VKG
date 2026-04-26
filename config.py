@@ -74,6 +74,7 @@ llm_apis = {
     "ollama_hpc_cluster_deepseek_r1_32b": {
         "url": "http://localhost:5000/api/chat",
         "api_key": "ollama",
+        "api_type": "ollama",
         "model": "deepseek-r1:32b",
         "history": [],
     }
