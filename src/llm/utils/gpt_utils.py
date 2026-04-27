@@ -89,6 +89,7 @@ class OpenAI_API:
         self.history = history if history else []
         self.debug_ollama = os.getenv("LLM4VKG_DEBUG_OLLAMA", "").lower() in {"1", "true", "yes", "on"}
         self.debug_ollama_file = os.getenv("LLM4VKG_DEBUG_OLLAMA_FILE")
+        self.ollama_timeout_seconds = int(os.getenv("LLM4VKG_OLLAMA_TIMEOUT_SECONDS", "3600"))
 
     @staticmethod
     def _infer_api_type(url, model, api_key):
@@ -148,7 +149,12 @@ class OpenAI_API:
             self._debug_log("request_url", self.url)
             self._debug_log("request_payload", _json_safe_dumps(data))
 
-            response = requests.post(self.url, headers=headers, data=json.dumps(data), timeout=600)
+            response = requests.post(
+                self.url,
+                headers=headers,
+                data=json.dumps(data),
+                timeout=self.ollama_timeout_seconds,
+            )
 
             self._debug_log(
                 "response_meta",
