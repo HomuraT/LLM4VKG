@@ -54,6 +54,8 @@ def _model_to_json_schema(model_like):
 
 
 class OpenAI_API:
+    _initialized_debug_files = set()
+
     def __init__(self, url, model, api_key=None, history=None, max_new_tokens=None, api_type=None):
         self.url = url
         self.api_key = api_key
@@ -89,6 +91,7 @@ class OpenAI_API:
         self.history = history if history else []
         self.debug_ollama = os.getenv("LLM4VKG_DEBUG_OLLAMA", "").lower() in {"1", "true", "yes", "on"}
         self.debug_ollama_file = os.getenv("LLM4VKG_DEBUG_OLLAMA_FILE")
+        self.debug_ollama_stdout = os.getenv("LLM4VKG_DEBUG_OLLAMA_STDOUT", "0").lower() in {"1", "true", "yes", "on"}
         self.ollama_timeout_seconds = int(os.getenv("LLM4VKG_OLLAMA_TIMEOUT_SECONDS", "3600"))
 
     @staticmethod
@@ -104,10 +107,18 @@ class OpenAI_API:
             return
 
         text = f"[LLM4VKG OLLAMA DEBUG] {title}\n{payload}\n"
-        print(text, flush=True)
         if self.debug_ollama_file:
+            log_dir = os.path.dirname(self.debug_ollama_file)
+            if log_dir:
+                os.makedirs(log_dir, exist_ok=True)
+            if self.debug_ollama_file not in self._initialized_debug_files:
+                with open(self.debug_ollama_file, "w", encoding="utf-8") as f:
+                    f.write("")
+                self._initialized_debug_files.add(self.debug_ollama_file)
             with open(self.debug_ollama_file, "a", encoding="utf-8") as f:
                 f.write(text)
+        if self.debug_ollama_stdout or not self.debug_ollama_file:
+            print(text, flush=True)
 
     def send_messages(self, messages, **kwargs):
         openai.api_base = self.url
