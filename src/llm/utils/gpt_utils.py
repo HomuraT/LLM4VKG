@@ -1,5 +1,7 @@
 import openai
 import os
+import itertools
+import time
 from openai import OpenAI
 
 from zhipuai import ZhipuAI
@@ -18,6 +20,13 @@ def _json_safe_dumps(data):
         return json.dumps(data, ensure_ascii=False, indent=2, default=str)
     except TypeError:
         return json.dumps(str(data), ensure_ascii=False, indent=2)
+
+
+def _format_duration(seconds):
+    total_seconds = int(round(seconds))
+    hours, remainder = divmod(total_seconds, 3600)
+    minutes, secs = divmod(remainder, 60)
+    return f"{hours:02d}:{minutes:02d}:{secs:02d}"
 
 
 def _model_to_json_schema(model_like):
@@ -55,6 +64,7 @@ def _model_to_json_schema(model_like):
 
 class OpenAI_API:
     _initialized_debug_files = set()
+    _request_counter = itertools.count(1)
 
     def __init__(self, url, model, api_key=None, history=None, max_new_tokens=None, api_type=None):
         self.url = url
@@ -120,6 +130,17 @@ class OpenAI_API:
         if self.debug_ollama_stdout or not self.debug_ollama_file:
             print(text, flush=True)
 
+    def _next_request_id(self):
+        return f"ollama-{next(self._request_counter):06d}"
+
+    def _stdout_trace(self, request_id, phase, extra=None):
+        if not self.debug_ollama:
+            return
+        msg = f"[LLM4VKG OLLAMA] {phase} request_id={request_id}"
+        if extra:
+            msg += f" {extra}"
+        print(msg, flush=True)
+
     def send_messages(self, messages, **kwargs):
         openai.api_base = self.url
         openai.api_key = self.api_key
@@ -127,6 +148,8 @@ class OpenAI_API:
         response_format = kwargs.get('response_format')
 
         if self.api_type == 'ollama':
+            request_id = self._next_request_id()
+            start_time = time.monotonic()
             ollama_kwargs = dict(kwargs)
             ollama_format = _model_to_json_schema(ollama_kwargs.pop('response_format', None))
 
@@ -157,18 +180,24 @@ class OpenAI_API:
             else:
                 data['do_sample'] = False
 
-            self._debug_log("request_url", self.url)
-            self._debug_log("request_payload", _json_safe_dumps(data))
+            self._stdout_trace(request_id, "start", f"model={self.model}")
+            self._debug_log(f"{request_id} request_url", self.url)
+            self._debug_log(f"{request_id} request_payload", _json_safe_dumps(data))
 
-            response = requests.post(
-                self.url,
-                headers=headers,
-                data=json.dumps(data),
-                timeout=self.ollama_timeout_seconds,
-            )
+            try:
+                response = requests.post(
+                    self.url,
+                    headers=headers,
+                    data=json.dumps(data),
+                    timeout=self.ollama_timeout_seconds,
+                )
+            except requests.RequestException as e:
+                elapsed = _format_duration(time.monotonic() - start_time)
+                self._stdout_trace(request_id, "error", f"type={type(e).__name__} elapsed={elapsed}")
+                raise type(e)(f"{e} [request_id={request_id}]") from e
 
             self._debug_log(
-                "response_meta",
+                f"{request_id} response_meta",
                 _json_safe_dumps(
                     {
                         "status_code": response.status_code,
@@ -176,17 +205,21 @@ class OpenAI_API:
                     }
                 ),
             )
-            self._debug_log("response_text", response.text)
+            self._debug_log(f"{request_id} response_text", response.text)
 
             response.raise_for_status()
             try:
                 parsed_response = response.json()
             except json.JSONDecodeError as e:
+                elapsed = _format_duration(time.monotonic() - start_time)
+                self._stdout_trace(request_id, "error", f"type=JSONDecodeError elapsed={elapsed}")
                 raise ValueError(
-                    f"Ollama returned a non-JSON response: {e}\nRaw response:\n{response.text}"
+                    f"Ollama returned a non-JSON response [request_id={request_id}]: {e}\nRaw response:\n{response.text}"
                 ) from e
 
-            self._debug_log("response_json", _json_safe_dumps(parsed_response))
+            self._debug_log(f"{request_id} response_json", _json_safe_dumps(parsed_response))
+            elapsed = _format_duration(time.monotonic() - start_time)
+            self._stdout_trace(request_id, "done", f"status_code={response.status_code} elapsed={elapsed}")
 
             return parsed_response
 
