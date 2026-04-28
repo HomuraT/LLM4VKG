@@ -12,8 +12,12 @@ if __name__ == "__main__":
         if dbname.startswith("mondial"):
             db_schema = 'mondial_rdf2sql_standard'
         base_path = f'./outputs/mapping_patterns/{dbname}'
+        output_file = f"{base_path}/mapping_pattern.pt"
         if not os.path.exists(base_path):
             os.makedirs(base_path)
+        if os.path.exists(output_file):
+            print(f"{dbname}: mapping_pattern.pt already exists, skipping")
+            continue
         print("dbname:", dbname)
         table_info = get_table_structure(dbname, **db_config, db_schema=db_schema)
 
@@ -32,7 +36,7 @@ if __name__ == "__main__":
             print('-------------------')
 
         import torch
-        torch.save(mapping_patterns, f"{base_path}/mapping_pattern.pt")
+        torch.save(mapping_patterns, output_file)
         print("saved mapping_pattern.pt")
         print()
         print()
